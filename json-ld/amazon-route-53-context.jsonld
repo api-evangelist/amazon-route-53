@@ -1,0 +1,109 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "route53": "https://docs.aws.amazon.com/Route53/latest/APIReference/",
+    "aws": "https://aws.amazon.com/",
+    "HostedZone": {
+      "@id": "route53:API_CreateHostedZone",
+      "@type": "@id",
+      "@context": {
+        "Id": {
+          "@id": "route53:hostedzone-id",
+          "@type": "xsd:string"
+        },
+        "Name": {
+          "@id": "schema:name",
+          "@type": "xsd:string"
+        },
+        "CallerReference": {
+          "@id": "route53:caller-reference",
+          "@type": "xsd:string"
+        },
+        "Comment": {
+          "@id": "schema:description",
+          "@type": "xsd:string"
+        },
+        "PrivateZone": {
+          "@id": "route53:private-zone",
+          "@type": "xsd:boolean"
+        },
+        "ResourceRecordSetCount": {
+          "@id": "route53:record-set-count",
+          "@type": "xsd:integer"
+        }
+      }
+    },
+    "ResourceRecordSet": {
+      "@id": "route53:API_ChangeResourceRecordSets",
+      "@type": "@id",
+      "@context": {
+        "Name": {
+          "@id": "schema:name",
+          "@type": "xsd:string"
+        },
+        "Type": {
+          "@id": "route53:record-type",
+          "@type": "xsd:string"
+        },
+        "TTL": {
+          "@id": "route53:ttl",
+          "@type": "xsd:integer"
+        },
+        "ResourceRecords": {
+          "@id": "route53:resource-records",
+          "@container": "@list"
+        },
+        "AliasTarget": {
+          "@id": "route53:alias-target",
+          "@type": "@id"
+        }
+      }
+    },
+    "HealthCheck": {
+      "@id": "route53:API_CreateHealthCheck",
+      "@type": "@id",
+      "@context": {
+        "Id": {
+          "@id": "route53:healthcheck-id",
+          "@type": "xsd:string"
+        },
+        "Type": {
+          "@id": "route53:healthcheck-type",
+          "@type": "xsd:string"
+        },
+        "IPAddress": {
+          "@id": "route53:ip-address",
+          "@type": "xsd:string"
+        },
+        "Port": {
+          "@id": "route53:port",
+          "@type": "xsd:integer"
+        },
+        "FullyQualifiedDomainName": {
+          "@id": "route53:fqdn",
+          "@type": "xsd:string"
+        },
+        "RequestInterval": {
+          "@id": "route53:request-interval",
+          "@type": "xsd:integer"
+        },
+        "FailureThreshold": {
+          "@id": "route53:failure-threshold",
+          "@type": "xsd:integer"
+        }
+      }
+    },
+    "DelegationSet": {
+      "@id": "route53:delegation-set",
+      "@type": "@id",
+      "@context": {
+        "NameServers": {
+          "@id": "route53:name-servers",
+          "@container": "@list"
+        }
+      }
+    },
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "schema": "https://schema.org/"
+  }
+}

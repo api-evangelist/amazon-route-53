@@ -1,0 +1,740 @@
+openapi: 3.1.0
+info:
+  title: Amazon Route 53 API
+  description: >-
+    Amazon Route 53 is a highly available and scalable Domain Name System (DNS)
+    web service that provides DNS routing, domain name registration, and health
+    checking capabilities. It connects user requests to internet applications
+    running on AWS or on-premises infrastructure.
+  version: 2013-04-01
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+  contact:
+    name: Amazon Web Services
+    url: https://aws.amazon.com/route53/
+servers:
+  - url: https://route53.amazonaws.com
+    description: Amazon Route 53 production endpoint
+paths:
+  /2013-04-01/hostedzone:
+    post:
+      operationId: CreateHostedZone
+      summary: Create a hosted zone
+      description: >-
+        Creates a new public or private hosted zone. When you create a hosted
+        zone, Route 53 automatically creates a default SOA record and four NS
+        records for the zone.
+      tags:
+        - Hosted Zones
+      requestBody:
+        required: true
+        content:
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/CreateHostedZoneRequest'
+      responses:
+        '201':
+          description: Hosted zone created successfully
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/CreateHostedZoneResponse'
+        '400':
+          description: Bad request
+        '409':
+          description: Hosted zone already exists
+    get:
+      operationId: ListHostedZones
+      summary: List hosted zones
+      description: >-
+        Retrieves a list of the public and private hosted zones that are
+        associated with the current AWS account.
+      tags:
+        - Hosted Zones
+      parameters:
+        - name: marker
+          in: query
+          description: >-
+            The value that you specified for the marker parameter in the
+            request to get the next page of results.
+          schema:
+            type: string
+        - name: maxitems
+          in: query
+          description: >-
+            The maximum number of hosted zones to include in the response body.
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: List of hosted zones
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ListHostedZonesResponse'
+        '400':
+          description: Bad request
+  /2013-04-01/hostedzone/{Id}:
+    get:
+      operationId: GetHostedZone
+      summary: Get hosted zone details
+      description: >-
+        Gets information about a specified hosted zone including the four name
+        servers assigned to the hosted zone.
+      tags:
+        - Hosted Zones
+      parameters:
+        - name: Id
+          in: path
+          required: true
+          description: The ID of the hosted zone to retrieve.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Hosted zone details
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/GetHostedZoneResponse'
+        '404':
+          description: Hosted zone not found
+    delete:
+      operationId: DeleteHostedZone
+      summary: Delete a hosted zone
+      description: >-
+        Deletes a hosted zone. You can delete a hosted zone only if it contains
+        only the default SOA record and NS resource record sets.
+      tags:
+        - Hosted Zones
+      parameters:
+        - name: Id
+          in: path
+          required: true
+          description: The ID of the hosted zone to delete.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Hosted zone deleted successfully
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/DeleteHostedZoneResponse'
+        '400':
+          description: Hosted zone is not empty
+        '404':
+          description: Hosted zone not found
+  /2013-04-01/hostedzone/{Id}/rrset:
+    post:
+      operationId: ChangeResourceRecordSets
+      summary: Create, update, or delete resource record sets
+      description: >-
+        Creates, changes, or deletes a resource record set, which contains
+        authoritative DNS information for a specified domain name or subdomain.
+      tags:
+        - Resource Record Sets
+      parameters:
+        - name: Id
+          in: path
+          required: true
+          description: The ID of the hosted zone that contains the resource record sets.
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/ChangeResourceRecordSetsRequest'
+      responses:
+        '200':
+          description: Resource record set changes submitted
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ChangeResourceRecordSetsResponse'
+        '400':
+          description: Bad request
+        '404':
+          description: Hosted zone not found
+    get:
+      operationId: ListResourceRecordSets
+      summary: List resource record sets
+      description: >-
+        Lists the resource record sets in a specified hosted zone.
+      tags:
+        - Resource Record Sets
+      parameters:
+        - name: Id
+          in: path
+          required: true
+          description: The ID of the hosted zone that contains the resource record sets.
+          schema:
+            type: string
+        - name: type
+          in: query
+          description: >-
+            The type of resource record set to begin the record listing from.
+          schema:
+            type: string
+            enum:
+              - A
+              - AAAA
+              - CAA
+              - CNAME
+              - DS
+              - MX
+              - NAPTR
+              - NS
+              - PTR
+              - SOA
+              - SPF
+              - SRV
+              - TXT
+        - name: name
+          in: query
+          description: >-
+            The first name in the lexicographic ordering of resource record sets
+            to list.
+          schema:
+            type: string
+        - name: maxitems
+          in: query
+          description: >-
+            The maximum number of records to include in the response.
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: List of resource record sets
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ListResourceRecordSetsResponse'
+        '404':
+          description: Hosted zone not found
+  /2013-04-01/healthcheck:
+    post:
+      operationId: CreateHealthCheck
+      summary: Create a health check
+      description: >-
+        Creates a new health check that monitors the health and performance of
+        your web applications, web servers, and other resources.
+      tags:
+        - Health Checks
+      requestBody:
+        required: true
+        content:
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/CreateHealthCheckRequest'
+      responses:
+        '201':
+          description: Health check created successfully
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/CreateHealthCheckResponse'
+        '400':
+          description: Bad request
+        '409':
+          description: Health check already exists
+    get:
+      operationId: ListHealthChecks
+      summary: List health checks
+      description: >-
+        Retrieves a list of the health checks that are associated with the
+        current AWS account.
+      tags:
+        - Health Checks
+      parameters:
+        - name: marker
+          in: query
+          description: >-
+            The value to use for the marker parameter in a subsequent request.
+          schema:
+            type: string
+        - name: maxitems
+          in: query
+          description: >-
+            The maximum number of health checks to include in the response.
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: List of health checks
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ListHealthChecksResponse'
+        '400':
+          description: Bad request
+  /2013-04-01/healthcheck/{HealthCheckId}:
+    get:
+      operationId: GetHealthCheck
+      summary: Get health check details
+      description: >-
+        Gets information about a specified health check.
+      tags:
+        - Health Checks
+      parameters:
+        - name: HealthCheckId
+          in: path
+          required: true
+          description: The ID of the health check to retrieve.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Health check details
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/GetHealthCheckResponse'
+        '404':
+          description: Health check not found
+components:
+  schemas:
+    HostedZone:
+      type: object
+      description: >-
+        A complex type that contains general information about the hosted zone.
+      properties:
+        Id:
+          type: string
+          description: The ID that Amazon Route 53 assigned to the hosted zone.
+        Name:
+          type: string
+          description: >-
+            The name of the domain. For public hosted zones, this is the name
+            that you registered with your DNS registrar.
+        CallerReference:
+          type: string
+          description: >-
+            The value that you specified for CallerReference when you created
+            the hosted zone.
+        Config:
+          type: object
+          properties:
+            Comment:
+              type: string
+              description: A comment for the hosted zone.
+            PrivateZone:
+              type: boolean
+              description: Whether the hosted zone is private.
+        ResourceRecordSetCount:
+          type: integer
+          description: The number of resource record sets in the hosted zone.
+        LinkedService:
+          type: object
+          properties:
+            ServicePrincipal:
+              type: string
+            Description:
+              type: string
+      required:
+        - Id
+        - Name
+        - CallerReference
+
+    ResourceRecordSet:
+      type: object
+      description: >-
+        Information about the resource record set to create or delete.
+      properties:
+        Name:
+          type: string
+          description: >-
+            The name of the domain for the resource record set.
+        Type:
+          type: string
+          description: The DNS record type.
+          enum:
+            - A
+            - AAAA
+            - CAA
+            - CNAME
+            - DS
+            - MX
+            - NAPTR
+            - NS
+            - PTR
+            - SOA
+            - SPF
+            - SRV
+            - TXT
+        SetIdentifier:
+          type: string
+          description: >-
+            An identifier that differentiates among multiple resource record
+            sets that have the same combination of name and type.
+        Weight:
+          type: integer
+          description: >-
+            The weight for weighted routing, ranging from 0 to 255.
+        Region:
+          type: string
+          description: The Amazon EC2 region for latency-based routing.
+        Failover:
+          type: string
+          description: The failover configuration.
+          enum:
+            - PRIMARY
+            - SECONDARY
+        TTL:
+          type: integer
+          description: >-
+            The resource record cache time to live (TTL), in seconds.
+        ResourceRecords:
+          type: array
+          description: The resource records.
+          items:
+            type: object
+            properties:
+              Value:
+                type: string
+                description: The current or new DNS record value.
+        AliasTarget:
+          type: object
+          description: Alias resource record set information.
+          properties:
+            HostedZoneId:
+              type: string
+              description: >-
+                The hosted zone ID for the alias target.
+            DNSName:
+              type: string
+              description: The DNS domain name for the alias target.
+            EvaluateTargetHealth:
+              type: boolean
+              description: >-
+                Whether Route 53 responds to DNS queries using this alias
+                by checking the health of the alias target.
+        HealthCheckId:
+          type: string
+          description: The ID of the health check to associate with the record set.
+      required:
+        - Name
+        - Type
+
+    HealthCheck:
+      type: object
+      description: >-
+        A complex type that contains information about a health check.
+      properties:
+        Id:
+          type: string
+          description: The identifier that Amazon Route 53 assigned to the health check.
+        CallerReference:
+          type: string
+          description: >-
+            A unique string that you specified when you created the health check.
+        LinkedService:
+          type: object
+          properties:
+            ServicePrincipal:
+              type: string
+            Description:
+              type: string
+        HealthCheckConfig:
+          type: object
+          description: Configuration for the health check.
+          properties:
+            IPAddress:
+              type: string
+              description: >-
+                The IPv4 or IPv6 IP address of the endpoint to check.
+            Port:
+              type: integer
+              description: The port on the endpoint to check.
+            Type:
+              type: string
+              description: The type of health check.
+              enum:
+                - HTTP
+                - HTTPS
+                - HTTP_STR_MATCH
+                - HTTPS_STR_MATCH
+                - TCP
+                - CALCULATED
+                - CLOUDWATCH_METRIC
+                - RECOVERY_CONTROL
+            ResourcePath:
+              type: string
+              description: >-
+                The path to request when performing health checks.
+            FullyQualifiedDomainName:
+              type: string
+              description: >-
+                The fully qualified domain name of the endpoint to check.
+            RequestInterval:
+              type: integer
+              description: >-
+                The number of seconds between health checks of the endpoint.
+              enum:
+                - 10
+                - 30
+            FailureThreshold:
+              type: integer
+              description: >-
+                The number of consecutive health checks that must fail before
+                Route 53 considers the endpoint unhealthy.
+            EnableSNI:
+              type: boolean
+              description: >-
+                Whether to send the value of FullyQualifiedDomainName to the
+                endpoint in the client_hello message during TLS negotiation.
+        HealthCheckVersion:
+          type: integer
+          description: The version of the health check.
+      required:
+        - Id
+        - CallerReference
+        - HealthCheckConfig
+
+    CreateHostedZoneRequest:
+      type: object
+      properties:
+        Name:
+          type: string
+          description: The name of the domain.
+        CallerReference:
+          type: string
+          description: >-
+            A unique string that identifies the request and allows failed
+            requests to be retried without risk of executing the operation twice.
+        HostedZoneConfig:
+          type: object
+          properties:
+            Comment:
+              type: string
+            PrivateZone:
+              type: boolean
+        VPC:
+          type: object
+          properties:
+            VPCRegion:
+              type: string
+            VPCId:
+              type: string
+        DelegationSetId:
+          type: string
+      required:
+        - Name
+        - CallerReference
+
+    CreateHostedZoneResponse:
+      type: object
+      properties:
+        HostedZone:
+          $ref: '#/components/schemas/HostedZone'
+        ChangeInfo:
+          $ref: '#/components/schemas/ChangeInfo'
+        DelegationSet:
+          $ref: '#/components/schemas/DelegationSet'
+
+    GetHostedZoneResponse:
+      type: object
+      properties:
+        HostedZone:
+          $ref: '#/components/schemas/HostedZone'
+        DelegationSet:
+          $ref: '#/components/schemas/DelegationSet'
+
+    ListHostedZonesResponse:
+      type: object
+      properties:
+        HostedZones:
+          type: array
+          items:
+            $ref: '#/components/schemas/HostedZone'
+        Marker:
+          type: string
+        IsTruncated:
+          type: boolean
+        NextMarker:
+          type: string
+        MaxItems:
+          type: integer
+
+    DeleteHostedZoneResponse:
+      type: object
+      properties:
+        ChangeInfo:
+          $ref: '#/components/schemas/ChangeInfo'
+
+    ChangeResourceRecordSetsRequest:
+      type: object
+      properties:
+        ChangeBatch:
+          type: object
+          properties:
+            Comment:
+              type: string
+              description: A comment about the changes.
+            Changes:
+              type: array
+              items:
+                type: object
+                properties:
+                  Action:
+                    type: string
+                    enum:
+                      - CREATE
+                      - DELETE
+                      - UPSERT
+                  ResourceRecordSet:
+                    $ref: '#/components/schemas/ResourceRecordSet'
+                required:
+                  - Action
+                  - ResourceRecordSet
+          required:
+            - Changes
+      required:
+        - ChangeBatch
+
+    ChangeResourceRecordSetsResponse:
+      type: object
+      properties:
+        ChangeInfo:
+          $ref: '#/components/schemas/ChangeInfo'
+
+    ListResourceRecordSetsResponse:
+      type: object
+      properties:
+        ResourceRecordSets:
+          type: array
+          items:
+            $ref: '#/components/schemas/ResourceRecordSet'
+        IsTruncated:
+          type: boolean
+        NextRecordName:
+          type: string
+        NextRecordType:
+          type: string
+        NextRecordIdentifier:
+          type: string
+        MaxItems:
+          type: integer
+
+    CreateHealthCheckRequest:
+      type: object
+      properties:
+        CallerReference:
+          type: string
+          description: >-
+            A unique string that identifies the request.
+        HealthCheckConfig:
+          type: object
+          properties:
+            IPAddress:
+              type: string
+            Port:
+              type: integer
+            Type:
+              type: string
+              enum:
+                - HTTP
+                - HTTPS
+                - HTTP_STR_MATCH
+                - HTTPS_STR_MATCH
+                - TCP
+                - CALCULATED
+                - CLOUDWATCH_METRIC
+                - RECOVERY_CONTROL
+            ResourcePath:
+              type: string
+            FullyQualifiedDomainName:
+              type: string
+            RequestInterval:
+              type: integer
+            FailureThreshold:
+              type: integer
+          required:
+            - Type
+      required:
+        - CallerReference
+        - HealthCheckConfig
+
+    CreateHealthCheckResponse:
+      type: object
+      properties:
+        HealthCheck:
+          $ref: '#/components/schemas/HealthCheck'
+
+    GetHealthCheckResponse:
+      type: object
+      properties:
+        HealthCheck:
+          $ref: '#/components/schemas/HealthCheck'
+
+    ListHealthChecksResponse:
+      type: object
+      properties:
+        HealthChecks:
+          type: array
+          items:
+            $ref: '#/components/schemas/HealthCheck'
+        Marker:
+          type: string
+        IsTruncated:
+          type: boolean
+        NextMarker:
+          type: string
+        MaxItems:
+          type: integer
+
+    ChangeInfo:
+      type: object
+      description: Information about the change.
+      properties:
+        Id:
+          type: string
+          description: The ID of the change.
+        Status:
+          type: string
+          description: The current status of the change.
+          enum:
+            - PENDING
+            - INSYNC
+        SubmittedAt:
+          type: string
+          format: date-time
+          description: The date and time the change was submitted.
+        Comment:
+          type: string
+          description: A comment about the change.
+
+    DelegationSet:
+      type: object
+      description: >-
+        A complex type that lists the name servers in a delegation set.
+      properties:
+        Id:
+          type: string
+        CallerReference:
+          type: string
+        NameServers:
+          type: array
+          items:
+            type: string
+
+  securitySchemes:
+    aws_sig_v4:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: AWS Signature Version 4 authentication
+
+security:
+  - aws_sig_v4: []
+
+tags:
+  - name: Hosted Zones
+    description: Operations for managing DNS hosted zones.
+  - name: Resource Record Sets
+    description: Operations for managing DNS resource record sets.
+  - name: Health Checks
+    description: Operations for managing health checks.
