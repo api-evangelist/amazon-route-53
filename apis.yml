@@ -8,19 +8,18 @@ description: >-
 url: https://aws.amazon.com/route53/
 baseURL: https://route53.amazonaws.com
 tags:
+  - AWS
   - DNS
   - Domain Registration
-  - Routing
   - Health Checks
-  - AWS
+  - Routing
 properties:
   - type: Documentation
     url: https://docs.aws.amazon.com/Route53/latest/APIReference/
   - type: OpenAPI
     url: openapi/amazon-route-53-openapi.yml
   - type: OpenAPI
-    url: 
-      https://api.apis.guru/v2/specs/amazonaws.com/route53/2013-04-01/openapi.yaml
+    url: https://api.apis.guru/v2/specs/amazonaws.com/route53/2013-04-01/openapi.yaml
   - type: JSONSchema
     url: json-schema/amazon-route-53-hosted-zone-schema.json
   - type: JSONLD

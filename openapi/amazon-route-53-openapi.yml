@@ -732,9 +732,9 @@ security:
   - aws_sig_v4: []
 
 tags:
+  - name: Health Checks
+    description: Operations for managing health checks.
   - name: Hosted Zones
     description: Operations for managing DNS hosted zones.
   - name: Resource Record Sets
     description: Operations for managing DNS resource record sets.
-  - name: Health Checks
-    description: Operations for managing health checks.
