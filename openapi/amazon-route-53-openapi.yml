@@ -20,7 +20,7 @@ paths:
   /2013-04-01/hostedzone:
     post:
       operationId: CreateHostedZone
-      summary: Create a hosted zone
+      summary: Amazon Route 53 Create a hosted zone
       description: >-
         Creates a new public or private hosted zone. When you create a hosted
         zone, Route 53 automatically creates a default SOA record and four NS
@@ -46,7 +46,7 @@ paths:
           description: Hosted zone already exists
     get:
       operationId: ListHostedZones
-      summary: List hosted zones
+      summary: Amazon Route 53 List hosted zones
       description: >-
         Retrieves a list of the public and private hosted zones that are
         associated with the current AWS account.
@@ -78,7 +78,7 @@ paths:
   /2013-04-01/hostedzone/{Id}:
     get:
       operationId: GetHostedZone
-      summary: Get hosted zone details
+      summary: Amazon Route 53 Get hosted zone details
       description: >-
         Gets information about a specified hosted zone including the four name
         servers assigned to the hosted zone.
@@ -102,7 +102,7 @@ paths:
           description: Hosted zone not found
     delete:
       operationId: DeleteHostedZone
-      summary: Delete a hosted zone
+      summary: Amazon Route 53 Delete a hosted zone
       description: >-
         Deletes a hosted zone. You can delete a hosted zone only if it contains
         only the default SOA record and NS resource record sets.
@@ -129,7 +129,7 @@ paths:
   /2013-04-01/hostedzone/{Id}/rrset:
     post:
       operationId: ChangeResourceRecordSets
-      summary: Create, update, or delete resource record sets
+      summary: Amazon Route 53 Create, update, or delete resource record sets
       description: >-
         Creates, changes, or deletes a resource record set, which contains
         authoritative DNS information for a specified domain name or subdomain.
@@ -161,7 +161,7 @@ paths:
           description: Hosted zone not found
     get:
       operationId: ListResourceRecordSets
-      summary: List resource record sets
+      summary: Amazon Route 53 List resource record sets
       description: >-
         Lists the resource record sets in a specified hosted zone.
       tags:
@@ -218,7 +218,7 @@ paths:
   /2013-04-01/healthcheck:
     post:
       operationId: CreateHealthCheck
-      summary: Create a health check
+      summary: Amazon Route 53 Create a health check
       description: >-
         Creates a new health check that monitors the health and performance of
         your web applications, web servers, and other resources.
@@ -243,7 +243,7 @@ paths:
           description: Health check already exists
     get:
       operationId: ListHealthChecks
-      summary: List health checks
+      summary: Amazon Route 53 List health checks
       description: >-
         Retrieves a list of the health checks that are associated with the
         current AWS account.
@@ -274,7 +274,7 @@ paths:
   /2013-04-01/healthcheck/{HealthCheckId}:
     get:
       operationId: GetHealthCheck
-      summary: Get health check details
+      summary: Amazon Route 53 Get health check details
       description: >-
         Gets information about a specified health check.
       tags:

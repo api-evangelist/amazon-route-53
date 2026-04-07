@@ -1,12 +1,10 @@
 name: Amazon Route 53
 description: >-
-  Amazon Route 53 is a highly available and scalable Domain Name System (DNS)
-  web service that provides DNS routing, domain name registration, and health
-  checking capabilities. Route 53 connects user requests to internet
-  applications running on AWS or on-premises infrastructure, and can be used to
-  route traffic based on latency, geolocation, geoproximity, and weighted
-  round-robin policies. It also offers domain registration services, allowing
-  you to purchase and manage domain names directly through the API.
+  Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web
+  service that provides DNS routing, domain name registration, and health checking
+  capabilities. Route 53 connects user requests to internet applications running on
+  AWS or on-premises infrastructure, and can be used to route traffic based on latency,
+  geolocation, geoproximity, and weighted round-robin policies.
 url: https://aws.amazon.com/route53/
 baseURL: https://route53.amazonaws.com
 tags:
@@ -21,7 +19,8 @@ properties:
   - type: OpenAPI
     url: openapi/amazon-route-53-openapi.yml
   - type: OpenAPI
-    url: https://api.apis.guru/v2/specs/amazonaws.com/route53/2013-04-01/openapi.yaml
+    url: 
+      https://api.apis.guru/v2/specs/amazonaws.com/route53/2013-04-01/openapi.yaml
   - type: JSONSchema
     url: json-schema/amazon-route-53-hosted-zone-schema.json
   - type: JSONLD
