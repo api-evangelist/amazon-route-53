@@ -1,0 +1,14 @@
+{
+  "Id": "abc123",
+  "Name": "Example Resource",
+  "CallerReference": "example-value",
+  "Config": {
+    "Comment": "Example description",
+    "PrivateZone": true
+  },
+  "ResourceRecordSetCount": 100,
+  "LinkedService": {
+    "ServicePrincipal": "example-value",
+    "Description": "Example description"
+  }
+}

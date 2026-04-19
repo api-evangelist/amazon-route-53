@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-route-53/refs/heads/main/json-schema/amazon-route-53-openapi-hosted-zone-schema.json",
+  "title": "HostedZone",
+  "description": "A complex type that contains general information about the hosted zone.",
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "The ID that Amazon Route 53 assigned to the hosted zone."
+    },
+    "Name": {
+      "type": "string",
+      "description": "The name of the domain. For public hosted zones, this is the name that you registered with your DNS registrar."
+    },
+    "CallerReference": {
+      "type": "string",
+      "description": "The value that you specified for CallerReference when you created the hosted zone."
+    },
+    "Config": {
+      "type": "object",
+      "properties": {
+        "Comment": {
+          "type": "string",
+          "description": "A comment for the hosted zone."
+        },
+        "PrivateZone": {
+          "type": "boolean",
+          "description": "Whether the hosted zone is private."
+        }
+      }
+    },
+    "ResourceRecordSetCount": {
+      "type": "integer",
+      "description": "The number of resource record sets in the hosted zone."
+    },
+    "LinkedService": {
+      "type": "object",
+      "properties": {
+        "ServicePrincipal": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "required": [
+    "Id",
+    "Name",
+    "CallerReference"
+  ]
+}

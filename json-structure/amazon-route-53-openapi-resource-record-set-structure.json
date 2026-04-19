@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-route-53/refs/heads/main/json-structure/amazon-route-53-openapi-resource-record-set-structure.json",
+  "description": "Information about the resource record set to create or delete.",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "type": "string",
+      "description": "The name of the domain for the resource record set."
+    },
+    "Type": {
+      "type": "string",
+      "description": "The DNS record type.",
+      "enum": [
+        "A",
+        "AAAA",
+        "CAA",
+        "CNAME",
+        "DS",
+        "MX",
+        "NAPTR",
+        "NS",
+        "PTR",
+        "SOA",
+        "SPF",
+        "SRV",
+        "TXT"
+      ]
+    },
+    "SetIdentifier": {
+      "type": "string",
+      "description": "An identifier that differentiates among multiple resource record sets that have the same combination of name and type."
+    },
+    "Weight": {
+      "type": "int32",
+      "description": "The weight for weighted routing, ranging from 0 to 255."
+    },
+    "Region": {
+      "type": "string",
+      "description": "The Amazon EC2 region for latency-based routing."
+    },
+    "Failover": {
+      "type": "string",
+      "description": "The failover configuration.",
+      "enum": [
+        "PRIMARY",
+        "SECONDARY"
+      ]
+    },
+    "TTL": {
+      "type": "int32",
+      "description": "The resource record cache time to live (TTL), in seconds."
+    },
+    "ResourceRecords": {
+      "type": "array",
+      "description": "The resource records.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "Value": {
+            "type": "string",
+            "description": "The current or new DNS record value."
+          }
+        }
+      }
+    },
+    "AliasTarget": {
+      "type": "object",
+      "description": "Alias resource record set information.",
+      "properties": {
+        "HostedZoneId": {
+          "type": "string",
+          "description": "The hosted zone ID for the alias target."
+        },
+        "DNSName": {
+          "type": "string",
+          "description": "The DNS domain name for the alias target."
+        },
+        "EvaluateTargetHealth": {
+          "type": "boolean",
+          "description": "Whether Route 53 responds to DNS queries using this alias by checking the health of the alias target."
+        }
+      }
+    },
+    "HealthCheckId": {
+      "type": "string",
+      "description": "The ID of the health check to associate with the record set."
+    }
+  },
+  "required": [
+    "Name",
+    "Type"
+  ],
+  "name": "ResourceRecordSet"
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-route-53/refs/heads/main/json-structure/amazon-route-53-openapi-delete-hosted-zone-response-structure.json",
+  "description": "DeleteHostedZoneResponse schema from openapi",
+  "type": "object",
+  "properties": {
+    "ChangeInfo": {
+      "$ref": "#/components/schemas/ChangeInfo"
+    }
+  },
+  "name": "DeleteHostedZoneResponse"
+}

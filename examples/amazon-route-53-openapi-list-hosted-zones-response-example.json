@@ -1,0 +1,9 @@
+{
+  "HostedZones": [
+    "example-value"
+  ],
+  "Marker": "example-value",
+  "IsTruncated": true,
+  "NextMarker": "example-value",
+  "MaxItems": 100
+}

@@ -1,0 +1,48 @@
+naftiko: 1.0.0-alpha1
+info:
+  label: Amazon Route 53 Operations
+  description: Workflow capability for Amazon Route 53. Enables automation of Amazon Route 53 resources for cloud operations teams.
+  tags:
+  - Amazon Route 53
+  - AWS
+  - Cloud Operations
+  created: '2026-04-19'
+  modified: '2026-04-19'
+binds:
+- namespace: env
+  keys:
+    AWS_ACCESS_KEY: AWS_ACCESS_KEY
+    AWS_SECRET_KEY: AWS_SECRET_KEY
+capability:
+  consumes:
+  - import: amazon-route-53
+    location: ./shared/amazon-route-53.yaml
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: amazon-route-53-api
+    description: Unified REST API for Amazon Route 53 operations.
+    resources:
+    - path: /v1/resources
+      name: resources
+      description: Amazon Route 53 resources
+      operations:
+      - method: GET
+        name: list-resources
+        description: List Amazon Route 53 resources
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: amazon-route-53-mcp
+    transport: http
+    description: MCP server for AI-assisted Amazon Route 53 operations.
+    tools:
+    - name: list-amazon-route-53-resources
+      description: List Amazon Route 53 resources
+      hints:
+        readOnly: true
+      outputParameters:
+      - type: object
+        mapping: $.

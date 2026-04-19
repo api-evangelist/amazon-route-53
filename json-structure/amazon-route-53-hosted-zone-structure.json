@@ -1,0 +1,139 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-route-53/refs/heads/main/json-structure/amazon-route-53-hosted-zone-structure.json",
+  "description": "A JSON Schema representation of an Amazon Route 53 hosted zone, which is a container for records that define how to route traffic for a domain and its subdomains.",
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "The ID that Amazon Route 53 assigned to the hosted zone when it was created.",
+      "pattern": "^/hostedzone/[A-Z0-9]+$"
+    },
+    "Name": {
+      "type": "string",
+      "description": "The name of the domain. For public hosted zones, this is the name that you registered with your DNS registrar.",
+      "format": "hostname"
+    },
+    "CallerReference": {
+      "type": "string",
+      "description": "The value that you specified for CallerReference when you created the hosted zone.",
+      "maxLength": 128
+    },
+    "Config": {
+      "type": "object",
+      "description": "A complex type that includes the Comment and PrivateZone elements.",
+      "properties": {
+        "Comment": {
+          "type": "string",
+          "description": "Any comments that you want to include about the hosted zone.",
+          "maxLength": 256
+        },
+        "PrivateZone": {
+          "type": "boolean",
+          "description": "A value that indicates whether this is a private hosted zone.",
+          "default": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "ResourceRecordSetCount": {
+      "type": "int32",
+      "description": "The number of resource record sets in the hosted zone.",
+      "minimum": 0
+    },
+    "LinkedService": {
+      "type": "object",
+      "description": "If the hosted zone was created by another service, the service that created the hosted zone.",
+      "properties": {
+        "ServicePrincipal": {
+          "type": "string",
+          "description": "The service that created the hosted zone."
+        },
+        "Description": {
+          "type": "string",
+          "description": "A description provided by the other service."
+        }
+      },
+      "additionalProperties": false
+    },
+    "DelegationSet": {
+      "type": "object",
+      "description": "The name servers that are associated with the hosted zone.",
+      "properties": {
+        "Id": {
+          "type": "string",
+          "description": "The ID of the reusable delegation set."
+        },
+        "CallerReference": {
+          "type": "string",
+          "description": "The value that you specified for CallerReference when you created the reusable delegation set."
+        },
+        "NameServers": {
+          "type": "array",
+          "description": "A list of the authoritative name servers for the hosted zone.",
+          "items": {
+            "type": "string",
+            "format": "hostname"
+          },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "NameServers"
+      ],
+      "additionalProperties": false
+    },
+    "VPCs": {
+      "type": "array",
+      "description": "A list of VPCs associated with a private hosted zone.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "VPCRegion": {
+            "type": "string",
+            "description": "The region of the VPC.",
+            "enum": [
+              "us-east-1",
+              "us-east-2",
+              "us-west-1",
+              "us-west-2",
+              "eu-west-1",
+              "eu-west-2",
+              "eu-west-3",
+              "eu-central-1",
+              "eu-north-1",
+              "ap-east-1",
+              "ap-southeast-1",
+              "ap-southeast-2",
+              "ap-northeast-1",
+              "ap-northeast-2",
+              "ap-northeast-3",
+              "ap-south-1",
+              "sa-east-1",
+              "ca-central-1",
+              "me-south-1",
+              "af-south-1"
+            ]
+          },
+          "VPCId": {
+            "type": "string",
+            "description": "The ID of the VPC.",
+            "pattern": "^vpc-[a-z0-9]+$"
+          }
+        },
+        "required": [
+          "VPCRegion",
+          "VPCId"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "Id",
+    "Name",
+    "CallerReference"
+  ],
+  "additionalProperties": false,
+  "name": "Amazon Route 53 Hosted Zone"
+}

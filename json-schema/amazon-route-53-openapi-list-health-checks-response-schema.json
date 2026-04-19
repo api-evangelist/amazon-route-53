@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-route-53/refs/heads/main/json-schema/amazon-route-53-openapi-list-health-checks-response-schema.json",
+  "title": "ListHealthChecksResponse",
+  "description": "ListHealthChecksResponse schema from openapi",
+  "type": "object",
+  "properties": {
+    "HealthChecks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/HealthCheck"
+      }
+    },
+    "Marker": {
+      "type": "string"
+    },
+    "IsTruncated": {
+      "type": "boolean"
+    },
+    "NextMarker": {
+      "type": "string"
+    },
+    "MaxItems": {
+      "type": "integer"
+    }
+  }
+}

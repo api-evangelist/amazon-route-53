@@ -1,0 +1,20 @@
+{
+  "Name": "Example Resource",
+  "Type": "A",
+  "SetIdentifier": "example-value",
+  "Weight": 100,
+  "Region": "us-east-1",
+  "Failover": "PRIMARY",
+  "TTL": 100,
+  "ResourceRecords": [
+    {
+      "Value": "example-value"
+    }
+  ],
+  "AliasTarget": {
+    "HostedZoneId": "abc123",
+    "DNSName": "Example Resource",
+    "EvaluateTargetHealth": true
+  },
+  "HealthCheckId": "abc123"
+}

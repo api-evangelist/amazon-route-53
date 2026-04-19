@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-route-53/refs/heads/main/json-structure/amazon-route-53-openapi-change-info-structure.json",
+  "description": "Information about the change.",
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "The ID of the change."
+    },
+    "Status": {
+      "type": "string",
+      "description": "The current status of the change.",
+      "enum": [
+        "PENDING",
+        "INSYNC"
+      ]
+    },
+    "SubmittedAt": {
+      "type": "datetime",
+      "description": "The date and time the change was submitted."
+    },
+    "Comment": {
+      "type": "string",
+      "description": "A comment about the change."
+    }
+  },
+  "name": "ChangeInfo"
+}

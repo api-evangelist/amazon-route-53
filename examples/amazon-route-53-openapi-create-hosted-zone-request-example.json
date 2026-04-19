@@ -1,0 +1,13 @@
+{
+  "Name": "Example Resource",
+  "CallerReference": "example-value",
+  "HostedZoneConfig": {
+    "Comment": "Example description",
+    "PrivateZone": true
+  },
+  "VPC": {
+    "VPCRegion": "us-east-1",
+    "VPCId": "abc123"
+  },
+  "DelegationSetId": "abc123"
+}

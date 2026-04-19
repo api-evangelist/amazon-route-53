@@ -1,0 +1,19 @@
+{
+  "Id": "abc123",
+  "CallerReference": "example-value",
+  "LinkedService": {
+    "ServicePrincipal": "example-value",
+    "Description": "Example description"
+  },
+  "HealthCheckConfig": {
+    "IPAddress": "example-value",
+    "Port": 100,
+    "Type": "HTTP",
+    "ResourcePath": "example-value",
+    "FullyQualifiedDomainName": "example.com",
+    "RequestInterval": 10,
+    "FailureThreshold": 100,
+    "EnableSNI": true
+  },
+  "HealthCheckVersion": 100
+}

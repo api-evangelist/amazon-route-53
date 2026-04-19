@@ -1,0 +1,76 @@
+vocabulary: 1.0.0
+info:
+  provider: Amazon Route 53
+  description: Vocabulary for Amazon Route 53 APIs covering operational and capability dimensions
+  created: '2026-04-19'
+  modified: '2026-04-19'
+operational:
+  apis:
+  - name: Amazon Route 53
+    namespace: amazon-route-53
+    status: active
+  resources:
+  - name: '2013-04-01'
+    api: amazon-route-53-openapi
+    actions:
+    - ListHostedZones
+    - CreateHostedZone
+  actions:
+  - name: list
+    httpMethod: GET
+    pattern: read
+  - name: create
+    httpMethod: POST
+    pattern: write
+  - name: get
+    httpMethod: GET
+    pattern: read
+  - name: delete
+    httpMethod: DELETE
+    pattern: write
+  - name: post
+    httpMethod: POST
+    pattern: write
+  schemas:
+    core:
+    - amazon-route-53-hosted-zone
+    - amazon-route-53-openapi-change-info
+    - amazon-route-53-openapi-change-resource-record-sets-request
+    - amazon-route-53-openapi-change-resource-record-sets-response
+    - amazon-route-53-openapi-create-health-check-request
+    - amazon-route-53-openapi-create-health-check-response
+    - amazon-route-53-openapi-create-hosted-zone-request
+    - amazon-route-53-openapi-create-hosted-zone-response
+    - amazon-route-53-openapi-delegation-set
+    - amazon-route-53-openapi-delete-hosted-zone-response
+    - amazon-route-53-openapi-get-health-check-response
+    - amazon-route-53-openapi-get-hosted-zone-response
+    - amazon-route-53-openapi-health-check
+    - amazon-route-53-openapi-hosted-zone
+    - amazon-route-53-openapi-list-health-checks-response
+    - amazon-route-53-openapi-list-hosted-zones-response
+    - amazon-route-53-openapi-list-resource-record-sets-response
+    - amazon-route-53-openapi-resource-record-set
+  authentication:
+    schemes:
+    - type: bearer
+      description: AWS Signature V4
+capability:
+  workflows:
+  - name: Amazon Route 53 Operations
+    file: capabilities/amazon-route-53.yaml
+    description: Automation workflow for Amazon Route 53
+  personas:
+  - id: cloud-engineer
+    name: Cloud Engineer
+    description: Engineer managing Amazon Route 53 resources
+  domains:
+  - name: Cloud Operations
+    description: AWS cloud resource management
+crossReference:
+- resource: '2013-04-01'
+  operations:
+  - ListHostedZones
+  - CreateHostedZone
+  workflows:
+  - Amazon Route 53 Operations

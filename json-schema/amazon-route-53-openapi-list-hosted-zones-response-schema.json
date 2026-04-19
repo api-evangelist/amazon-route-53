@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-route-53/refs/heads/main/json-schema/amazon-route-53-openapi-list-hosted-zones-response-schema.json",
+  "title": "ListHostedZonesResponse",
+  "description": "ListHostedZonesResponse schema from openapi",
+  "type": "object",
+  "properties": {
+    "HostedZones": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/HostedZone"
+      }
+    },
+    "Marker": {
+      "type": "string"
+    },
+    "IsTruncated": {
+      "type": "boolean"
+    },
+    "NextMarker": {
+      "type": "string"
+    },
+    "MaxItems": {
+      "type": "integer"
+    }
+  }
+}

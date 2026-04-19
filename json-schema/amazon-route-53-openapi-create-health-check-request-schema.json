@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-route-53/refs/heads/main/json-schema/amazon-route-53-openapi-create-health-check-request-schema.json",
+  "title": "CreateHealthCheckRequest",
+  "description": "CreateHealthCheckRequest schema from openapi",
+  "type": "object",
+  "properties": {
+    "CallerReference": {
+      "type": "string",
+      "description": "A unique string that identifies the request."
+    },
+    "HealthCheckConfig": {
+      "type": "object",
+      "properties": {
+        "IPAddress": {
+          "type": "string"
+        },
+        "Port": {
+          "type": "integer"
+        },
+        "Type": {
+          "type": "string",
+          "enum": [
+            "HTTP",
+            "HTTPS",
+            "HTTP_STR_MATCH",
+            "HTTPS_STR_MATCH",
+            "TCP",
+            "CALCULATED",
+            "CLOUDWATCH_METRIC",
+            "RECOVERY_CONTROL"
+          ]
+        },
+        "ResourcePath": {
+          "type": "string"
+        },
+        "FullyQualifiedDomainName": {
+          "type": "string"
+        },
+        "RequestInterval": {
+          "type": "integer"
+        },
+        "FailureThreshold": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "Type"
+      ]
+    }
+  },
+  "required": [
+    "CallerReference",
+    "HealthCheckConfig"
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-route-53/refs/heads/main/json-schema/amazon-route-53-openapi-health-check-schema.json",
+  "title": "HealthCheck",
+  "description": "A complex type that contains information about a health check.",
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "The identifier that Amazon Route 53 assigned to the health check."
+    },
+    "CallerReference": {
+      "type": "string",
+      "description": "A unique string that you specified when you created the health check."
+    },
+    "LinkedService": {
+      "type": "object",
+      "properties": {
+        "ServicePrincipal": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        }
+      }
+    },
+    "HealthCheckConfig": {
+      "type": "object",
+      "description": "Configuration for the health check.",
+      "properties": {
+        "IPAddress": {
+          "type": "string",
+          "description": "The IPv4 or IPv6 IP address of the endpoint to check."
+        },
+        "Port": {
+          "type": "integer",
+          "description": "The port on the endpoint to check."
+        },
+        "Type": {
+          "type": "string",
+          "description": "The type of health check.",
+          "enum": [
+            "HTTP",
+            "HTTPS",
+            "HTTP_STR_MATCH",
+            "HTTPS_STR_MATCH",
+            "TCP",
+            "CALCULATED",
+            "CLOUDWATCH_METRIC",
+            "RECOVERY_CONTROL"
+          ]
+        },
+        "ResourcePath": {
+          "type": "string",
+          "description": "The path to request when performing health checks."
+        },
+        "FullyQualifiedDomainName": {
+          "type": "string",
+          "description": "The fully qualified domain name of the endpoint to check."
+        },
+        "RequestInterval": {
+          "type": "integer",
+          "description": "The number of seconds between health checks of the endpoint.",
+          "enum": [
+            10,
+            30
+          ]
+        },
+        "FailureThreshold": {
+          "type": "integer",
+          "description": "The number of consecutive health checks that must fail before Route 53 considers the endpoint unhealthy."
+        },
+        "EnableSNI": {
+          "type": "boolean",
+          "description": "Whether to send the value of FullyQualifiedDomainName to the endpoint in the client_hello message during TLS negotiation."
+        }
+      }
+    },
+    "HealthCheckVersion": {
+      "type": "integer",
+      "description": "The version of the health check."
+    }
+  },
+  "required": [
+    "Id",
+    "CallerReference",
+    "HealthCheckConfig"
+  ]
+}

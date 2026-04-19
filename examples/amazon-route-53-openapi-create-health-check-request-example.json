@@ -1,0 +1,12 @@
+{
+  "CallerReference": "example-value",
+  "HealthCheckConfig": {
+    "IPAddress": "example-value",
+    "Port": 100,
+    "Type": "HTTP",
+    "ResourcePath": "example-value",
+    "FullyQualifiedDomainName": "example.com",
+    "RequestInterval": 100,
+    "FailureThreshold": 100
+  }
+}

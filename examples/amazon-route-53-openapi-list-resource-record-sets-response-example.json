@@ -1,0 +1,10 @@
+{
+  "ResourceRecordSets": [
+    "example-value"
+  ],
+  "IsTruncated": true,
+  "NextRecordName": "Example Resource",
+  "NextRecordType": "example-value",
+  "NextRecordIdentifier": "example-value",
+  "MaxItems": 100
+}

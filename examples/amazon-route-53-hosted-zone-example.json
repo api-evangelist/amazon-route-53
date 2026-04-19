@@ -1,0 +1,27 @@
+{
+  "Id": "abc123",
+  "Name": "Example Resource",
+  "CallerReference": "example-value",
+  "Config": {
+    "Comment": "Example description",
+    "PrivateZone": false
+  },
+  "ResourceRecordSetCount": 100,
+  "LinkedService": {
+    "ServicePrincipal": "example-value",
+    "Description": "Example description"
+  },
+  "DelegationSet": {
+    "Id": "abc123",
+    "CallerReference": "example-value",
+    "NameServers": [
+      "Example Resource"
+    ]
+  },
+  "VPCs": [
+    {
+      "VPCRegion": "us-east-1",
+      "VPCId": "abc123"
+    }
+  ]
+}

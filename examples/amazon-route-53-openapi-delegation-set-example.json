@@ -1,0 +1,7 @@
+{
+  "Id": "abc123",
+  "CallerReference": "example-value",
+  "NameServers": [
+    "Example Resource"
+  ]
+}

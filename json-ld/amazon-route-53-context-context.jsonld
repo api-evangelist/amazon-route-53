@@ -1,0 +1,250 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "aws": "https://aws.amazon.com/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "Amazon Route 53 Hosted Zone": "aws:Amazon Route 53 Hosted Zone",
+    "ChangeInfo": {
+      "@id": "aws:ChangeInfo",
+      "@type": "xsd:string"
+    },
+    "ChangeResourceRecordSetsRequest": "aws:ChangeResourceRecordSetsRequest",
+    "ChangeResourceRecordSetsResponse": "aws:ChangeResourceRecordSetsResponse",
+    "CreateHealthCheckRequest": "aws:CreateHealthCheckRequest",
+    "CreateHealthCheckResponse": "aws:CreateHealthCheckResponse",
+    "CreateHostedZoneRequest": "aws:CreateHostedZoneRequest",
+    "CreateHostedZoneResponse": "aws:CreateHostedZoneResponse",
+    "DelegationSet": {
+      "@id": "aws:DelegationSet",
+      "@type": "xsd:string"
+    },
+    "DeleteHostedZoneResponse": "aws:DeleteHostedZoneResponse",
+    "GetHealthCheckResponse": "aws:GetHealthCheckResponse",
+    "GetHostedZoneResponse": "aws:GetHostedZoneResponse",
+    "HealthCheck": {
+      "@id": "aws:HealthCheck",
+      "@type": "xsd:string"
+    },
+    "HostedZone": {
+      "@id": "aws:HostedZone",
+      "@type": "xsd:string"
+    },
+    "ListHealthChecksResponse": "aws:ListHealthChecksResponse",
+    "ListHostedZonesResponse": "aws:ListHostedZonesResponse",
+    "ListResourceRecordSetsResponse": "aws:ListResourceRecordSetsResponse",
+    "ResourceRecordSet": "aws:ResourceRecordSet",
+    "Id": {
+      "@id": "aws:Id",
+      "@type": "xsd:string"
+    },
+    "Name": {
+      "@id": "aws:Name",
+      "@type": "xsd:string"
+    },
+    "CallerReference": {
+      "@id": "aws:CallerReference",
+      "@type": "xsd:string"
+    },
+    "Config": {
+      "@id": "aws:Config",
+      "@type": "xsd:string"
+    },
+    "Comment": {
+      "@id": "aws:Comment",
+      "@type": "xsd:string"
+    },
+    "PrivateZone": {
+      "@id": "aws:PrivateZone",
+      "@type": "xsd:boolean"
+    },
+    "ResourceRecordSetCount": {
+      "@id": "aws:ResourceRecordSetCount",
+      "@type": "xsd:integer"
+    },
+    "LinkedService": {
+      "@id": "aws:LinkedService",
+      "@type": "xsd:string"
+    },
+    "ServicePrincipal": {
+      "@id": "aws:ServicePrincipal",
+      "@type": "xsd:string"
+    },
+    "Description": {
+      "@id": "aws:Description",
+      "@type": "xsd:string"
+    },
+    "NameServers": {
+      "@id": "aws:NameServers",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "VPCs": {
+      "@id": "aws:VPCs",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "Status": {
+      "@id": "aws:Status",
+      "@type": "xsd:string"
+    },
+    "SubmittedAt": {
+      "@id": "aws:SubmittedAt",
+      "@type": "xsd:dateTime"
+    },
+    "ChangeBatch": {
+      "@id": "aws:ChangeBatch",
+      "@type": "xsd:string"
+    },
+    "Changes": {
+      "@id": "aws:Changes",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "HealthCheckConfig": {
+      "@id": "aws:HealthCheckConfig",
+      "@type": "xsd:string"
+    },
+    "IPAddress": {
+      "@id": "aws:IPAddress",
+      "@type": "xsd:string"
+    },
+    "Port": {
+      "@id": "aws:Port",
+      "@type": "xsd:integer"
+    },
+    "Type": {
+      "@id": "aws:Type",
+      "@type": "xsd:string"
+    },
+    "ResourcePath": {
+      "@id": "aws:ResourcePath",
+      "@type": "xsd:string"
+    },
+    "FullyQualifiedDomainName": {
+      "@id": "aws:FullyQualifiedDomainName",
+      "@type": "xsd:string"
+    },
+    "RequestInterval": {
+      "@id": "aws:RequestInterval",
+      "@type": "xsd:integer"
+    },
+    "FailureThreshold": {
+      "@id": "aws:FailureThreshold",
+      "@type": "xsd:integer"
+    },
+    "HostedZoneConfig": {
+      "@id": "aws:HostedZoneConfig",
+      "@type": "xsd:string"
+    },
+    "VPC": {
+      "@id": "aws:VPC",
+      "@type": "xsd:string"
+    },
+    "VPCRegion": {
+      "@id": "aws:VPCRegion",
+      "@type": "xsd:string"
+    },
+    "VPCId": {
+      "@id": "aws:VPCId",
+      "@type": "xsd:string"
+    },
+    "DelegationSetId": {
+      "@id": "aws:DelegationSetId",
+      "@type": "xsd:string"
+    },
+    "HealthCheckVersion": {
+      "@id": "aws:HealthCheckVersion",
+      "@type": "xsd:integer"
+    },
+    "HealthChecks": {
+      "@id": "aws:HealthChecks",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "Marker": {
+      "@id": "aws:Marker",
+      "@type": "xsd:string"
+    },
+    "IsTruncated": {
+      "@id": "aws:IsTruncated",
+      "@type": "xsd:boolean"
+    },
+    "NextMarker": {
+      "@id": "aws:NextMarker",
+      "@type": "xsd:string"
+    },
+    "MaxItems": {
+      "@id": "aws:MaxItems",
+      "@type": "xsd:integer"
+    },
+    "HostedZones": {
+      "@id": "aws:HostedZones",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "ResourceRecordSets": {
+      "@id": "aws:ResourceRecordSets",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "NextRecordName": {
+      "@id": "aws:NextRecordName",
+      "@type": "xsd:string"
+    },
+    "NextRecordType": {
+      "@id": "aws:NextRecordType",
+      "@type": "xsd:string"
+    },
+    "NextRecordIdentifier": {
+      "@id": "aws:NextRecordIdentifier",
+      "@type": "xsd:string"
+    },
+    "SetIdentifier": {
+      "@id": "aws:SetIdentifier",
+      "@type": "xsd:string"
+    },
+    "Weight": {
+      "@id": "aws:Weight",
+      "@type": "xsd:integer"
+    },
+    "Region": {
+      "@id": "aws:Region",
+      "@type": "xsd:string"
+    },
+    "Failover": {
+      "@id": "aws:Failover",
+      "@type": "xsd:string"
+    },
+    "TTL": {
+      "@id": "aws:TTL",
+      "@type": "xsd:integer"
+    },
+    "ResourceRecords": {
+      "@id": "aws:ResourceRecords",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "AliasTarget": {
+      "@id": "aws:AliasTarget",
+      "@type": "xsd:string"
+    },
+    "HostedZoneId": {
+      "@id": "aws:HostedZoneId",
+      "@type": "xsd:string"
+    },
+    "DNSName": {
+      "@id": "aws:DNSName",
+      "@type": "xsd:string"
+    },
+    "EvaluateTargetHealth": {
+      "@id": "aws:EvaluateTargetHealth",
+      "@type": "xsd:boolean"
+    },
+    "HealthCheckId": {
+      "@id": "aws:HealthCheckId",
+      "@type": "xsd:string"
+    }
+  }
+}
