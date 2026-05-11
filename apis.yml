@@ -197,7 +197,18 @@ common:
   url: vocabulary/amazon-route-53-vocabulary.yaml
 - type: OpenAPI
   url: openapi/amazon-route-53-openapi.yml
+- type: Integrations
+  url: https://aws.amazon.com/partners/
 maintainer:
   name: Kin Lane
   url: https://kinlane.com
 modified: '2026-04-19'
+integrations:
+  - name: Partner Programs
+  - name: Resources
+  - name: Success Stories
+  - name: Work with an AWS Partner
+  - name: AWS Marketplace
+  - name: AWS Partner Central
+  - name: Partner Paths
+  - name: co-sell with AWS
