@@ -26,13 +26,13 @@ properties:
   url: json-ld/amazon-route-53-context.jsonld
 - type: Pricing
   url: https://aws.amazon.com/route53/pricing/
-- type: Getting Started
+- type: GettingStarted
   url: https://aws.amazon.com/route53/getting-started/
 - type: FAQ
   url: https://aws.amazon.com/route53/faqs/
 - type: User Guide
   url: https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/
-- type: API Reference
+- type: APIReference
   url: https://docs.aws.amazon.com/Route53/latest/APIReference/
 - type: CLI Reference
   url: https://docs.aws.amazon.com/cli/latest/reference/route53/
@@ -75,9 +75,9 @@ common:
   url: https://aws.amazon.com/security/
 - type: Compliance
   url: https://aws.amazon.com/compliance/
-- type: JSON-LD
+- type: JSONLD
   url: json-ld/amazon-route-53-context-context.jsonld
-- type: JSON-LD
+- type: JSONLD
   url: json-ld/amazon-route-53-context.jsonld
 - type: JSONSchema
   url: json-schema/amazon-route-53-hosted-zone-schema.json
