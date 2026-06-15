@@ -1,0 +1,227 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Amazon Route 53 API",
+    "version": "Sun Mar 31 2013 20:00:00 GMT-0400 (Eastern Daylight Time)"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Hosted Zones",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon Route 53 List hosted zones",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://route53.amazonaws.com/2013-04-01/hostedzone",
+            "params": [
+              {
+                "name": "marker",
+                "value": "",
+                "type": "query",
+                "description": "The value that you specified for the marker parameter in the request to get the next page of results."
+              },
+              {
+                "name": "maxitems",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of hosted zones to include in the response body."
+              }
+            ]
+          },
+          "docs": "Retrieves a list of the public and private hosted zones that are associated with the current AWS account."
+        },
+        {
+          "info": {
+            "name": "Amazon Route 53 Create a hosted zone",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://route53.amazonaws.com/2013-04-01/hostedzone"
+          },
+          "docs": "Creates a new public or private hosted zone. When you create a hosted zone, Route 53 automatically creates a default SOA record and four NS records for the zone."
+        },
+        {
+          "info": {
+            "name": "Amazon Route 53 Get hosted zone details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://route53.amazonaws.com/2013-04-01/hostedzone/:Id",
+            "params": [
+              {
+                "name": "Id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the hosted zone to retrieve."
+              }
+            ]
+          },
+          "docs": "Gets information about a specified hosted zone including the four name servers assigned to the hosted zone."
+        },
+        {
+          "info": {
+            "name": "Amazon Route 53 Delete a hosted zone",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://route53.amazonaws.com/2013-04-01/hostedzone/:Id",
+            "params": [
+              {
+                "name": "Id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the hosted zone to delete."
+              }
+            ]
+          },
+          "docs": "Deletes a hosted zone. You can delete a hosted zone only if it contains only the default SOA record and NS resource record sets."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Resource Record Sets",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon Route 53 List resource record sets",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://route53.amazonaws.com/2013-04-01/hostedzone/:Id/rrset",
+            "params": [
+              {
+                "name": "Id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the hosted zone that contains the resource record sets."
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "The type of resource record set to begin the record listing from."
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "The first name in the lexicographic ordering of resource record sets to list."
+              },
+              {
+                "name": "maxitems",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of records to include in the response."
+              }
+            ]
+          },
+          "docs": "Lists the resource record sets in a specified hosted zone."
+        },
+        {
+          "info": {
+            "name": "Amazon Route 53 Create, update, or delete resource record sets",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://route53.amazonaws.com/2013-04-01/hostedzone/:Id/rrset",
+            "params": [
+              {
+                "name": "Id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the hosted zone that contains the resource record sets."
+              }
+            ]
+          },
+          "docs": "Creates, changes, or deletes a resource record set, which contains authoritative DNS information for a specified domain name or subdomain."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Health Checks",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon Route 53 List health checks",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://route53.amazonaws.com/2013-04-01/healthcheck",
+            "params": [
+              {
+                "name": "marker",
+                "value": "",
+                "type": "query",
+                "description": "The value to use for the marker parameter in a subsequent request."
+              },
+              {
+                "name": "maxitems",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of health checks to include in the response."
+              }
+            ]
+          },
+          "docs": "Retrieves a list of the health checks that are associated with the current AWS account."
+        },
+        {
+          "info": {
+            "name": "Amazon Route 53 Create a health check",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://route53.amazonaws.com/2013-04-01/healthcheck"
+          },
+          "docs": "Creates a new health check that monitors the health and performance of your web applications, web servers, and other resources."
+        },
+        {
+          "info": {
+            "name": "Amazon Route 53 Get health check details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://route53.amazonaws.com/2013-04-01/healthcheck/:HealthCheckId",
+            "params": [
+              {
+                "name": "HealthCheckId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the health check to retrieve."
+              }
+            ]
+          },
+          "docs": "Gets information about a specified health check."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

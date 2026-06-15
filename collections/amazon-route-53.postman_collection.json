@@ -1,0 +1,1689 @@
+{
+  "item": [
+    {
+      "id": "c71df2c5-3503-413e-b4dc-493039e2e93f",
+      "name": "Health Checks",
+      "description": {
+        "content": "Operations for managing health checks.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e7b28ade-ef6d-4001-9972-9c509bdc321b",
+          "name": "Amazon Route 53 Create a health check",
+          "request": {
+            "name": "Amazon Route 53 Create a health check",
+            "description": {
+              "content": "Creates a new health check that monitors the health and performance of your web applications, web servers, and other resources.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2013-04-01",
+                "healthcheck"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/xml"
+              },
+              {
+                "key": "Accept",
+                "value": "application/xml"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <CallerReference>(string)</CallerReference>\n  <HealthCheckConfig>\n    <IPAddress>(string)</IPAddress>\n    <Port>(integer)</Port>\n    <Type>(string)</Type>\n    <ResourcePath>(string)</ResourcePath>\n    <FullyQualifiedDomainName>(string)</FullyQualifiedDomainName>\n    <RequestInterval>(integer)</RequestInterval>\n    <FailureThreshold>(integer)</FailureThreshold>\n  </HealthCheckConfig>\n</element>",
+              "options": {
+                "raw": {
+                  "language": "xml"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c831a8f4-ee0b-4839-8649-5fff98c11ad6",
+              "name": "Health check created successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2013-04-01",
+                    "healthcheck"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/xml"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <CallerReference>(string)</CallerReference>\n  <HealthCheckConfig>\n    <IPAddress>(string)</IPAddress>\n    <Port>(integer)</Port>\n    <Type>(string)</Type>\n    <ResourcePath>(string)</ResourcePath>\n    <FullyQualifiedDomainName>(string)</FullyQualifiedDomainName>\n    <RequestInterval>(integer)</RequestInterval>\n    <FailureThreshold>(integer)</FailureThreshold>\n  </HealthCheckConfig>\n</element>",
+                  "options": {
+                    "raw": {
+                      "language": "xml"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/xml"
+                }
+              ],
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <HealthCheck>\n    <Id>(string)</Id>\n    <CallerReference>(string)</CallerReference>\n    <LinkedService>\n      <ServicePrincipal>(string)</ServicePrincipal>\n      <Description>(string)</Description>\n    </LinkedService>\n    <HealthCheckConfig>\n      <IPAddress>(string)</IPAddress>\n      <Port>(integer)</Port>\n      <Type>(string)</Type>\n      <ResourcePath>(string)</ResourcePath>\n      <FullyQualifiedDomainName>(string)</FullyQualifiedDomainName>\n      <RequestInterval>(integer)</RequestInterval>\n      <FailureThreshold>(integer)</FailureThreshold>\n      <EnableSNI>(boolean)</EnableSNI>\n    </HealthCheckConfig>\n    <HealthCheckVersion>(integer)</HealthCheckVersion>\n  </HealthCheck>\n</element>",
+              "cookie": [],
+              "_postman_previewlanguage": "xml"
+            },
+            {
+              "id": "a4a2d8a4-af68-4938-b791-8f560801b1af",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2013-04-01",
+                    "healthcheck"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <CallerReference>(string)</CallerReference>\n  <HealthCheckConfig>\n    <IPAddress>(string)</IPAddress>\n    <Port>(integer)</Port>\n    <Type>(string)</Type>\n    <ResourcePath>(string)</ResourcePath>\n    <FullyQualifiedDomainName>(string)</FullyQualifiedDomainName>\n    <RequestInterval>(integer)</RequestInterval>\n    <FailureThreshold>(integer)</FailureThreshold>\n  </HealthCheckConfig>\n</element>",
+                  "options": {
+                    "raw": {
+                      "language": "xml"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "47819b58-515b-431a-abc9-b922b61ff51e",
+              "name": "Health check already exists",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2013-04-01",
+                    "healthcheck"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <CallerReference>(string)</CallerReference>\n  <HealthCheckConfig>\n    <IPAddress>(string)</IPAddress>\n    <Port>(integer)</Port>\n    <Type>(string)</Type>\n    <ResourcePath>(string)</ResourcePath>\n    <FullyQualifiedDomainName>(string)</FullyQualifiedDomainName>\n    <RequestInterval>(integer)</RequestInterval>\n    <FailureThreshold>(integer)</FailureThreshold>\n  </HealthCheckConfig>\n</element>",
+                  "options": {
+                    "raw": {
+                      "language": "xml"
+                    }
+                  }
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "afdee5ab-e377-4c4a-ad76-020e125fbe98",
+          "name": "Amazon Route 53 List health checks",
+          "request": {
+            "name": "Amazon Route 53 List health checks",
+            "description": {
+              "content": "Retrieves a list of the health checks that are associated with the current AWS account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2013-04-01",
+                "healthcheck"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "marker",
+                  "value": "<string>",
+                  "description": "The value to use for the marker parameter in a subsequent request."
+                },
+                {
+                  "disabled": false,
+                  "key": "maxitems",
+                  "value": "<integer>",
+                  "description": "The maximum number of health checks to include in the response."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/xml"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "df27fd09-82af-4938-ab9c-1d3a44c97d6e",
+              "name": "List of health checks",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2013-04-01",
+                    "healthcheck"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "maxitems",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/xml"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/xml"
+                }
+              ],
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <HealthChecks>\n    <Id>(string)</Id>\n    <CallerReference>(string)</CallerReference>\n    <LinkedService>\n      <ServicePrincipal>(string)</ServicePrincipal>\n      <Description>(string)</Description>\n    </LinkedService>\n    <HealthCheckConfig>\n      <IPAddress>(string)</IPAddress>\n      <Port>(integer)</Port>\n      <Type>(string)</Type>\n      <ResourcePath>(string)</ResourcePath>\n      <FullyQualifiedDomainName>(string)</FullyQualifiedDomainName>\n      <RequestInterval>(integer)</RequestInterval>\n      <FailureThreshold>(integer)</FailureThreshold>\n      <EnableSNI>(boolean)</EnableSNI>\n    </HealthCheckConfig>\n    <HealthCheckVersion>(integer)</HealthCheckVersion>\n  </HealthChecks>\n  <HealthChecks>\n    <Id>(string)</Id>\n    <CallerReference>(string)</CallerReference>\n    <LinkedService>\n      <ServicePrincipal>(string)</ServicePrincipal>\n      <Description>(string)</Description>\n    </LinkedService>\n    <HealthCheckConfig>\n      <IPAddress>(string)</IPAddress>\n      <Port>(integer)</Port>\n      <Type>(string)</Type>\n      <ResourcePath>(string)</ResourcePath>\n      <FullyQualifiedDomainName>(string)</FullyQualifiedDomainName>\n      <RequestInterval>(integer)</RequestInterval>\n      <FailureThreshold>(integer)</FailureThreshold>\n      <EnableSNI>(boolean)</EnableSNI>\n    </HealthCheckConfig>\n    <HealthCheckVersion>(integer)</HealthCheckVersion>\n  </HealthChecks>\n  <Marker>(string)</Marker>\n  <IsTruncated>(boolean)</IsTruncated>\n  <NextMarker>(string)</NextMarker>\n  <MaxItems>(integer)</MaxItems>\n</element>",
+              "cookie": [],
+              "_postman_previewlanguage": "xml"
+            },
+            {
+              "id": "1409e0d9-8da0-47b2-8a95-1988ad172ea1",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2013-04-01",
+                    "healthcheck"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "maxitems",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "eeada51a-1640-4e5a-b407-d2d451752fc4",
+          "name": "Amazon Route 53 Get health check details",
+          "request": {
+            "name": "Amazon Route 53 Get health check details",
+            "description": {
+              "content": "Gets information about a specified health check.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2013-04-01",
+                "healthcheck",
+                ":HealthCheckId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "HealthCheckId",
+                  "description": "(Required) The ID of the health check to retrieve."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/xml"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e9129071-a718-4923-8952-c84e2252d692",
+              "name": "Health check details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2013-04-01",
+                    "healthcheck",
+                    ":HealthCheckId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "HealthCheckId",
+                      "description": "(Required) The ID of the health check to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/xml"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/xml"
+                }
+              ],
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <HealthCheck>\n    <Id>(string)</Id>\n    <CallerReference>(string)</CallerReference>\n    <LinkedService>\n      <ServicePrincipal>(string)</ServicePrincipal>\n      <Description>(string)</Description>\n    </LinkedService>\n    <HealthCheckConfig>\n      <IPAddress>(string)</IPAddress>\n      <Port>(integer)</Port>\n      <Type>(string)</Type>\n      <ResourcePath>(string)</ResourcePath>\n      <FullyQualifiedDomainName>(string)</FullyQualifiedDomainName>\n      <RequestInterval>(integer)</RequestInterval>\n      <FailureThreshold>(integer)</FailureThreshold>\n      <EnableSNI>(boolean)</EnableSNI>\n    </HealthCheckConfig>\n    <HealthCheckVersion>(integer)</HealthCheckVersion>\n  </HealthCheck>\n</element>",
+              "cookie": [],
+              "_postman_previewlanguage": "xml"
+            },
+            {
+              "id": "8ca55b0a-45f6-4f28-b15c-3e30a9fb0916",
+              "name": "Health check not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2013-04-01",
+                    "healthcheck",
+                    ":HealthCheckId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "HealthCheckId",
+                      "description": "(Required) The ID of the health check to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "4452d32c-5c3d-4bbf-8b7a-bd3b1d3e6965",
+      "name": "Hosted Zones",
+      "description": {
+        "content": "Operations for managing DNS hosted zones.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ad2dc800-099a-47a5-bf54-b1bf4f37f059",
+          "name": "Amazon Route 53 Create a hosted zone",
+          "request": {
+            "name": "Amazon Route 53 Create a hosted zone",
+            "description": {
+              "content": "Creates a new public or private hosted zone. When you create a hosted zone, Route 53 automatically creates a default SOA record and four NS records for the zone.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2013-04-01",
+                "hostedzone"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/xml"
+              },
+              {
+                "key": "Accept",
+                "value": "application/xml"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Name>(string)</Name>\n  <CallerReference>(string)</CallerReference>\n  <HostedZoneConfig>\n    <Comment>(string)</Comment>\n    <PrivateZone>(boolean)</PrivateZone>\n  </HostedZoneConfig>\n  <VPC>\n    <VPCRegion>(string)</VPCRegion>\n    <VPCId>(string)</VPCId>\n  </VPC>\n  <DelegationSetId>(string)</DelegationSetId>\n</element>",
+              "options": {
+                "raw": {
+                  "language": "xml"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "59a9c991-ca14-4de1-874e-ae54755bf02c",
+              "name": "Hosted zone created successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2013-04-01",
+                    "hostedzone"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/xml"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Name>(string)</Name>\n  <CallerReference>(string)</CallerReference>\n  <HostedZoneConfig>\n    <Comment>(string)</Comment>\n    <PrivateZone>(boolean)</PrivateZone>\n  </HostedZoneConfig>\n  <VPC>\n    <VPCRegion>(string)</VPCRegion>\n    <VPCId>(string)</VPCId>\n  </VPC>\n  <DelegationSetId>(string)</DelegationSetId>\n</element>",
+                  "options": {
+                    "raw": {
+                      "language": "xml"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/xml"
+                }
+              ],
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <HostedZone>\n    <Id>(string)</Id>\n    <Name>(string)</Name>\n    <CallerReference>(string)</CallerReference>\n    <Config>\n      <Comment>(string)</Comment>\n      <PrivateZone>(boolean)</PrivateZone>\n    </Config>\n    <ResourceRecordSetCount>(integer)</ResourceRecordSetCount>\n    <LinkedService>\n      <ServicePrincipal>(string)</ServicePrincipal>\n      <Description>(string)</Description>\n    </LinkedService>\n  </HostedZone>\n  <ChangeInfo>\n    <Id>(string)</Id>\n    <Status>(string)</Status>\n    <SubmittedAt>(string)</SubmittedAt>\n    <Comment>(string)</Comment>\n  </ChangeInfo>\n  <DelegationSet>\n    <Id>(string)</Id>\n    <CallerReference>(string)</CallerReference>\n    <NameServers>(string)</NameServers>\n    <NameServers>(string)</NameServers>\n  </DelegationSet>\n</element>",
+              "cookie": [],
+              "_postman_previewlanguage": "xml"
+            },
+            {
+              "id": "f6554058-f129-4fe2-a541-f4d04ab3d93e",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2013-04-01",
+                    "hostedzone"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Name>(string)</Name>\n  <CallerReference>(string)</CallerReference>\n  <HostedZoneConfig>\n    <Comment>(string)</Comment>\n    <PrivateZone>(boolean)</PrivateZone>\n  </HostedZoneConfig>\n  <VPC>\n    <VPCRegion>(string)</VPCRegion>\n    <VPCId>(string)</VPCId>\n  </VPC>\n  <DelegationSetId>(string)</DelegationSetId>\n</element>",
+                  "options": {
+                    "raw": {
+                      "language": "xml"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1a81d24d-f4a3-41b8-a19a-2abfbbe8815f",
+              "name": "Hosted zone already exists",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2013-04-01",
+                    "hostedzone"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Name>(string)</Name>\n  <CallerReference>(string)</CallerReference>\n  <HostedZoneConfig>\n    <Comment>(string)</Comment>\n    <PrivateZone>(boolean)</PrivateZone>\n  </HostedZoneConfig>\n  <VPC>\n    <VPCRegion>(string)</VPCRegion>\n    <VPCId>(string)</VPCId>\n  </VPC>\n  <DelegationSetId>(string)</DelegationSetId>\n</element>",
+                  "options": {
+                    "raw": {
+                      "language": "xml"
+                    }
+                  }
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fca1f91e-4ece-467a-afe5-05d0d7d8990b",
+          "name": "Amazon Route 53 List hosted zones",
+          "request": {
+            "name": "Amazon Route 53 List hosted zones",
+            "description": {
+              "content": "Retrieves a list of the public and private hosted zones that are associated with the current AWS account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2013-04-01",
+                "hostedzone"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "marker",
+                  "value": "<string>",
+                  "description": "The value that you specified for the marker parameter in the request to get the next page of results."
+                },
+                {
+                  "disabled": false,
+                  "key": "maxitems",
+                  "value": "<integer>",
+                  "description": "The maximum number of hosted zones to include in the response body."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/xml"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "86d45d80-ad8f-4d99-9c15-85fe8aa7ec44",
+              "name": "List of hosted zones",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2013-04-01",
+                    "hostedzone"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "maxitems",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/xml"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/xml"
+                }
+              ],
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <HostedZones>\n    <Id>(string)</Id>\n    <Name>(string)</Name>\n    <CallerReference>(string)</CallerReference>\n    <Config>\n      <Comment>(string)</Comment>\n      <PrivateZone>(boolean)</PrivateZone>\n    </Config>\n    <ResourceRecordSetCount>(integer)</ResourceRecordSetCount>\n    <LinkedService>\n      <ServicePrincipal>(string)</ServicePrincipal>\n      <Description>(string)</Description>\n    </LinkedService>\n  </HostedZones>\n  <HostedZones>\n    <Id>(string)</Id>\n    <Name>(string)</Name>\n    <CallerReference>(string)</CallerReference>\n    <Config>\n      <Comment>(string)</Comment>\n      <PrivateZone>(boolean)</PrivateZone>\n    </Config>\n    <ResourceRecordSetCount>(integer)</ResourceRecordSetCount>\n    <LinkedService>\n      <ServicePrincipal>(string)</ServicePrincipal>\n      <Description>(string)</Description>\n    </LinkedService>\n  </HostedZones>\n  <Marker>(string)</Marker>\n  <IsTruncated>(boolean)</IsTruncated>\n  <NextMarker>(string)</NextMarker>\n  <MaxItems>(integer)</MaxItems>\n</element>",
+              "cookie": [],
+              "_postman_previewlanguage": "xml"
+            },
+            {
+              "id": "7201cf6b-9a0b-44fc-9277-345c1f88c058",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2013-04-01",
+                    "hostedzone"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "maxitems",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0937f0df-7069-4a35-a4f5-6d77f8c5b7e4",
+          "name": "Amazon Route 53 Get hosted zone details",
+          "request": {
+            "name": "Amazon Route 53 Get hosted zone details",
+            "description": {
+              "content": "Gets information about a specified hosted zone including the four name servers assigned to the hosted zone.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2013-04-01",
+                "hostedzone",
+                ":Id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "Id",
+                  "description": "(Required) The ID of the hosted zone to retrieve."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/xml"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9a96d1aa-13bf-48e7-b4a6-8b2032952718",
+              "name": "Hosted zone details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2013-04-01",
+                    "hostedzone",
+                    ":Id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "Id",
+                      "description": "(Required) The ID of the hosted zone to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/xml"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/xml"
+                }
+              ],
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <HostedZone>\n    <Id>(string)</Id>\n    <Name>(string)</Name>\n    <CallerReference>(string)</CallerReference>\n    <Config>\n      <Comment>(string)</Comment>\n      <PrivateZone>(boolean)</PrivateZone>\n    </Config>\n    <ResourceRecordSetCount>(integer)</ResourceRecordSetCount>\n    <LinkedService>\n      <ServicePrincipal>(string)</ServicePrincipal>\n      <Description>(string)</Description>\n    </LinkedService>\n  </HostedZone>\n  <DelegationSet>\n    <Id>(string)</Id>\n    <CallerReference>(string)</CallerReference>\n    <NameServers>(string)</NameServers>\n    <NameServers>(string)</NameServers>\n  </DelegationSet>\n</element>",
+              "cookie": [],
+              "_postman_previewlanguage": "xml"
+            },
+            {
+              "id": "07d0fcf5-60a8-4354-9ba9-b2ee39645c78",
+              "name": "Hosted zone not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2013-04-01",
+                    "hostedzone",
+                    ":Id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "Id",
+                      "description": "(Required) The ID of the hosted zone to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2fe55c9d-04ad-4528-a8a1-75756afe867a",
+          "name": "Amazon Route 53 Delete a hosted zone",
+          "request": {
+            "name": "Amazon Route 53 Delete a hosted zone",
+            "description": {
+              "content": "Deletes a hosted zone. You can delete a hosted zone only if it contains only the default SOA record and NS resource record sets.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2013-04-01",
+                "hostedzone",
+                ":Id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "Id",
+                  "description": "(Required) The ID of the hosted zone to delete."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/xml"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d78c7b48-0579-48b9-a4c3-eafbae7d09b3",
+              "name": "Hosted zone deleted successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2013-04-01",
+                    "hostedzone",
+                    ":Id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "Id",
+                      "description": "(Required) The ID of the hosted zone to delete."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/xml"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/xml"
+                }
+              ],
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ChangeInfo>\n    <Id>(string)</Id>\n    <Status>(string)</Status>\n    <SubmittedAt>(string)</SubmittedAt>\n    <Comment>(string)</Comment>\n  </ChangeInfo>\n</element>",
+              "cookie": [],
+              "_postman_previewlanguage": "xml"
+            },
+            {
+              "id": "518c25e7-4f26-4960-bcaf-a7a1e8e2fc48",
+              "name": "Hosted zone is not empty",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2013-04-01",
+                    "hostedzone",
+                    ":Id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "Id",
+                      "description": "(Required) The ID of the hosted zone to delete."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e9f73eb8-6181-4928-946f-b40afdaeef31",
+              "name": "Hosted zone not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2013-04-01",
+                    "hostedzone",
+                    ":Id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "Id",
+                      "description": "(Required) The ID of the hosted zone to delete."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "a4be485f-32c8-41c8-926a-0a447f3c7b82",
+      "name": "Resource Record Sets",
+      "description": {
+        "content": "Operations for managing DNS resource record sets.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "26442a0f-3001-4e55-8cc2-6b4230fc930f",
+          "name": "Amazon Route 53 Create, update, or delete resource record sets",
+          "request": {
+            "name": "Amazon Route 53 Create, update, or delete resource record sets",
+            "description": {
+              "content": "Creates, changes, or deletes a resource record set, which contains authoritative DNS information for a specified domain name or subdomain.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2013-04-01",
+                "hostedzone",
+                ":Id",
+                "rrset"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "Id",
+                  "description": "(Required) The ID of the hosted zone that contains the resource record sets."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/xml"
+              },
+              {
+                "key": "Accept",
+                "value": "application/xml"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ChangeBatch>\n    <Comment>(string)</Comment>\n    <Changes>\n      <Action>(string)</Action>\n      <ResourceRecordSet>\n        <Name>(string)</Name>\n        <Type>(string)</Type>\n        <SetIdentifier>(string)</SetIdentifier>\n        <Weight>(integer)</Weight>\n        <Region>(string)</Region>\n        <Failover>(string)</Failover>\n        <TTL>(integer)</TTL>\n        <ResourceRecords>\n          <Value>(string)</Value>\n        </ResourceRecords>\n        <ResourceRecords>\n          <Value>(string)</Value>\n        </ResourceRecords>\n        <AliasTarget>\n          <HostedZoneId>(string)</HostedZoneId>\n          <DNSName>(string)</DNSName>\n          <EvaluateTargetHealth>(boolean)</EvaluateTargetHealth>\n        </AliasTarget>\n        <HealthCheckId>(string)</HealthCheckId>\n      </ResourceRecordSet>\n    </Changes>\n    <Changes>\n      <Action>(string)</Action>\n      <ResourceRecordSet>\n        <Name>(string)</Name>\n        <Type>(string)</Type>\n        <SetIdentifier>(string)</SetIdentifier>\n        <Weight>(integer)</Weight>\n        <Region>(string)</Region>\n        <Failover>(string)</Failover>\n        <TTL>(integer)</TTL>\n        <ResourceRecords>\n          <Value>(string)</Value>\n        </ResourceRecords>\n        <ResourceRecords>\n          <Value>(string)</Value>\n        </ResourceRecords>\n        <AliasTarget>\n          <HostedZoneId>(string)</HostedZoneId>\n          <DNSName>(string)</DNSName>\n          <EvaluateTargetHealth>(boolean)</EvaluateTargetHealth>\n        </AliasTarget>\n        <HealthCheckId>(string)</HealthCheckId>\n      </ResourceRecordSet>\n    </Changes>\n  </ChangeBatch>\n</element>",
+              "options": {
+                "raw": {
+                  "language": "xml"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5460c874-e111-4562-a838-948a6ec04b78",
+              "name": "Resource record set changes submitted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2013-04-01",
+                    "hostedzone",
+                    ":Id",
+                    "rrset"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "Id",
+                      "description": "(Required) The ID of the hosted zone that contains the resource record sets."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/xml"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ChangeBatch>\n    <Comment>(string)</Comment>\n    <Changes>\n      <Action>(string)</Action>\n      <ResourceRecordSet>\n        <Name>(string)</Name>\n        <Type>(string)</Type>\n        <SetIdentifier>(string)</SetIdentifier>\n        <Weight>(integer)</Weight>\n        <Region>(string)</Region>\n        <Failover>(string)</Failover>\n        <TTL>(integer)</TTL>\n        <ResourceRecords>\n          <Value>(string)</Value>\n        </ResourceRecords>\n        <ResourceRecords>\n          <Value>(string)</Value>\n        </ResourceRecords>\n        <AliasTarget>\n          <HostedZoneId>(string)</HostedZoneId>\n          <DNSName>(string)</DNSName>\n          <EvaluateTargetHealth>(boolean)</EvaluateTargetHealth>\n        </AliasTarget>\n        <HealthCheckId>(string)</HealthCheckId>\n      </ResourceRecordSet>\n    </Changes>\n    <Changes>\n      <Action>(string)</Action>\n      <ResourceRecordSet>\n        <Name>(string)</Name>\n        <Type>(string)</Type>\n        <SetIdentifier>(string)</SetIdentifier>\n        <Weight>(integer)</Weight>\n        <Region>(string)</Region>\n        <Failover>(string)</Failover>\n        <TTL>(integer)</TTL>\n        <ResourceRecords>\n          <Value>(string)</Value>\n        </ResourceRecords>\n        <ResourceRecords>\n          <Value>(string)</Value>\n        </ResourceRecords>\n        <AliasTarget>\n          <HostedZoneId>(string)</HostedZoneId>\n          <DNSName>(string)</DNSName>\n          <EvaluateTargetHealth>(boolean)</EvaluateTargetHealth>\n        </AliasTarget>\n        <HealthCheckId>(string)</HealthCheckId>\n      </ResourceRecordSet>\n    </Changes>\n  </ChangeBatch>\n</element>",
+                  "options": {
+                    "raw": {
+                      "language": "xml"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/xml"
+                }
+              ],
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ChangeInfo>\n    <Id>(string)</Id>\n    <Status>(string)</Status>\n    <SubmittedAt>(string)</SubmittedAt>\n    <Comment>(string)</Comment>\n  </ChangeInfo>\n</element>",
+              "cookie": [],
+              "_postman_previewlanguage": "xml"
+            },
+            {
+              "id": "3847c2e3-e59f-45b3-b0e1-2b5a7b5d659c",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2013-04-01",
+                    "hostedzone",
+                    ":Id",
+                    "rrset"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "Id",
+                      "description": "(Required) The ID of the hosted zone that contains the resource record sets."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ChangeBatch>\n    <Comment>(string)</Comment>\n    <Changes>\n      <Action>(string)</Action>\n      <ResourceRecordSet>\n        <Name>(string)</Name>\n        <Type>(string)</Type>\n        <SetIdentifier>(string)</SetIdentifier>\n        <Weight>(integer)</Weight>\n        <Region>(string)</Region>\n        <Failover>(string)</Failover>\n        <TTL>(integer)</TTL>\n        <ResourceRecords>\n          <Value>(string)</Value>\n        </ResourceRecords>\n        <ResourceRecords>\n          <Value>(string)</Value>\n        </ResourceRecords>\n        <AliasTarget>\n          <HostedZoneId>(string)</HostedZoneId>\n          <DNSName>(string)</DNSName>\n          <EvaluateTargetHealth>(boolean)</EvaluateTargetHealth>\n        </AliasTarget>\n        <HealthCheckId>(string)</HealthCheckId>\n      </ResourceRecordSet>\n    </Changes>\n    <Changes>\n      <Action>(string)</Action>\n      <ResourceRecordSet>\n        <Name>(string)</Name>\n        <Type>(string)</Type>\n        <SetIdentifier>(string)</SetIdentifier>\n        <Weight>(integer)</Weight>\n        <Region>(string)</Region>\n        <Failover>(string)</Failover>\n        <TTL>(integer)</TTL>\n        <ResourceRecords>\n          <Value>(string)</Value>\n        </ResourceRecords>\n        <ResourceRecords>\n          <Value>(string)</Value>\n        </ResourceRecords>\n        <AliasTarget>\n          <HostedZoneId>(string)</HostedZoneId>\n          <DNSName>(string)</DNSName>\n          <EvaluateTargetHealth>(boolean)</EvaluateTargetHealth>\n        </AliasTarget>\n        <HealthCheckId>(string)</HealthCheckId>\n      </ResourceRecordSet>\n    </Changes>\n  </ChangeBatch>\n</element>",
+                  "options": {
+                    "raw": {
+                      "language": "xml"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7acf1e85-5f3a-4ed2-ae15-2a7a197894f1",
+              "name": "Hosted zone not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2013-04-01",
+                    "hostedzone",
+                    ":Id",
+                    "rrset"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "Id",
+                      "description": "(Required) The ID of the hosted zone that contains the resource record sets."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ChangeBatch>\n    <Comment>(string)</Comment>\n    <Changes>\n      <Action>(string)</Action>\n      <ResourceRecordSet>\n        <Name>(string)</Name>\n        <Type>(string)</Type>\n        <SetIdentifier>(string)</SetIdentifier>\n        <Weight>(integer)</Weight>\n        <Region>(string)</Region>\n        <Failover>(string)</Failover>\n        <TTL>(integer)</TTL>\n        <ResourceRecords>\n          <Value>(string)</Value>\n        </ResourceRecords>\n        <ResourceRecords>\n          <Value>(string)</Value>\n        </ResourceRecords>\n        <AliasTarget>\n          <HostedZoneId>(string)</HostedZoneId>\n          <DNSName>(string)</DNSName>\n          <EvaluateTargetHealth>(boolean)</EvaluateTargetHealth>\n        </AliasTarget>\n        <HealthCheckId>(string)</HealthCheckId>\n      </ResourceRecordSet>\n    </Changes>\n    <Changes>\n      <Action>(string)</Action>\n      <ResourceRecordSet>\n        <Name>(string)</Name>\n        <Type>(string)</Type>\n        <SetIdentifier>(string)</SetIdentifier>\n        <Weight>(integer)</Weight>\n        <Region>(string)</Region>\n        <Failover>(string)</Failover>\n        <TTL>(integer)</TTL>\n        <ResourceRecords>\n          <Value>(string)</Value>\n        </ResourceRecords>\n        <ResourceRecords>\n          <Value>(string)</Value>\n        </ResourceRecords>\n        <AliasTarget>\n          <HostedZoneId>(string)</HostedZoneId>\n          <DNSName>(string)</DNSName>\n          <EvaluateTargetHealth>(boolean)</EvaluateTargetHealth>\n        </AliasTarget>\n        <HealthCheckId>(string)</HealthCheckId>\n      </ResourceRecordSet>\n    </Changes>\n  </ChangeBatch>\n</element>",
+                  "options": {
+                    "raw": {
+                      "language": "xml"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7e4b9d8e-3653-46fc-a9df-8ed3c2db9b59",
+          "name": "Amazon Route 53 List resource record sets",
+          "request": {
+            "name": "Amazon Route 53 List resource record sets",
+            "description": {
+              "content": "Lists the resource record sets in a specified hosted zone.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2013-04-01",
+                "hostedzone",
+                ":Id",
+                "rrset"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "<string>",
+                  "description": "The type of resource record set to begin the record listing from."
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "The first name in the lexicographic ordering of resource record sets to list."
+                },
+                {
+                  "disabled": false,
+                  "key": "maxitems",
+                  "value": "<integer>",
+                  "description": "The maximum number of records to include in the response."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "Id",
+                  "description": "(Required) The ID of the hosted zone that contains the resource record sets."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/xml"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "46587c35-d2e6-44a3-8f55-bbe0b1d17453",
+              "name": "List of resource record sets",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2013-04-01",
+                    "hostedzone",
+                    ":Id",
+                    "rrset"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "maxitems",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "Id",
+                      "description": "(Required) The ID of the hosted zone that contains the resource record sets."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/xml"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/xml"
+                }
+              ],
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ResourceRecordSets>\n    <Name>(string)</Name>\n    <Type>(string)</Type>\n    <SetIdentifier>(string)</SetIdentifier>\n    <Weight>(integer)</Weight>\n    <Region>(string)</Region>\n    <Failover>(string)</Failover>\n    <TTL>(integer)</TTL>\n    <ResourceRecords>\n      <Value>(string)</Value>\n    </ResourceRecords>\n    <ResourceRecords>\n      <Value>(string)</Value>\n    </ResourceRecords>\n    <AliasTarget>\n      <HostedZoneId>(string)</HostedZoneId>\n      <DNSName>(string)</DNSName>\n      <EvaluateTargetHealth>(boolean)</EvaluateTargetHealth>\n    </AliasTarget>\n    <HealthCheckId>(string)</HealthCheckId>\n  </ResourceRecordSets>\n  <ResourceRecordSets>\n    <Name>(string)</Name>\n    <Type>(string)</Type>\n    <SetIdentifier>(string)</SetIdentifier>\n    <Weight>(integer)</Weight>\n    <Region>(string)</Region>\n    <Failover>(string)</Failover>\n    <TTL>(integer)</TTL>\n    <ResourceRecords>\n      <Value>(string)</Value>\n    </ResourceRecords>\n    <ResourceRecords>\n      <Value>(string)</Value>\n    </ResourceRecords>\n    <AliasTarget>\n      <HostedZoneId>(string)</HostedZoneId>\n      <DNSName>(string)</DNSName>\n      <EvaluateTargetHealth>(boolean)</EvaluateTargetHealth>\n    </AliasTarget>\n    <HealthCheckId>(string)</HealthCheckId>\n  </ResourceRecordSets>\n  <IsTruncated>(boolean)</IsTruncated>\n  <NextRecordName>(string)</NextRecordName>\n  <NextRecordType>(string)</NextRecordType>\n  <NextRecordIdentifier>(string)</NextRecordIdentifier>\n  <MaxItems>(integer)</MaxItems>\n</element>",
+              "cookie": [],
+              "_postman_previewlanguage": "xml"
+            },
+            {
+              "id": "08a444fb-085d-4b4e-81e8-cbf251abf830",
+              "name": "Hosted zone not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2013-04-01",
+                    "hostedzone",
+                    ":Id",
+                    "rrset"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "maxitems",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "Id",
+                      "description": "(Required) The ID of the hosted zone that contains the resource record sets."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://route53.amazonaws.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "8922ae6a-8107-470e-ab3a-24d8a03383ba",
+    "name": "Amazon Route 53 API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service that provides DNS routing, domain name registration, and health checking capabilities. It connects user requests to internet applications running on AWS or on-premises infrastructure.\n\nContact Support:\n Name: Amazon Web Services",
+      "type": "text/plain"
+    }
+  }
+}
