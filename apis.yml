@@ -55,7 +55,7 @@ common:
   url: https://github.com/aws
 - type: Portal
   url: https://console.aws.amazon.com/route53/
-- type: SignUp
+- type: Signup
   url: https://portal.aws.amazon.com/billing/signup
 - type: Login
   url: https://signin.aws.amazon.com/
@@ -149,41 +149,41 @@ common:
   url: json-structure/amazon-route-53-openapi-list-resource-record-sets-response-structure.json
 - type: JSONStructure
   url: json-structure/amazon-route-53-openapi-resource-record-set-structure.json
-- type: Example
+- type: Examples
   url: examples/amazon-route-53-hosted-zone-example.json
-- type: Example
+- type: Examples
   url: examples/amazon-route-53-openapi-change-info-example.json
-- type: Example
+- type: Examples
   url: examples/amazon-route-53-openapi-change-resource-record-sets-request-example.json
-- type: Example
+- type: Examples
   url: examples/amazon-route-53-openapi-change-resource-record-sets-response-example.json
-- type: Example
+- type: Examples
   url: examples/amazon-route-53-openapi-create-health-check-request-example.json
-- type: Example
+- type: Examples
   url: examples/amazon-route-53-openapi-create-health-check-response-example.json
-- type: Example
+- type: Examples
   url: examples/amazon-route-53-openapi-create-hosted-zone-request-example.json
-- type: Example
+- type: Examples
   url: examples/amazon-route-53-openapi-create-hosted-zone-response-example.json
-- type: Example
+- type: Examples
   url: examples/amazon-route-53-openapi-delegation-set-example.json
-- type: Example
+- type: Examples
   url: examples/amazon-route-53-openapi-delete-hosted-zone-response-example.json
-- type: Example
+- type: Examples
   url: examples/amazon-route-53-openapi-get-health-check-response-example.json
-- type: Example
+- type: Examples
   url: examples/amazon-route-53-openapi-get-hosted-zone-response-example.json
-- type: Example
+- type: Examples
   url: examples/amazon-route-53-openapi-health-check-example.json
-- type: Example
+- type: Examples
   url: examples/amazon-route-53-openapi-hosted-zone-example.json
-- type: Example
+- type: Examples
   url: examples/amazon-route-53-openapi-list-health-checks-response-example.json
-- type: Example
+- type: Examples
   url: examples/amazon-route-53-openapi-list-hosted-zones-response-example.json
-- type: Example
+- type: Examples
   url: examples/amazon-route-53-openapi-list-resource-record-sets-response-example.json
-- type: Example
+- type: Examples
   url: examples/amazon-route-53-openapi-resource-record-set-example.json
 - type: SpectralRules
   url: rules/amazon-route-53-spectral-rules.yml
