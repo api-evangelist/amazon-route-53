@@ -37,6 +37,14 @@ properties:
 - type: Security
   url: https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/security.html
 common:
+- type: TrustCenter
+  url: security/amazon-route-53-trust-center.yml
+- type: VulnerabilityDisclosure
+  url: security/amazon-route-53-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/amazon-route-53-domain-security.yml
+- type: Authentication
+  url: authentication/amazon-route-53-authentication.yml
 - type: Portal
   url: https://aws.amazon.com/
 - type: Portal
