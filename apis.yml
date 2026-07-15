@@ -37,6 +37,8 @@ properties:
 - type: Security
   url: https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/security.html
 common:
+- type: AgenticAccess
+  url: agentic-access/amazon-route-53-agentic-access.yml
 - type: TrustCenter
   url: security/amazon-route-53-trust-center.yml
 - type: VulnerabilityDisclosure
