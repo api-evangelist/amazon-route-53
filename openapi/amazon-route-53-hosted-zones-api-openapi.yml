@@ -1,0 +1,257 @@
+openapi: 3.1.0
+info:
+  title: Amazon Route 53 Health Checks Hosted Zones API
+  description: Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service that provides DNS routing, domain name registration, and health checking capabilities. It connects user requests to internet applications running on AWS or on-premises infrastructure.
+  version: 2013-04-01
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+  contact:
+    name: Amazon Web Services
+    url: https://aws.amazon.com/route53/
+servers:
+- url: https://route53.amazonaws.com
+  description: Amazon Route 53 production endpoint
+security:
+- aws_sig_v4: []
+tags:
+- name: Hosted Zones
+  description: Operations for managing DNS hosted zones.
+paths:
+  /2013-04-01/hostedzone:
+    post:
+      operationId: CreateHostedZone
+      summary: Amazon Route 53 Create a hosted zone
+      description: Creates a new public or private hosted zone. When you create a hosted zone, Route 53 automatically creates a default SOA record and four NS records for the zone.
+      tags:
+      - Hosted Zones
+      requestBody:
+        required: true
+        content:
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/CreateHostedZoneRequest'
+      responses:
+        '201':
+          description: Hosted zone created successfully
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/CreateHostedZoneResponse'
+        '400':
+          description: Bad request
+        '409':
+          description: Hosted zone already exists
+    get:
+      operationId: ListHostedZones
+      summary: Amazon Route 53 List hosted zones
+      description: Retrieves a list of the public and private hosted zones that are associated with the current AWS account.
+      tags:
+      - Hosted Zones
+      parameters:
+      - name: marker
+        in: query
+        description: The value that you specified for the marker parameter in the request to get the next page of results.
+        schema:
+          type: string
+      - name: maxitems
+        in: query
+        description: The maximum number of hosted zones to include in the response body.
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: List of hosted zones
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ListHostedZonesResponse'
+        '400':
+          description: Bad request
+  /2013-04-01/hostedzone/{Id}:
+    get:
+      operationId: GetHostedZone
+      summary: Amazon Route 53 Get hosted zone details
+      description: Gets information about a specified hosted zone including the four name servers assigned to the hosted zone.
+      tags:
+      - Hosted Zones
+      parameters:
+      - name: Id
+        in: path
+        required: true
+        description: The ID of the hosted zone to retrieve.
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Hosted zone details
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/GetHostedZoneResponse'
+        '404':
+          description: Hosted zone not found
+    delete:
+      operationId: DeleteHostedZone
+      summary: Amazon Route 53 Delete a hosted zone
+      description: Deletes a hosted zone. You can delete a hosted zone only if it contains only the default SOA record and NS resource record sets.
+      tags:
+      - Hosted Zones
+      parameters:
+      - name: Id
+        in: path
+        required: true
+        description: The ID of the hosted zone to delete.
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Hosted zone deleted successfully
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/DeleteHostedZoneResponse'
+        '400':
+          description: Hosted zone is not empty
+        '404':
+          description: Hosted zone not found
+components:
+  schemas:
+    CreateHostedZoneRequest:
+      type: object
+      properties:
+        Name:
+          type: string
+          description: The name of the domain.
+        CallerReference:
+          type: string
+          description: A unique string that identifies the request and allows failed requests to be retried without risk of executing the operation twice.
+        HostedZoneConfig:
+          type: object
+          properties:
+            Comment:
+              type: string
+            PrivateZone:
+              type: boolean
+        VPC:
+          type: object
+          properties:
+            VPCRegion:
+              type: string
+            VPCId:
+              type: string
+        DelegationSetId:
+          type: string
+      required:
+      - Name
+      - CallerReference
+    ChangeInfo:
+      type: object
+      description: Information about the change.
+      properties:
+        Id:
+          type: string
+          description: The ID of the change.
+        Status:
+          type: string
+          description: The current status of the change.
+          enum:
+          - PENDING
+          - INSYNC
+        SubmittedAt:
+          type: string
+          format: date-time
+          description: The date and time the change was submitted.
+        Comment:
+          type: string
+          description: A comment about the change.
+    ListHostedZonesResponse:
+      type: object
+      properties:
+        HostedZones:
+          type: array
+          items:
+            $ref: '#/components/schemas/HostedZone'
+        Marker:
+          type: string
+        IsTruncated:
+          type: boolean
+        NextMarker:
+          type: string
+        MaxItems:
+          type: integer
+    CreateHostedZoneResponse:
+      type: object
+      properties:
+        HostedZone:
+          $ref: '#/components/schemas/HostedZone'
+        ChangeInfo:
+          $ref: '#/components/schemas/ChangeInfo'
+        DelegationSet:
+          $ref: '#/components/schemas/DelegationSet'
+    GetHostedZoneResponse:
+      type: object
+      properties:
+        HostedZone:
+          $ref: '#/components/schemas/HostedZone'
+        DelegationSet:
+          $ref: '#/components/schemas/DelegationSet'
+    DelegationSet:
+      type: object
+      description: A complex type that lists the name servers in a delegation set.
+      properties:
+        Id:
+          type: string
+        CallerReference:
+          type: string
+        NameServers:
+          type: array
+          items:
+            type: string
+    DeleteHostedZoneResponse:
+      type: object
+      properties:
+        ChangeInfo:
+          $ref: '#/components/schemas/ChangeInfo'
+    HostedZone:
+      type: object
+      description: A complex type that contains general information about the hosted zone.
+      properties:
+        Id:
+          type: string
+          description: The ID that Amazon Route 53 assigned to the hosted zone.
+        Name:
+          type: string
+          description: The name of the domain. For public hosted zones, this is the name that you registered with your DNS registrar.
+        CallerReference:
+          type: string
+          description: The value that you specified for CallerReference when you created the hosted zone.
+        Config:
+          type: object
+          properties:
+            Comment:
+              type: string
+              description: A comment for the hosted zone.
+            PrivateZone:
+              type: boolean
+              description: Whether the hosted zone is private.
+        ResourceRecordSetCount:
+          type: integer
+          description: The number of resource record sets in the hosted zone.
+        LinkedService:
+          type: object
+          properties:
+            ServicePrincipal:
+              type: string
+            Description:
+              type: string
+      required:
+      - Id
+      - Name
+      - CallerReference
+  securitySchemes:
+    aws_sig_v4:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: AWS Signature Version 4 authentication

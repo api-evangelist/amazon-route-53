@@ -1,0 +1,251 @@
+openapi: 3.1.0
+info:
+  title: Amazon Route 53 Health Checks Resource Record Sets API
+  description: Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service that provides DNS routing, domain name registration, and health checking capabilities. It connects user requests to internet applications running on AWS or on-premises infrastructure.
+  version: 2013-04-01
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+  contact:
+    name: Amazon Web Services
+    url: https://aws.amazon.com/route53/
+servers:
+- url: https://route53.amazonaws.com
+  description: Amazon Route 53 production endpoint
+security:
+- aws_sig_v4: []
+tags:
+- name: Resource Record Sets
+  description: Operations for managing DNS resource record sets.
+paths:
+  /2013-04-01/hostedzone/{Id}/rrset:
+    post:
+      operationId: ChangeResourceRecordSets
+      summary: Amazon Route 53 Create, update, or delete resource record sets
+      description: Creates, changes, or deletes a resource record set, which contains authoritative DNS information for a specified domain name or subdomain.
+      tags:
+      - Resource Record Sets
+      parameters:
+      - name: Id
+        in: path
+        required: true
+        description: The ID of the hosted zone that contains the resource record sets.
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/ChangeResourceRecordSetsRequest'
+      responses:
+        '200':
+          description: Resource record set changes submitted
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ChangeResourceRecordSetsResponse'
+        '400':
+          description: Bad request
+        '404':
+          description: Hosted zone not found
+    get:
+      operationId: ListResourceRecordSets
+      summary: Amazon Route 53 List resource record sets
+      description: Lists the resource record sets in a specified hosted zone.
+      tags:
+      - Resource Record Sets
+      parameters:
+      - name: Id
+        in: path
+        required: true
+        description: The ID of the hosted zone that contains the resource record sets.
+        schema:
+          type: string
+      - name: type
+        in: query
+        description: The type of resource record set to begin the record listing from.
+        schema:
+          type: string
+          enum:
+          - A
+          - AAAA
+          - CAA
+          - CNAME
+          - DS
+          - MX
+          - NAPTR
+          - NS
+          - PTR
+          - SOA
+          - SPF
+          - SRV
+          - TXT
+      - name: name
+        in: query
+        description: The first name in the lexicographic ordering of resource record sets to list.
+        schema:
+          type: string
+      - name: maxitems
+        in: query
+        description: The maximum number of records to include in the response.
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: List of resource record sets
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/ListResourceRecordSetsResponse'
+        '404':
+          description: Hosted zone not found
+components:
+  schemas:
+    ChangeInfo:
+      type: object
+      description: Information about the change.
+      properties:
+        Id:
+          type: string
+          description: The ID of the change.
+        Status:
+          type: string
+          description: The current status of the change.
+          enum:
+          - PENDING
+          - INSYNC
+        SubmittedAt:
+          type: string
+          format: date-time
+          description: The date and time the change was submitted.
+        Comment:
+          type: string
+          description: A comment about the change.
+    ChangeResourceRecordSetsResponse:
+      type: object
+      properties:
+        ChangeInfo:
+          $ref: '#/components/schemas/ChangeInfo'
+    ListResourceRecordSetsResponse:
+      type: object
+      properties:
+        ResourceRecordSets:
+          type: array
+          items:
+            $ref: '#/components/schemas/ResourceRecordSet'
+        IsTruncated:
+          type: boolean
+        NextRecordName:
+          type: string
+        NextRecordType:
+          type: string
+        NextRecordIdentifier:
+          type: string
+        MaxItems:
+          type: integer
+    ChangeResourceRecordSetsRequest:
+      type: object
+      properties:
+        ChangeBatch:
+          type: object
+          properties:
+            Comment:
+              type: string
+              description: A comment about the changes.
+            Changes:
+              type: array
+              items:
+                type: object
+                properties:
+                  Action:
+                    type: string
+                    enum:
+                    - CREATE
+                    - DELETE
+                    - UPSERT
+                  ResourceRecordSet:
+                    $ref: '#/components/schemas/ResourceRecordSet'
+                required:
+                - Action
+                - ResourceRecordSet
+          required:
+          - Changes
+      required:
+      - ChangeBatch
+    ResourceRecordSet:
+      type: object
+      description: Information about the resource record set to create or delete.
+      properties:
+        Name:
+          type: string
+          description: The name of the domain for the resource record set.
+        Type:
+          type: string
+          description: The DNS record type.
+          enum:
+          - A
+          - AAAA
+          - CAA
+          - CNAME
+          - DS
+          - MX
+          - NAPTR
+          - NS
+          - PTR
+          - SOA
+          - SPF
+          - SRV
+          - TXT
+        SetIdentifier:
+          type: string
+          description: An identifier that differentiates among multiple resource record sets that have the same combination of name and type.
+        Weight:
+          type: integer
+          description: The weight for weighted routing, ranging from 0 to 255.
+        Region:
+          type: string
+          description: The Amazon EC2 region for latency-based routing.
+        Failover:
+          type: string
+          description: The failover configuration.
+          enum:
+          - PRIMARY
+          - SECONDARY
+        TTL:
+          type: integer
+          description: The resource record cache time to live (TTL), in seconds.
+        ResourceRecords:
+          type: array
+          description: The resource records.
+          items:
+            type: object
+            properties:
+              Value:
+                type: string
+                description: The current or new DNS record value.
+        AliasTarget:
+          type: object
+          description: Alias resource record set information.
+          properties:
+            HostedZoneId:
+              type: string
+              description: The hosted zone ID for the alias target.
+            DNSName:
+              type: string
+              description: The DNS domain name for the alias target.
+            EvaluateTargetHealth:
+              type: boolean
+              description: Whether Route 53 responds to DNS queries using this alias by checking the health of the alias target.
+        HealthCheckId:
+          type: string
+          description: The ID of the health check to associate with the record set.
+      required:
+      - Name
+      - Type
+  securitySchemes:
+    aws_sig_v4:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: AWS Signature Version 4 authentication
