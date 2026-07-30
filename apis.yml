@@ -1,3 +1,17 @@
+accessModel:
+  pricing: free
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Free · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/amazon-route-53.png
 name: Amazon Route 53
 description: Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service that provides DNS routing,
   domain name registration, and health checking capabilities. Route 53 connects user requests to internet applications running
@@ -36,7 +50,34 @@ properties:
   url: https://docs.aws.amazon.com/cli/latest/reference/route53/
 - type: Security
   url: https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/security.html
+apis:
+- aid: amazon-route-53:amazon-route-53-health-checks-api
+  name: Amazon Route 53 Health Checks API
+  description: Operations for managing health checks.
+  tags:
+  - Health Checks
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-route-53-health-checks-api-openapi.yml
+- aid: amazon-route-53:amazon-route-53-hosted-zones-api
+  name: Amazon Route 53 Hosted Zones API
+  description: Operations for managing DNS hosted zones.
+  tags:
+  - Hosted Zones
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-route-53-hosted-zones-api-openapi.yml
+- aid: amazon-route-53:amazon-route-53-resource-record-sets-api
+  name: Amazon Route 53 Resource Record Sets API
+  description: Operations for managing DNS resource record sets.
+  tags:
+  - Resource Record Sets
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-route-53-resource-record-sets-api-openapi.yml
 common:
+- type: PostmanWorkspace
+  url: https://www.postman.com/kinlaneapi/amazon-route-53/overview
 - type: AgenticAccess
   url: agentic-access/amazon-route-53-agentic-access.yml
 - type: TrustCenter
