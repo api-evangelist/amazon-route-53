@@ -1,0 +1,18 @@
+{
+  "provider": "amazon-route-53",
+  "sources": [
+    "amazon-route-53-health-checks-api-openapi.yml",
+    "amazon-route-53-hosted-zones-api-openapi.yml",
+    "amazon-route-53-resource-record-sets-api-openapi.yml"
+  ],
+  "outputs": [
+    "amazon-route-53-health-checks-api-openapi.yml",
+    "amazon-route-53-hosted-zones-api-openapi.yml",
+    "amazon-route-53-resource-record-sets-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
