@@ -29,7 +29,7 @@ properties:
 - type: Documentation
   url: https://docs.aws.amazon.com/Route53/latest/APIReference/
 - type: OpenAPI
-  url: openapi/amazon-route-53-openapi.yml
+  url: openapi/_original/amazon-route-53-openapi.yml
 - type: OpenAPI
   url: https://api.apis.guru/v2/specs/amazonaws.com/route53/2013-04-01/openapi.yaml
 - type: JSONSchema
@@ -241,7 +241,7 @@ common:
 - type: Vocabulary
   url: vocabulary/amazon-route-53-vocabulary.yaml
 - type: OpenAPI
-  url: openapi/amazon-route-53-openapi.yml
+  url: openapi/_original/amazon-route-53-openapi.yml
 - type: Integrations
   url: https://aws.amazon.com/partners/
 maintainer:
