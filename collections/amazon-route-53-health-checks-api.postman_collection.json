@@ -1,0 +1,544 @@
+{
+  "item": [
+    {
+      "id": "366f6510-5902-4702-b783-e3989358f2c1",
+      "name": "Health Checks",
+      "description": {
+        "content": "Operations for managing health checks.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5b3a5a8d-4a43-4cb6-b7f2-aa9f1b1668fe",
+          "name": "Amazon Route 53 Create a health check",
+          "request": {
+            "name": "Amazon Route 53 Create a health check",
+            "description": {
+              "content": "Creates a new health check that monitors the health and performance of your web applications, web servers, and other resources.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2013-04-01",
+                "healthcheck"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/xml"
+              },
+              {
+                "key": "Accept",
+                "value": "application/xml"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <CallerReference>(string)</CallerReference>\n  <HealthCheckConfig>\n    <IPAddress>(string)</IPAddress>\n    <Port>(integer)</Port>\n    <Type>(string)</Type>\n    <ResourcePath>(string)</ResourcePath>\n    <FullyQualifiedDomainName>(string)</FullyQualifiedDomainName>\n    <RequestInterval>(integer)</RequestInterval>\n    <FailureThreshold>(integer)</FailureThreshold>\n  </HealthCheckConfig>\n</element>",
+              "options": {
+                "raw": {
+                  "language": "xml"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "86721802-95d2-4da9-8d73-1a03c1b4ffa7",
+              "name": "Health check created successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2013-04-01",
+                    "healthcheck"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/xml"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <CallerReference>(string)</CallerReference>\n  <HealthCheckConfig>\n    <IPAddress>(string)</IPAddress>\n    <Port>(integer)</Port>\n    <Type>(string)</Type>\n    <ResourcePath>(string)</ResourcePath>\n    <FullyQualifiedDomainName>(string)</FullyQualifiedDomainName>\n    <RequestInterval>(integer)</RequestInterval>\n    <FailureThreshold>(integer)</FailureThreshold>\n  </HealthCheckConfig>\n</element>",
+                  "options": {
+                    "raw": {
+                      "language": "xml"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/xml"
+                }
+              ],
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <HealthCheck>\n    <Id>(string)</Id>\n    <CallerReference>(string)</CallerReference>\n    <LinkedService>\n      <ServicePrincipal>(string)</ServicePrincipal>\n      <Description>(string)</Description>\n    </LinkedService>\n    <HealthCheckConfig>\n      <IPAddress>(string)</IPAddress>\n      <Port>(integer)</Port>\n      <Type>(string)</Type>\n      <ResourcePath>(string)</ResourcePath>\n      <FullyQualifiedDomainName>(string)</FullyQualifiedDomainName>\n      <RequestInterval>(integer)</RequestInterval>\n      <FailureThreshold>(integer)</FailureThreshold>\n      <EnableSNI>(boolean)</EnableSNI>\n    </HealthCheckConfig>\n    <HealthCheckVersion>(integer)</HealthCheckVersion>\n  </HealthCheck>\n</element>",
+              "cookie": [],
+              "_postman_previewlanguage": "xml"
+            },
+            {
+              "id": "bc835b90-dbf8-4ad7-9958-8f5afad7e205",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2013-04-01",
+                    "healthcheck"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <CallerReference>(string)</CallerReference>\n  <HealthCheckConfig>\n    <IPAddress>(string)</IPAddress>\n    <Port>(integer)</Port>\n    <Type>(string)</Type>\n    <ResourcePath>(string)</ResourcePath>\n    <FullyQualifiedDomainName>(string)</FullyQualifiedDomainName>\n    <RequestInterval>(integer)</RequestInterval>\n    <FailureThreshold>(integer)</FailureThreshold>\n  </HealthCheckConfig>\n</element>",
+                  "options": {
+                    "raw": {
+                      "language": "xml"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a9443385-3ff9-4e3a-b226-b3d5085e79b9",
+              "name": "Health check already exists",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2013-04-01",
+                    "healthcheck"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <CallerReference>(string)</CallerReference>\n  <HealthCheckConfig>\n    <IPAddress>(string)</IPAddress>\n    <Port>(integer)</Port>\n    <Type>(string)</Type>\n    <ResourcePath>(string)</ResourcePath>\n    <FullyQualifiedDomainName>(string)</FullyQualifiedDomainName>\n    <RequestInterval>(integer)</RequestInterval>\n    <FailureThreshold>(integer)</FailureThreshold>\n  </HealthCheckConfig>\n</element>",
+                  "options": {
+                    "raw": {
+                      "language": "xml"
+                    }
+                  }
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d01bc7d0-31d2-4463-a956-3a65c318994a",
+          "name": "Amazon Route 53 List health checks",
+          "request": {
+            "name": "Amazon Route 53 List health checks",
+            "description": {
+              "content": "Retrieves a list of the health checks that are associated with the current AWS account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2013-04-01",
+                "healthcheck"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "marker",
+                  "value": "<string>",
+                  "description": "The value to use for the marker parameter in a subsequent request."
+                },
+                {
+                  "disabled": false,
+                  "key": "maxitems",
+                  "value": "<integer>",
+                  "description": "The maximum number of health checks to include in the response."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/xml"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a625b885-2e5f-4f9d-877b-a26e536e41dd",
+              "name": "List of health checks",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2013-04-01",
+                    "healthcheck"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "maxitems",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/xml"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/xml"
+                }
+              ],
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <HealthChecks>\n    <Id>(string)</Id>\n    <CallerReference>(string)</CallerReference>\n    <LinkedService>\n      <ServicePrincipal>(string)</ServicePrincipal>\n      <Description>(string)</Description>\n    </LinkedService>\n    <HealthCheckConfig>\n      <IPAddress>(string)</IPAddress>\n      <Port>(integer)</Port>\n      <Type>(string)</Type>\n      <ResourcePath>(string)</ResourcePath>\n      <FullyQualifiedDomainName>(string)</FullyQualifiedDomainName>\n      <RequestInterval>(integer)</RequestInterval>\n      <FailureThreshold>(integer)</FailureThreshold>\n      <EnableSNI>(boolean)</EnableSNI>\n    </HealthCheckConfig>\n    <HealthCheckVersion>(integer)</HealthCheckVersion>\n  </HealthChecks>\n  <HealthChecks>\n    <Id>(string)</Id>\n    <CallerReference>(string)</CallerReference>\n    <LinkedService>\n      <ServicePrincipal>(string)</ServicePrincipal>\n      <Description>(string)</Description>\n    </LinkedService>\n    <HealthCheckConfig>\n      <IPAddress>(string)</IPAddress>\n      <Port>(integer)</Port>\n      <Type>(string)</Type>\n      <ResourcePath>(string)</ResourcePath>\n      <FullyQualifiedDomainName>(string)</FullyQualifiedDomainName>\n      <RequestInterval>(integer)</RequestInterval>\n      <FailureThreshold>(integer)</FailureThreshold>\n      <EnableSNI>(boolean)</EnableSNI>\n    </HealthCheckConfig>\n    <HealthCheckVersion>(integer)</HealthCheckVersion>\n  </HealthChecks>\n  <Marker>(string)</Marker>\n  <IsTruncated>(boolean)</IsTruncated>\n  <NextMarker>(string)</NextMarker>\n  <MaxItems>(integer)</MaxItems>\n</element>",
+              "cookie": [],
+              "_postman_previewlanguage": "xml"
+            },
+            {
+              "id": "38ac1898-b8d9-4450-a9e3-001c78b142ef",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2013-04-01",
+                    "healthcheck"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "maxitems",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cafcb9dc-d3f2-43b1-a35c-2ab3a9a08639",
+          "name": "Amazon Route 53 Get health check details",
+          "request": {
+            "name": "Amazon Route 53 Get health check details",
+            "description": {
+              "content": "Gets information about a specified health check.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2013-04-01",
+                "healthcheck",
+                ":HealthCheckId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "HealthCheckId",
+                  "description": "(Required) The ID of the health check to retrieve."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/xml"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1e548234-f29a-45e5-8f6f-d43bbd99f6b8",
+              "name": "Health check details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2013-04-01",
+                    "healthcheck",
+                    ":HealthCheckId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "HealthCheckId",
+                      "description": "(Required) The ID of the health check to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/xml"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/xml"
+                }
+              ],
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <HealthCheck>\n    <Id>(string)</Id>\n    <CallerReference>(string)</CallerReference>\n    <LinkedService>\n      <ServicePrincipal>(string)</ServicePrincipal>\n      <Description>(string)</Description>\n    </LinkedService>\n    <HealthCheckConfig>\n      <IPAddress>(string)</IPAddress>\n      <Port>(integer)</Port>\n      <Type>(string)</Type>\n      <ResourcePath>(string)</ResourcePath>\n      <FullyQualifiedDomainName>(string)</FullyQualifiedDomainName>\n      <RequestInterval>(integer)</RequestInterval>\n      <FailureThreshold>(integer)</FailureThreshold>\n      <EnableSNI>(boolean)</EnableSNI>\n    </HealthCheckConfig>\n    <HealthCheckVersion>(integer)</HealthCheckVersion>\n  </HealthCheck>\n</element>",
+              "cookie": [],
+              "_postman_previewlanguage": "xml"
+            },
+            {
+              "id": "e3627fbb-3edf-48ff-8b1b-72750efacc54",
+              "name": "Health check not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2013-04-01",
+                    "healthcheck",
+                    ":HealthCheckId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "HealthCheckId",
+                      "description": "(Required) The ID of the health check to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://route53.amazonaws.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "e4cd8164-91a8-404c-9c5b-159b7b536950",
+    "name": "Amazon Route 53 Health Checks API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service that provides DNS routing, domain name registration, and health checking capabilities. It connects user requests to internet applications running on AWS or on-premises infrastructure.\n\nContact Support:\n Name: Amazon Web Services",
+      "type": "text/plain"
+    }
+  }
+}

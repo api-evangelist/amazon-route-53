@@ -1,0 +1,82 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Amazon Route 53 Health Checks Resource Record Sets API",
+    "version": "2013-04-01"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Resource Record Sets",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon Route 53 List resource record sets",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://route53.amazonaws.com/2013-04-01/hostedzone/:Id/rrset",
+            "params": [
+              {
+                "name": "Id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the hosted zone that contains the resource record sets."
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "The type of resource record set to begin the record listing from."
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "The first name in the lexicographic ordering of resource record sets to list."
+              },
+              {
+                "name": "maxitems",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of records to include in the response."
+              }
+            ]
+          },
+          "docs": "Lists the resource record sets in a specified hosted zone."
+        },
+        {
+          "info": {
+            "name": "Amazon Route 53 Create, update, or delete resource record sets",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://route53.amazonaws.com/2013-04-01/hostedzone/:Id/rrset",
+            "params": [
+              {
+                "name": "Id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the hosted zone that contains the resource record sets."
+              }
+            ]
+          },
+          "docs": "Creates, changes, or deletes a resource record set, which contains authoritative DNS information for a specified domain name or subdomain."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,81 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Amazon Route 53 Health Checks API",
+    "version": "2013-04-01"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Health Checks",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon Route 53 List health checks",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://route53.amazonaws.com/2013-04-01/healthcheck",
+            "params": [
+              {
+                "name": "marker",
+                "value": "",
+                "type": "query",
+                "description": "The value to use for the marker parameter in a subsequent request."
+              },
+              {
+                "name": "maxitems",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of health checks to include in the response."
+              }
+            ]
+          },
+          "docs": "Retrieves a list of the health checks that are associated with the current AWS account."
+        },
+        {
+          "info": {
+            "name": "Amazon Route 53 Create a health check",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://route53.amazonaws.com/2013-04-01/healthcheck"
+          },
+          "docs": "Creates a new health check that monitors the health and performance of your web applications, web servers, and other resources."
+        },
+        {
+          "info": {
+            "name": "Amazon Route 53 Get health check details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://route53.amazonaws.com/2013-04-01/healthcheck/:HealthCheckId",
+            "params": [
+              {
+                "name": "HealthCheckId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the health check to retrieve."
+              }
+            ]
+          },
+          "docs": "Gets information about a specified health check."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,740 @@
+{
+  "item": [
+    {
+      "id": "a99bd9f0-7681-49c5-b552-8b2c347d156d",
+      "name": "Hosted Zones",
+      "description": {
+        "content": "Operations for managing DNS hosted zones.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5419cea3-7c86-445b-8f29-8c32d485ba5e",
+          "name": "Amazon Route 53 Create a hosted zone",
+          "request": {
+            "name": "Amazon Route 53 Create a hosted zone",
+            "description": {
+              "content": "Creates a new public or private hosted zone. When you create a hosted zone, Route 53 automatically creates a default SOA record and four NS records for the zone.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2013-04-01",
+                "hostedzone"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/xml"
+              },
+              {
+                "key": "Accept",
+                "value": "application/xml"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Name>(string)</Name>\n  <CallerReference>(string)</CallerReference>\n  <HostedZoneConfig>\n    <Comment>(string)</Comment>\n    <PrivateZone>(boolean)</PrivateZone>\n  </HostedZoneConfig>\n  <VPC>\n    <VPCRegion>(string)</VPCRegion>\n    <VPCId>(string)</VPCId>\n  </VPC>\n  <DelegationSetId>(string)</DelegationSetId>\n</element>",
+              "options": {
+                "raw": {
+                  "language": "xml"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a77c74f4-7d1b-4a52-9d39-9ebe737c9578",
+              "name": "Hosted zone created successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2013-04-01",
+                    "hostedzone"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/xml"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Name>(string)</Name>\n  <CallerReference>(string)</CallerReference>\n  <HostedZoneConfig>\n    <Comment>(string)</Comment>\n    <PrivateZone>(boolean)</PrivateZone>\n  </HostedZoneConfig>\n  <VPC>\n    <VPCRegion>(string)</VPCRegion>\n    <VPCId>(string)</VPCId>\n  </VPC>\n  <DelegationSetId>(string)</DelegationSetId>\n</element>",
+                  "options": {
+                    "raw": {
+                      "language": "xml"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/xml"
+                }
+              ],
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <HostedZone>\n    <Id>(string)</Id>\n    <Name>(string)</Name>\n    <CallerReference>(string)</CallerReference>\n    <Config>\n      <Comment>(string)</Comment>\n      <PrivateZone>(boolean)</PrivateZone>\n    </Config>\n    <ResourceRecordSetCount>(integer)</ResourceRecordSetCount>\n    <LinkedService>\n      <ServicePrincipal>(string)</ServicePrincipal>\n      <Description>(string)</Description>\n    </LinkedService>\n  </HostedZone>\n  <ChangeInfo>\n    <Id>(string)</Id>\n    <Status>(string)</Status>\n    <SubmittedAt>(string)</SubmittedAt>\n    <Comment>(string)</Comment>\n  </ChangeInfo>\n  <DelegationSet>\n    <Id>(string)</Id>\n    <CallerReference>(string)</CallerReference>\n    <NameServers>(string)</NameServers>\n    <NameServers>(string)</NameServers>\n  </DelegationSet>\n</element>",
+              "cookie": [],
+              "_postman_previewlanguage": "xml"
+            },
+            {
+              "id": "41433c1e-94e0-4e10-acef-be0aaae01ce2",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2013-04-01",
+                    "hostedzone"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Name>(string)</Name>\n  <CallerReference>(string)</CallerReference>\n  <HostedZoneConfig>\n    <Comment>(string)</Comment>\n    <PrivateZone>(boolean)</PrivateZone>\n  </HostedZoneConfig>\n  <VPC>\n    <VPCRegion>(string)</VPCRegion>\n    <VPCId>(string)</VPCId>\n  </VPC>\n  <DelegationSetId>(string)</DelegationSetId>\n</element>",
+                  "options": {
+                    "raw": {
+                      "language": "xml"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3f089c25-9ab1-4510-a6c7-8735a760affc",
+              "name": "Hosted zone already exists",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2013-04-01",
+                    "hostedzone"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Name>(string)</Name>\n  <CallerReference>(string)</CallerReference>\n  <HostedZoneConfig>\n    <Comment>(string)</Comment>\n    <PrivateZone>(boolean)</PrivateZone>\n  </HostedZoneConfig>\n  <VPC>\n    <VPCRegion>(string)</VPCRegion>\n    <VPCId>(string)</VPCId>\n  </VPC>\n  <DelegationSetId>(string)</DelegationSetId>\n</element>",
+                  "options": {
+                    "raw": {
+                      "language": "xml"
+                    }
+                  }
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1ca960a5-69e4-4244-97bc-c7cb3cf54cfd",
+          "name": "Amazon Route 53 List hosted zones",
+          "request": {
+            "name": "Amazon Route 53 List hosted zones",
+            "description": {
+              "content": "Retrieves a list of the public and private hosted zones that are associated with the current AWS account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2013-04-01",
+                "hostedzone"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "marker",
+                  "value": "<string>",
+                  "description": "The value that you specified for the marker parameter in the request to get the next page of results."
+                },
+                {
+                  "disabled": false,
+                  "key": "maxitems",
+                  "value": "<integer>",
+                  "description": "The maximum number of hosted zones to include in the response body."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/xml"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "44be78b5-14a9-4ea5-80a3-4d61b843a2a2",
+              "name": "List of hosted zones",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2013-04-01",
+                    "hostedzone"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "maxitems",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/xml"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/xml"
+                }
+              ],
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <HostedZones>\n    <Id>(string)</Id>\n    <Name>(string)</Name>\n    <CallerReference>(string)</CallerReference>\n    <Config>\n      <Comment>(string)</Comment>\n      <PrivateZone>(boolean)</PrivateZone>\n    </Config>\n    <ResourceRecordSetCount>(integer)</ResourceRecordSetCount>\n    <LinkedService>\n      <ServicePrincipal>(string)</ServicePrincipal>\n      <Description>(string)</Description>\n    </LinkedService>\n  </HostedZones>\n  <HostedZones>\n    <Id>(string)</Id>\n    <Name>(string)</Name>\n    <CallerReference>(string)</CallerReference>\n    <Config>\n      <Comment>(string)</Comment>\n      <PrivateZone>(boolean)</PrivateZone>\n    </Config>\n    <ResourceRecordSetCount>(integer)</ResourceRecordSetCount>\n    <LinkedService>\n      <ServicePrincipal>(string)</ServicePrincipal>\n      <Description>(string)</Description>\n    </LinkedService>\n  </HostedZones>\n  <Marker>(string)</Marker>\n  <IsTruncated>(boolean)</IsTruncated>\n  <NextMarker>(string)</NextMarker>\n  <MaxItems>(integer)</MaxItems>\n</element>",
+              "cookie": [],
+              "_postman_previewlanguage": "xml"
+            },
+            {
+              "id": "ed7a7972-a832-4564-8b63-a8cf6fad71cf",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2013-04-01",
+                    "hostedzone"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "maxitems",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "38e334ff-9029-4b94-af6a-f9779558b390",
+          "name": "Amazon Route 53 Get hosted zone details",
+          "request": {
+            "name": "Amazon Route 53 Get hosted zone details",
+            "description": {
+              "content": "Gets information about a specified hosted zone including the four name servers assigned to the hosted zone.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2013-04-01",
+                "hostedzone",
+                ":Id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "Id",
+                  "description": "(Required) The ID of the hosted zone to retrieve."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/xml"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "aa621384-012f-46af-ab3d-2baebae27ca1",
+              "name": "Hosted zone details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2013-04-01",
+                    "hostedzone",
+                    ":Id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "Id",
+                      "description": "(Required) The ID of the hosted zone to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/xml"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/xml"
+                }
+              ],
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <HostedZone>\n    <Id>(string)</Id>\n    <Name>(string)</Name>\n    <CallerReference>(string)</CallerReference>\n    <Config>\n      <Comment>(string)</Comment>\n      <PrivateZone>(boolean)</PrivateZone>\n    </Config>\n    <ResourceRecordSetCount>(integer)</ResourceRecordSetCount>\n    <LinkedService>\n      <ServicePrincipal>(string)</ServicePrincipal>\n      <Description>(string)</Description>\n    </LinkedService>\n  </HostedZone>\n  <DelegationSet>\n    <Id>(string)</Id>\n    <CallerReference>(string)</CallerReference>\n    <NameServers>(string)</NameServers>\n    <NameServers>(string)</NameServers>\n  </DelegationSet>\n</element>",
+              "cookie": [],
+              "_postman_previewlanguage": "xml"
+            },
+            {
+              "id": "c858ef66-dbf0-4b50-9665-d3f3f6608ad0",
+              "name": "Hosted zone not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2013-04-01",
+                    "hostedzone",
+                    ":Id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "Id",
+                      "description": "(Required) The ID of the hosted zone to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0bef889d-5113-460b-8ed4-6a5fd1e8b8dd",
+          "name": "Amazon Route 53 Delete a hosted zone",
+          "request": {
+            "name": "Amazon Route 53 Delete a hosted zone",
+            "description": {
+              "content": "Deletes a hosted zone. You can delete a hosted zone only if it contains only the default SOA record and NS resource record sets.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2013-04-01",
+                "hostedzone",
+                ":Id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "Id",
+                  "description": "(Required) The ID of the hosted zone to delete."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/xml"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "96cff198-6869-424a-b190-2be317f2be46",
+              "name": "Hosted zone deleted successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2013-04-01",
+                    "hostedzone",
+                    ":Id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "Id",
+                      "description": "(Required) The ID of the hosted zone to delete."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/xml"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/xml"
+                }
+              ],
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ChangeInfo>\n    <Id>(string)</Id>\n    <Status>(string)</Status>\n    <SubmittedAt>(string)</SubmittedAt>\n    <Comment>(string)</Comment>\n  </ChangeInfo>\n</element>",
+              "cookie": [],
+              "_postman_previewlanguage": "xml"
+            },
+            {
+              "id": "f11cc813-0ba3-4fab-bfab-1aae7c4e7685",
+              "name": "Hosted zone is not empty",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2013-04-01",
+                    "hostedzone",
+                    ":Id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "Id",
+                      "description": "(Required) The ID of the hosted zone to delete."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2a1ae94d-d3d5-4ab4-9f57-fdb1d9c81c62",
+              "name": "Hosted zone not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2013-04-01",
+                    "hostedzone",
+                    ":Id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "Id",
+                      "description": "(Required) The ID of the hosted zone to delete."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://route53.amazonaws.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "550204bd-6fc9-4fae-8b0c-cc6eab33b508",
+    "name": "Amazon Route 53 Health Checks Hosted Zones API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service that provides DNS routing, domain name registration, and health checking capabilities. It connects user requests to internet applications running on AWS or on-premises infrastructure.\n\nContact Support:\n Name: Amazon Web Services",
+      "type": "text/plain"
+    }
+  }
+}
