@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Amazon Route 53 Health Checks Resource Record Sets API
   description: Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service that provides DNS routing, domain name registration, and health checking capabilities. It connects user requests to internet applications running on AWS or on-premises infrastructure.
@@ -102,6 +102,28 @@ paths:
           description: Hosted zone not found
 components:
   schemas:
+    ListResourceRecordSetsResponse:
+      type: object
+      properties:
+        ResourceRecordSets:
+          type: array
+          items:
+            $ref: '#/components/schemas/ResourceRecordSet'
+        IsTruncated:
+          type: boolean
+        NextRecordName:
+          type: string
+        NextRecordType:
+          type: string
+        NextRecordIdentifier:
+          type: string
+        MaxItems:
+          type: integer
+    ChangeResourceRecordSetsResponse:
+      type: object
+      properties:
+        ChangeInfo:
+          $ref: '#/components/schemas/ChangeInfo'
     ChangeInfo:
       type: object
       description: Information about the change.
@@ -122,28 +144,6 @@ components:
         Comment:
           type: string
           description: A comment about the change.
-    ChangeResourceRecordSetsResponse:
-      type: object
-      properties:
-        ChangeInfo:
-          $ref: '#/components/schemas/ChangeInfo'
-    ListResourceRecordSetsResponse:
-      type: object
-      properties:
-        ResourceRecordSets:
-          type: array
-          items:
-            $ref: '#/components/schemas/ResourceRecordSet'
-        IsTruncated:
-          type: boolean
-        NextRecordName:
-          type: string
-        NextRecordType:
-          type: string
-        NextRecordIdentifier:
-          type: string
-        MaxItems:
-          type: integer
     ChangeResourceRecordSetsRequest:
       type: object
       properties:

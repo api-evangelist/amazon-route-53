@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Amazon Route 53 Health Checks Hosted Zones API
   description: Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service that provides DNS routing, domain name registration, and health checking capabilities. It connects user requests to internet applications running on AWS or on-premises infrastructure.
@@ -117,6 +117,21 @@ paths:
           description: Hosted zone not found
 components:
   schemas:
+    ListHostedZonesResponse:
+      type: object
+      properties:
+        HostedZones:
+          type: array
+          items:
+            $ref: '#/components/schemas/HostedZone'
+        Marker:
+          type: string
+        IsTruncated:
+          type: boolean
+        NextMarker:
+          type: string
+        MaxItems:
+          type: integer
     CreateHostedZoneRequest:
       type: object
       properties:
@@ -145,74 +160,6 @@ components:
       required:
       - Name
       - CallerReference
-    ChangeInfo:
-      type: object
-      description: Information about the change.
-      properties:
-        Id:
-          type: string
-          description: The ID of the change.
-        Status:
-          type: string
-          description: The current status of the change.
-          enum:
-          - PENDING
-          - INSYNC
-        SubmittedAt:
-          type: string
-          format: date-time
-          description: The date and time the change was submitted.
-        Comment:
-          type: string
-          description: A comment about the change.
-    ListHostedZonesResponse:
-      type: object
-      properties:
-        HostedZones:
-          type: array
-          items:
-            $ref: '#/components/schemas/HostedZone'
-        Marker:
-          type: string
-        IsTruncated:
-          type: boolean
-        NextMarker:
-          type: string
-        MaxItems:
-          type: integer
-    CreateHostedZoneResponse:
-      type: object
-      properties:
-        HostedZone:
-          $ref: '#/components/schemas/HostedZone'
-        ChangeInfo:
-          $ref: '#/components/schemas/ChangeInfo'
-        DelegationSet:
-          $ref: '#/components/schemas/DelegationSet'
-    GetHostedZoneResponse:
-      type: object
-      properties:
-        HostedZone:
-          $ref: '#/components/schemas/HostedZone'
-        DelegationSet:
-          $ref: '#/components/schemas/DelegationSet'
-    DelegationSet:
-      type: object
-      description: A complex type that lists the name servers in a delegation set.
-      properties:
-        Id:
-          type: string
-        CallerReference:
-          type: string
-        NameServers:
-          type: array
-          items:
-            type: string
-    DeleteHostedZoneResponse:
-      type: object
-      properties:
-        ChangeInfo:
-          $ref: '#/components/schemas/ChangeInfo'
     HostedZone:
       type: object
       description: A complex type that contains general information about the hosted zone.
@@ -249,6 +196,59 @@ components:
       - Id
       - Name
       - CallerReference
+    ChangeInfo:
+      type: object
+      description: Information about the change.
+      properties:
+        Id:
+          type: string
+          description: The ID of the change.
+        Status:
+          type: string
+          description: The current status of the change.
+          enum:
+          - PENDING
+          - INSYNC
+        SubmittedAt:
+          type: string
+          format: date-time
+          description: The date and time the change was submitted.
+        Comment:
+          type: string
+          description: A comment about the change.
+    DelegationSet:
+      type: object
+      description: A complex type that lists the name servers in a delegation set.
+      properties:
+        Id:
+          type: string
+        CallerReference:
+          type: string
+        NameServers:
+          type: array
+          items:
+            type: string
+    CreateHostedZoneResponse:
+      type: object
+      properties:
+        HostedZone:
+          $ref: '#/components/schemas/HostedZone'
+        ChangeInfo:
+          $ref: '#/components/schemas/ChangeInfo'
+        DelegationSet:
+          $ref: '#/components/schemas/DelegationSet'
+    DeleteHostedZoneResponse:
+      type: object
+      properties:
+        ChangeInfo:
+          $ref: '#/components/schemas/ChangeInfo'
+    GetHostedZoneResponse:
+      type: object
+      properties:
+        HostedZone:
+          $ref: '#/components/schemas/HostedZone'
+        DelegationSet:
+          $ref: '#/components/schemas/DelegationSet'
   securitySchemes:
     aws_sig_v4:
       type: apiKey
