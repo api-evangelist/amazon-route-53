@@ -1,9 +1,7 @@
 {
   "provider": "amazon-route-53",
   "sources": [
-    "amazon-route-53-health-checks-api-openapi.yml",
-    "amazon-route-53-hosted-zones-api-openapi.yml",
-    "amazon-route-53-resource-record-sets-api-openapi.yml"
+    "_original/amazon-route-53-openapi.yml"
   ],
   "outputs": [
     "amazon-route-53-health-checks-api-openapi.yml",
@@ -14,7 +12,13 @@
   "errors": [],
   "warnings": [],
   "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "amazon-route-53-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
     "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "amazon-route-53-health-checks-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-route-53-hosted-zones-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-route-53-resource-record-sets-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

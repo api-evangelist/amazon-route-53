@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Amazon Route 53 Health Checks Resource Record Sets API
+  title: Amazon Route 53 Resource Record Sets API
   description: Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service that provides DNS routing, domain name registration, and health checking capabilities. It connects user requests to internet applications running on AWS or on-premises infrastructure.
   version: 2013-04-01
   license:
@@ -124,26 +124,6 @@ components:
       properties:
         ChangeInfo:
           $ref: '#/components/schemas/ChangeInfo'
-    ChangeInfo:
-      type: object
-      description: Information about the change.
-      properties:
-        Id:
-          type: string
-          description: The ID of the change.
-        Status:
-          type: string
-          description: The current status of the change.
-          enum:
-          - PENDING
-          - INSYNC
-        SubmittedAt:
-          type: string
-          format: date-time
-          description: The date and time the change was submitted.
-        Comment:
-          type: string
-          description: A comment about the change.
     ChangeResourceRecordSetsRequest:
       type: object
       properties:
@@ -243,6 +223,26 @@ components:
       required:
       - Name
       - Type
+    ChangeInfo:
+      type: object
+      description: Information about the change.
+      properties:
+        Id:
+          type: string
+          description: The ID of the change.
+        Status:
+          type: string
+          description: The current status of the change.
+          enum:
+          - PENDING
+          - INSYNC
+        SubmittedAt:
+          type: string
+          format: date-time
+          description: The date and time the change was submitted.
+        Comment:
+          type: string
+          description: A comment about the change.
   securitySchemes:
     aws_sig_v4:
       type: apiKey

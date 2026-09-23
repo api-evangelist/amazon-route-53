@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Amazon Route 53 Health Checks Hosted Zones API
+  title: Amazon Route 53 Hosted Zones API
   description: Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service that provides DNS routing, domain name registration, and health checking capabilities. It connects user requests to internet applications running on AWS or on-premises infrastructure.
   version: 2013-04-01
   license:
@@ -117,49 +117,6 @@ paths:
           description: Hosted zone not found
 components:
   schemas:
-    ListHostedZonesResponse:
-      type: object
-      properties:
-        HostedZones:
-          type: array
-          items:
-            $ref: '#/components/schemas/HostedZone'
-        Marker:
-          type: string
-        IsTruncated:
-          type: boolean
-        NextMarker:
-          type: string
-        MaxItems:
-          type: integer
-    CreateHostedZoneRequest:
-      type: object
-      properties:
-        Name:
-          type: string
-          description: The name of the domain.
-        CallerReference:
-          type: string
-          description: A unique string that identifies the request and allows failed requests to be retried without risk of executing the operation twice.
-        HostedZoneConfig:
-          type: object
-          properties:
-            Comment:
-              type: string
-            PrivateZone:
-              type: boolean
-        VPC:
-          type: object
-          properties:
-            VPCRegion:
-              type: string
-            VPCId:
-              type: string
-        DelegationSetId:
-          type: string
-      required:
-      - Name
-      - CallerReference
     HostedZone:
       type: object
       description: A complex type that contains general information about the hosted zone.
@@ -196,6 +153,55 @@ components:
       - Id
       - Name
       - CallerReference
+    GetHostedZoneResponse:
+      type: object
+      properties:
+        HostedZone:
+          $ref: '#/components/schemas/HostedZone'
+        DelegationSet:
+          $ref: '#/components/schemas/DelegationSet'
+    CreateHostedZoneRequest:
+      type: object
+      properties:
+        Name:
+          type: string
+          description: The name of the domain.
+        CallerReference:
+          type: string
+          description: A unique string that identifies the request and allows failed requests to be retried without risk of executing the operation twice.
+        HostedZoneConfig:
+          type: object
+          properties:
+            Comment:
+              type: string
+            PrivateZone:
+              type: boolean
+        VPC:
+          type: object
+          properties:
+            VPCRegion:
+              type: string
+            VPCId:
+              type: string
+        DelegationSetId:
+          type: string
+      required:
+      - Name
+      - CallerReference
+    DeleteHostedZoneResponse:
+      type: object
+      properties:
+        ChangeInfo:
+          $ref: '#/components/schemas/ChangeInfo'
+    CreateHostedZoneResponse:
+      type: object
+      properties:
+        HostedZone:
+          $ref: '#/components/schemas/HostedZone'
+        ChangeInfo:
+          $ref: '#/components/schemas/ChangeInfo'
+        DelegationSet:
+          $ref: '#/components/schemas/DelegationSet'
     ChangeInfo:
       type: object
       description: Information about the change.
@@ -216,6 +222,21 @@ components:
         Comment:
           type: string
           description: A comment about the change.
+    ListHostedZonesResponse:
+      type: object
+      properties:
+        HostedZones:
+          type: array
+          items:
+            $ref: '#/components/schemas/HostedZone'
+        Marker:
+          type: string
+        IsTruncated:
+          type: boolean
+        NextMarker:
+          type: string
+        MaxItems:
+          type: integer
     DelegationSet:
       type: object
       description: A complex type that lists the name servers in a delegation set.
@@ -228,27 +249,6 @@ components:
           type: array
           items:
             type: string
-    CreateHostedZoneResponse:
-      type: object
-      properties:
-        HostedZone:
-          $ref: '#/components/schemas/HostedZone'
-        ChangeInfo:
-          $ref: '#/components/schemas/ChangeInfo'
-        DelegationSet:
-          $ref: '#/components/schemas/DelegationSet'
-    DeleteHostedZoneResponse:
-      type: object
-      properties:
-        ChangeInfo:
-          $ref: '#/components/schemas/ChangeInfo'
-    GetHostedZoneResponse:
-      type: object
-      properties:
-        HostedZone:
-          $ref: '#/components/schemas/HostedZone'
-        DelegationSet:
-          $ref: '#/components/schemas/DelegationSet'
   securitySchemes:
     aws_sig_v4:
       type: apiKey
