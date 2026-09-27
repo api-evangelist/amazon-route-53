@@ -271,5 +271,5 @@ integrations:
 - name: AWS Partner Central
 - name: Partner Paths
 - name: co-sell with AWS
-x-parent: aws
+x-parent: amazon-web-services
 x-relationship: product

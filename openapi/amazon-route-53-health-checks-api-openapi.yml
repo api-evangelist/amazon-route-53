@@ -98,48 +98,6 @@ components:
       properties:
         HealthCheck:
           $ref: '#/components/schemas/HealthCheck'
-    CreateHealthCheckRequest:
-      type: object
-      properties:
-        CallerReference:
-          type: string
-          description: A unique string that identifies the request.
-        HealthCheckConfig:
-          type: object
-          properties:
-            IPAddress:
-              type: string
-            Port:
-              type: integer
-            Type:
-              type: string
-              enum:
-              - HTTP
-              - HTTPS
-              - HTTP_STR_MATCH
-              - HTTPS_STR_MATCH
-              - TCP
-              - CALCULATED
-              - CLOUDWATCH_METRIC
-              - RECOVERY_CONTROL
-            ResourcePath:
-              type: string
-            FullyQualifiedDomainName:
-              type: string
-            RequestInterval:
-              type: integer
-            FailureThreshold:
-              type: integer
-          required:
-          - Type
-      required:
-      - CallerReference
-      - HealthCheckConfig
-    GetHealthCheckResponse:
-      type: object
-      properties:
-        HealthCheck:
-          $ref: '#/components/schemas/HealthCheck'
     HealthCheck:
       type: object
       description: A complex type that contains information about a health check.
@@ -219,6 +177,48 @@ components:
           type: string
         MaxItems:
           type: integer
+    GetHealthCheckResponse:
+      type: object
+      properties:
+        HealthCheck:
+          $ref: '#/components/schemas/HealthCheck'
+    CreateHealthCheckRequest:
+      type: object
+      properties:
+        CallerReference:
+          type: string
+          description: A unique string that identifies the request.
+        HealthCheckConfig:
+          type: object
+          properties:
+            IPAddress:
+              type: string
+            Port:
+              type: integer
+            Type:
+              type: string
+              enum:
+              - HTTP
+              - HTTPS
+              - HTTP_STR_MATCH
+              - HTTPS_STR_MATCH
+              - TCP
+              - CALCULATED
+              - CLOUDWATCH_METRIC
+              - RECOVERY_CONTROL
+            ResourcePath:
+              type: string
+            FullyQualifiedDomainName:
+              type: string
+            RequestInterval:
+              type: integer
+            FailureThreshold:
+              type: integer
+          required:
+          - Type
+      required:
+      - CallerReference
+      - HealthCheckConfig
   securitySchemes:
     aws_sig_v4:
       type: apiKey

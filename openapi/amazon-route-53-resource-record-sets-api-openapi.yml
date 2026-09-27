@@ -102,28 +102,26 @@ paths:
           description: Hosted zone not found
 components:
   schemas:
-    ListResourceRecordSetsResponse:
+    ChangeInfo:
       type: object
+      description: Information about the change.
       properties:
-        ResourceRecordSets:
-          type: array
-          items:
-            $ref: '#/components/schemas/ResourceRecordSet'
-        IsTruncated:
-          type: boolean
-        NextRecordName:
+        Id:
           type: string
-        NextRecordType:
+          description: The ID of the change.
+        Status:
           type: string
-        NextRecordIdentifier:
+          description: The current status of the change.
+          enum:
+          - PENDING
+          - INSYNC
+        SubmittedAt:
           type: string
-        MaxItems:
-          type: integer
-    ChangeResourceRecordSetsResponse:
-      type: object
-      properties:
-        ChangeInfo:
-          $ref: '#/components/schemas/ChangeInfo'
+          format: date-time
+          description: The date and time the change was submitted.
+        Comment:
+          type: string
+          description: A comment about the change.
     ChangeResourceRecordSetsRequest:
       type: object
       properties:
@@ -153,6 +151,28 @@ components:
           - Changes
       required:
       - ChangeBatch
+    ChangeResourceRecordSetsResponse:
+      type: object
+      properties:
+        ChangeInfo:
+          $ref: '#/components/schemas/ChangeInfo'
+    ListResourceRecordSetsResponse:
+      type: object
+      properties:
+        ResourceRecordSets:
+          type: array
+          items:
+            $ref: '#/components/schemas/ResourceRecordSet'
+        IsTruncated:
+          type: boolean
+        NextRecordName:
+          type: string
+        NextRecordType:
+          type: string
+        NextRecordIdentifier:
+          type: string
+        MaxItems:
+          type: integer
     ResourceRecordSet:
       type: object
       description: Information about the resource record set to create or delete.
@@ -223,26 +243,6 @@ components:
       required:
       - Name
       - Type
-    ChangeInfo:
-      type: object
-      description: Information about the change.
-      properties:
-        Id:
-          type: string
-          description: The ID of the change.
-        Status:
-          type: string
-          description: The current status of the change.
-          enum:
-          - PENDING
-          - INSYNC
-        SubmittedAt:
-          type: string
-          format: date-time
-          description: The date and time the change was submitted.
-        Comment:
-          type: string
-          description: A comment about the change.
   securitySchemes:
     aws_sig_v4:
       type: apiKey
