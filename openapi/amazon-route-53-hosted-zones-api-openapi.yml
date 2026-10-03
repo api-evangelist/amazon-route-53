@@ -117,31 +117,49 @@ paths:
           description: Hosted zone not found
 components:
   schemas:
-    DeleteHostedZoneResponse:
+    DelegationSet:
       type: object
-      properties:
-        ChangeInfo:
-          $ref: '#/components/schemas/ChangeInfo'
-    ChangeInfo:
-      type: object
-      description: Information about the change.
+      description: A complex type that lists the name servers in a delegation set.
       properties:
         Id:
           type: string
-          description: The ID of the change.
-        Status:
+        CallerReference:
           type: string
-          description: The current status of the change.
-          enum:
-          - PENDING
-          - INSYNC
-        SubmittedAt:
+        NameServers:
+          type: array
+          items:
+            type: string
+    CreateHostedZoneResponse:
+      type: object
+      properties:
+        HostedZone:
+          $ref: '#/components/schemas/HostedZone'
+        ChangeInfo:
+          $ref: '#/components/schemas/ChangeInfo'
+        DelegationSet:
+          $ref: '#/components/schemas/DelegationSet'
+    GetHostedZoneResponse:
+      type: object
+      properties:
+        HostedZone:
+          $ref: '#/components/schemas/HostedZone'
+        DelegationSet:
+          $ref: '#/components/schemas/DelegationSet'
+    ListHostedZonesResponse:
+      type: object
+      properties:
+        HostedZones:
+          type: array
+          items:
+            $ref: '#/components/schemas/HostedZone'
+        Marker:
           type: string
-          format: date-time
-          description: The date and time the change was submitted.
-        Comment:
+        IsTruncated:
+          type: boolean
+        NextMarker:
           type: string
-          description: A comment about the change.
+        MaxItems:
+          type: integer
     HostedZone:
       type: object
       description: A complex type that contains general information about the hosted zone.
@@ -178,13 +196,6 @@ components:
       - Id
       - Name
       - CallerReference
-    GetHostedZoneResponse:
-      type: object
-      properties:
-        HostedZone:
-          $ref: '#/components/schemas/HostedZone'
-        DelegationSet:
-          $ref: '#/components/schemas/DelegationSet'
     CreateHostedZoneRequest:
       type: object
       properties:
@@ -213,42 +224,31 @@ components:
       required:
       - Name
       - CallerReference
-    ListHostedZonesResponse:
+    DeleteHostedZoneResponse:
       type: object
       properties:
-        HostedZones:
-          type: array
-          items:
-            $ref: '#/components/schemas/HostedZone'
-        Marker:
-          type: string
-        IsTruncated:
-          type: boolean
-        NextMarker:
-          type: string
-        MaxItems:
-          type: integer
-    CreateHostedZoneResponse:
-      type: object
-      properties:
-        HostedZone:
-          $ref: '#/components/schemas/HostedZone'
         ChangeInfo:
           $ref: '#/components/schemas/ChangeInfo'
-        DelegationSet:
-          $ref: '#/components/schemas/DelegationSet'
-    DelegationSet:
+    ChangeInfo:
       type: object
-      description: A complex type that lists the name servers in a delegation set.
+      description: Information about the change.
       properties:
         Id:
           type: string
-        CallerReference:
+          description: The ID of the change.
+        Status:
           type: string
-        NameServers:
-          type: array
-          items:
-            type: string
+          description: The current status of the change.
+          enum:
+          - PENDING
+          - INSYNC
+        SubmittedAt:
+          type: string
+          format: date-time
+          description: The date and time the change was submitted.
+        Comment:
+          type: string
+          description: A comment about the change.
   securitySchemes:
     aws_sig_v4:
       type: apiKey
