@@ -93,16 +93,6 @@ paths:
           description: Health check not found
 components:
   schemas:
-    CreateHealthCheckResponse:
-      type: object
-      properties:
-        HealthCheck:
-          $ref: '#/components/schemas/HealthCheck'
-    GetHealthCheckResponse:
-      type: object
-      properties:
-        HealthCheck:
-          $ref: '#/components/schemas/HealthCheck'
     CreateHealthCheckRequest:
       type: object
       properties:
@@ -140,6 +130,11 @@ components:
       required:
       - CallerReference
       - HealthCheckConfig
+    GetHealthCheckResponse:
+      type: object
+      properties:
+        HealthCheck:
+          $ref: '#/components/schemas/HealthCheck'
     HealthCheck:
       type: object
       description: A complex type that contains information about a health check.
@@ -219,6 +214,11 @@ components:
           type: string
         MaxItems:
           type: integer
+    CreateHealthCheckResponse:
+      type: object
+      properties:
+        HealthCheck:
+          $ref: '#/components/schemas/HealthCheck'
   securitySchemes:
     aws_sig_v4:
       type: apiKey
