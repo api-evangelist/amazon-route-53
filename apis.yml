@@ -90,6 +90,12 @@ apis:
   - type: OpenAPI
     url: openapi/amazon-route-53-resource-record-sets-api-openapi.yml
 common:
+- type: Plans
+  url: plans/amazon-route-53-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/amazon-route-53-rate-limits.yml
+- type: FinOps
+  url: finops/amazon-route-53-finops.yml
 - type: PostmanWorkspace
   url: https://www.postman.com/kinlaneapi/amazon-route-53/overview
 - type: AgenticAccess
