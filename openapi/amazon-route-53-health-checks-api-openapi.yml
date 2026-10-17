@@ -93,48 +93,21 @@ paths:
           description: Health check not found
 components:
   schemas:
-    CreateHealthCheckRequest:
+    ListHealthChecksResponse:
       type: object
       properties:
-        CallerReference:
+        HealthChecks:
+          type: array
+          items:
+            $ref: '#/components/schemas/HealthCheck'
+        Marker:
           type: string
-          description: A unique string that identifies the request.
-        HealthCheckConfig:
-          type: object
-          properties:
-            IPAddress:
-              type: string
-            Port:
-              type: integer
-            Type:
-              type: string
-              enum:
-              - HTTP
-              - HTTPS
-              - HTTP_STR_MATCH
-              - HTTPS_STR_MATCH
-              - TCP
-              - CALCULATED
-              - CLOUDWATCH_METRIC
-              - RECOVERY_CONTROL
-            ResourcePath:
-              type: string
-            FullyQualifiedDomainName:
-              type: string
-            RequestInterval:
-              type: integer
-            FailureThreshold:
-              type: integer
-          required:
-          - Type
-      required:
-      - CallerReference
-      - HealthCheckConfig
-    GetHealthCheckResponse:
-      type: object
-      properties:
-        HealthCheck:
-          $ref: '#/components/schemas/HealthCheck'
+        IsTruncated:
+          type: boolean
+        NextMarker:
+          type: string
+        MaxItems:
+          type: integer
     HealthCheck:
       type: object
       description: A complex type that contains information about a health check.
@@ -199,26 +172,53 @@ components:
       - Id
       - CallerReference
       - HealthCheckConfig
-    ListHealthChecksResponse:
-      type: object
-      properties:
-        HealthChecks:
-          type: array
-          items:
-            $ref: '#/components/schemas/HealthCheck'
-        Marker:
-          type: string
-        IsTruncated:
-          type: boolean
-        NextMarker:
-          type: string
-        MaxItems:
-          type: integer
     CreateHealthCheckResponse:
       type: object
       properties:
         HealthCheck:
           $ref: '#/components/schemas/HealthCheck'
+    GetHealthCheckResponse:
+      type: object
+      properties:
+        HealthCheck:
+          $ref: '#/components/schemas/HealthCheck'
+    CreateHealthCheckRequest:
+      type: object
+      properties:
+        CallerReference:
+          type: string
+          description: A unique string that identifies the request.
+        HealthCheckConfig:
+          type: object
+          properties:
+            IPAddress:
+              type: string
+            Port:
+              type: integer
+            Type:
+              type: string
+              enum:
+              - HTTP
+              - HTTPS
+              - HTTP_STR_MATCH
+              - HTTPS_STR_MATCH
+              - TCP
+              - CALCULATED
+              - CLOUDWATCH_METRIC
+              - RECOVERY_CONTROL
+            ResourcePath:
+              type: string
+            FullyQualifiedDomainName:
+              type: string
+            RequestInterval:
+              type: integer
+            FailureThreshold:
+              type: integer
+          required:
+          - Type
+      required:
+      - CallerReference
+      - HealthCheckConfig
   securitySchemes:
     aws_sig_v4:
       type: apiKey

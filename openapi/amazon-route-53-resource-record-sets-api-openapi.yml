@@ -102,6 +102,48 @@ paths:
           description: Hosted zone not found
 components:
   schemas:
+    ListResourceRecordSetsResponse:
+      type: object
+      properties:
+        ResourceRecordSets:
+          type: array
+          items:
+            $ref: '#/components/schemas/ResourceRecordSet'
+        IsTruncated:
+          type: boolean
+        NextRecordName:
+          type: string
+        NextRecordType:
+          type: string
+        NextRecordIdentifier:
+          type: string
+        MaxItems:
+          type: integer
+    ChangeInfo:
+      type: object
+      description: Information about the change.
+      properties:
+        Id:
+          type: string
+          description: The ID of the change.
+        Status:
+          type: string
+          description: The current status of the change.
+          enum:
+          - PENDING
+          - INSYNC
+        SubmittedAt:
+          type: string
+          format: date-time
+          description: The date and time the change was submitted.
+        Comment:
+          type: string
+          description: A comment about the change.
+    ChangeResourceRecordSetsResponse:
+      type: object
+      properties:
+        ChangeInfo:
+          $ref: '#/components/schemas/ChangeInfo'
     ChangeResourceRecordSetsRequest:
       type: object
       properties:
@@ -131,48 +173,6 @@ components:
           - Changes
       required:
       - ChangeBatch
-    ListResourceRecordSetsResponse:
-      type: object
-      properties:
-        ResourceRecordSets:
-          type: array
-          items:
-            $ref: '#/components/schemas/ResourceRecordSet'
-        IsTruncated:
-          type: boolean
-        NextRecordName:
-          type: string
-        NextRecordType:
-          type: string
-        NextRecordIdentifier:
-          type: string
-        MaxItems:
-          type: integer
-    ChangeResourceRecordSetsResponse:
-      type: object
-      properties:
-        ChangeInfo:
-          $ref: '#/components/schemas/ChangeInfo'
-    ChangeInfo:
-      type: object
-      description: Information about the change.
-      properties:
-        Id:
-          type: string
-          description: The ID of the change.
-        Status:
-          type: string
-          description: The current status of the change.
-          enum:
-          - PENDING
-          - INSYNC
-        SubmittedAt:
-          type: string
-          format: date-time
-          description: The date and time the change was submitted.
-        Comment:
-          type: string
-          description: A comment about the change.
     ResourceRecordSet:
       type: object
       description: Information about the resource record set to create or delete.
