@@ -1,4 +1,4 @@
-# Amazon Route 53 (amazon-route-53)
+# Amazon Route 53
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,97 +66,191 @@
 
 Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service that provides DNS routing, domain name registration, and health checking capabilities. Route 53 connects user requests to internet applications running on AWS or on-premises infrastructure, and can be used to route traffic based on latency, geolocation, geoproximity, and weighted round-robin policies.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/amazon-route-53/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/amazon-route-53/refs/heads/main/apis.yml)
+**Areas:** AWS · DNS · Domain Registration · Health Checks · Routing
 
-## Tags
+## Amazon Route 53 on APIs.io
 
-- AWS
-- DNS
-- Domain Registration
-- Health Checks
-- Routing
+Everything profiled for Amazon Route 53 is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/amazon-route-53/](https://apis.io/providers/amazon-route-53/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (11)
 
-- **Modified:** 2026-05-19
+- [Amazon Route 53 Health Checks API](https://apis.io/apis/amazon-route-53/amazon-route-53-health-checks-api/) — Operations for managing health checks.
+- [Amazon Route 53 Hosted Zones API](https://apis.io/apis/amazon-route-53/amazon-route-53-hosted-zones-api/) — Operations for managing DNS hosted zones.
+- [Amazon Route 53 Resource Record Sets API](https://apis.io/apis/amazon-route-53/amazon-route-53-resource-record-sets-api/) — Operations for managing DNS resource record sets.
+- [Amazon Route 53 Route 53 Cidrcollection API](https://apis.io/apis/amazon-route-53/amazon-route-53-cidrcollection-api/) — The Route 53 Cidrcollection API from Amazon Route 53 — 3 operation(s) for route 53 cidrcollection.
+- [Amazon Route 53 Route 53 Delegationset API](https://apis.io/apis/amazon-route-53/amazon-route-53-delegationset-api/) — The Route 53 Delegationset API from Amazon Route 53 — 2 operation(s) for route 53 delegationset.
+- [Amazon Route 53 Route 53 Operations API](https://apis.io/apis/amazon-route-53/amazon-route-53-operations-api/) — The Route 53 Operations API from Amazon Route 53 — 30 operation(s) for route 53 operations.
+- [Amazon Route 53 Route 53 Queryloggingconfig API](https://apis.io/apis/amazon-route-53/amazon-route-53-queryloggingconfig-api/) — The Route 53 Queryloggingconfig API from Amazon Route 53 — 2 operation(s) for route 53 queryloggingconfig.
+- [Amazon Route 53 Route 53 Tags API](https://apis.io/apis/amazon-route-53/amazon-route-53-tags-api/) — The Route 53 Tags API from Amazon Route 53 — 2 operation(s) for route 53 tags.
+- [Amazon Route 53 Route 53 Trafficpolicy API](https://apis.io/apis/amazon-route-53/amazon-route-53-trafficpolicy-api/) — The Route 53 Trafficpolicy API from Amazon Route 53 — 3 operation(s) for route 53 trafficpolicy.
+- [Amazon Route 53 Route 53 Trafficpolicyinstance API](https://apis.io/apis/amazon-route-53/amazon-route-53-trafficpolicyinstance-api/) — The Route 53 Trafficpolicyinstance API from Amazon Route 53 — 2 operation(s) for route 53 trafficpolicyinstance.
+- [Amazon Route 53 Route 53 Trafficpolicyinstances API](https://apis.io/apis/amazon-route-53/amazon-route-53-trafficpolicyinstances-api/) — The Route 53 Trafficpolicyinstances API from Amazon Route 53 — 3 operation(s) for route 53 trafficpolicyinstances.
 
-## Common Properties
+### Published properties
 
-- [Portal](https://aws.amazon.com/)
-- [Portal](https://aws.amazon.com/route53/)
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Agentic access (1)
+
+Which operations an agent can call, which act, and which need a human in the loop.
+
+- [Amazon Route 53 Agentic Access](https://apis.io/agentic-access/amazon-route-53/amazon-route-53-agentic-access/)
+
+#### JSON Schema (18)
+
+The data models the API reads and writes.
+
+- [Amazon Route 53 Hosted Zone](https://apis.io/schemas/amazon-route-53/amazon-route-53-hosted-zone/)
+- [ChangeInfo](https://apis.io/schemas/amazon-route-53/amazon-route-53-openapi-change-info/)
+- [ChangeResourceRecordSetsRequest](https://apis.io/schemas/amazon-route-53/amazon-route-53-openapi-change-resource-record-sets-request/)
+- [ChangeResourceRecordSetsResponse](https://apis.io/schemas/amazon-route-53/amazon-route-53-openapi-change-resource-record-sets-response/)
+- [CreateHealthCheckRequest](https://apis.io/schemas/amazon-route-53/amazon-route-53-openapi-create-health-check-request/)
+- [CreateHealthCheckResponse](https://apis.io/schemas/amazon-route-53/amazon-route-53-openapi-create-health-check-response/)
+- [CreateHostedZoneRequest](https://apis.io/schemas/amazon-route-53/amazon-route-53-openapi-create-hosted-zone-request/)
+- [CreateHostedZoneResponse](https://apis.io/schemas/amazon-route-53/amazon-route-53-openapi-create-hosted-zone-response/)
+- [DelegationSet](https://apis.io/schemas/amazon-route-53/amazon-route-53-openapi-delegation-set/)
+- [DeleteHostedZoneResponse](https://apis.io/schemas/amazon-route-53/amazon-route-53-openapi-delete-hosted-zone-response/)
+- [GetHealthCheckResponse](https://apis.io/schemas/amazon-route-53/amazon-route-53-openapi-get-health-check-response/)
+- [GetHostedZoneResponse](https://apis.io/schemas/amazon-route-53/amazon-route-53-openapi-get-hosted-zone-response/)
+- [HealthCheck](https://apis.io/schemas/amazon-route-53/amazon-route-53-openapi-health-check/)
+- [HostedZone](https://apis.io/schemas/amazon-route-53/amazon-route-53-openapi-hosted-zone/)
+- [ListHealthChecksResponse](https://apis.io/schemas/amazon-route-53/amazon-route-53-openapi-list-health-checks-response/)
+- [ListHostedZonesResponse](https://apis.io/schemas/amazon-route-53/amazon-route-53-openapi-list-hosted-zones-response/)
+- [ListResourceRecordSetsResponse](https://apis.io/schemas/amazon-route-53/amazon-route-53-openapi-list-resource-record-sets-response/)
+- [ResourceRecordSet](https://apis.io/schemas/amazon-route-53/amazon-route-53-openapi-resource-record-set/)
+
+#### JSON Structure (18)
+
+Data models expressed in JSON Structure.
+
+- [Amazon Route 53 Hosted Zone Structure](https://apis.io/json-structure/amazon-route-53/amazon-route-53-hosted-zone-structure/)
+- [Amazon Route 53 Openapi Change Info Structure](https://apis.io/json-structure/amazon-route-53/amazon-route-53-openapi-change-info-structure/)
+- [Amazon Route 53 Openapi Change Resource Record Sets Request Structure](https://apis.io/json-structure/amazon-route-53/amazon-route-53-openapi-change-resource-record-sets-request-structure/)
+- [Amazon Route 53 Openapi Change Resource Record Sets Response Structure](https://apis.io/json-structure/amazon-route-53/amazon-route-53-openapi-change-resource-record-sets-response-structure/)
+- [Amazon Route 53 Openapi Create Health Check Request Structure](https://apis.io/json-structure/amazon-route-53/amazon-route-53-openapi-create-health-check-request-structure/)
+- [Amazon Route 53 Openapi Create Health Check Response Structure](https://apis.io/json-structure/amazon-route-53/amazon-route-53-openapi-create-health-check-response-structure/)
+- [Amazon Route 53 Openapi Create Hosted Zone Request Structure](https://apis.io/json-structure/amazon-route-53/amazon-route-53-openapi-create-hosted-zone-request-structure/)
+- [Amazon Route 53 Openapi Create Hosted Zone Response Structure](https://apis.io/json-structure/amazon-route-53/amazon-route-53-openapi-create-hosted-zone-response-structure/)
+- [Amazon Route 53 Openapi Delegation Set Structure](https://apis.io/json-structure/amazon-route-53/amazon-route-53-openapi-delegation-set-structure/)
+- [Amazon Route 53 Openapi Delete Hosted Zone Response Structure](https://apis.io/json-structure/amazon-route-53/amazon-route-53-openapi-delete-hosted-zone-response-structure/)
+- [Amazon Route 53 Openapi Get Health Check Response Structure](https://apis.io/json-structure/amazon-route-53/amazon-route-53-openapi-get-health-check-response-structure/)
+- [Amazon Route 53 Openapi Get Hosted Zone Response Structure](https://apis.io/json-structure/amazon-route-53/amazon-route-53-openapi-get-hosted-zone-response-structure/)
+- [Amazon Route 53 Openapi Health Check Structure](https://apis.io/json-structure/amazon-route-53/amazon-route-53-openapi-health-check-structure/)
+- [Amazon Route 53 Openapi Hosted Zone Structure](https://apis.io/json-structure/amazon-route-53/amazon-route-53-openapi-hosted-zone-structure/)
+- [Amazon Route 53 Openapi List Health Checks Response Structure](https://apis.io/json-structure/amazon-route-53/amazon-route-53-openapi-list-health-checks-response-structure/)
+- [Amazon Route 53 Openapi List Hosted Zones Response Structure](https://apis.io/json-structure/amazon-route-53/amazon-route-53-openapi-list-hosted-zones-response-structure/)
+- [Amazon Route 53 Openapi List Resource Record Sets Response Structure](https://apis.io/json-structure/amazon-route-53/amazon-route-53-openapi-list-resource-record-sets-response-structure/)
+- [Amazon Route 53 Openapi Resource Record Set Structure](https://apis.io/json-structure/amazon-route-53/amazon-route-53-openapi-resource-record-set-structure/)
+
+#### JSON-LD (2)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Amazon Route 53 Context](https://apis.io/jsonld/amazon-route-53/amazon-route-53-context/)
+- [Amazon Route 53 Context](https://apis.io/jsonld/amazon-route-53/amazon-route-53-context-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Amazon Route 53 Vocabulary](https://apis.io/vocabularies/amazon-route-53/amazon-route-53-vocabulary/)
+
+#### Examples (18)
+
+Example requests and responses.
+
+- [Amazon Route 53 Hosted Zone Example](https://apis.io/examples/amazon-route-53/amazon-route-53-hosted-zone-example/)
+- [Amazon Route 53 Openapi Change Info Example](https://apis.io/examples/amazon-route-53/amazon-route-53-openapi-change-info-example/)
+- [Amazon Route 53 Openapi Change Resource Record Sets Request Example](https://apis.io/examples/amazon-route-53/amazon-route-53-openapi-change-resource-record-sets-request-example/)
+- [Amazon Route 53 Openapi Change Resource Record Sets Response Example](https://apis.io/examples/amazon-route-53/amazon-route-53-openapi-change-resource-record-sets-response-example/)
+- [Amazon Route 53 Openapi Create Health Check Request Example](https://apis.io/examples/amazon-route-53/amazon-route-53-openapi-create-health-check-request-example/)
+- [Amazon Route 53 Openapi Create Health Check Response Example](https://apis.io/examples/amazon-route-53/amazon-route-53-openapi-create-health-check-response-example/)
+- [Amazon Route 53 Openapi Create Hosted Zone Request Example](https://apis.io/examples/amazon-route-53/amazon-route-53-openapi-create-hosted-zone-request-example/)
+- [Amazon Route 53 Openapi Create Hosted Zone Response Example](https://apis.io/examples/amazon-route-53/amazon-route-53-openapi-create-hosted-zone-response-example/)
+- [Amazon Route 53 Openapi Delegation Set Example](https://apis.io/examples/amazon-route-53/amazon-route-53-openapi-delegation-set-example/)
+- [Amazon Route 53 Openapi Delete Hosted Zone Response Example](https://apis.io/examples/amazon-route-53/amazon-route-53-openapi-delete-hosted-zone-response-example/)
+- [Amazon Route 53 Openapi Get Health Check Response Example](https://apis.io/examples/amazon-route-53/amazon-route-53-openapi-get-health-check-response-example/)
+- [Amazon Route 53 Openapi Get Hosted Zone Response Example](https://apis.io/examples/amazon-route-53/amazon-route-53-openapi-get-hosted-zone-response-example/)
+- [Amazon Route 53 Openapi Health Check Example](https://apis.io/examples/amazon-route-53/amazon-route-53-openapi-health-check-example/)
+- [Amazon Route 53 Openapi Hosted Zone Example](https://apis.io/examples/amazon-route-53/amazon-route-53-openapi-hosted-zone-example/)
+- [Amazon Route 53 Openapi List Health Checks Response Example](https://apis.io/examples/amazon-route-53/amazon-route-53-openapi-list-health-checks-response-example/)
+- [Amazon Route 53 Openapi List Hosted Zones Response Example](https://apis.io/examples/amazon-route-53/amazon-route-53-openapi-list-hosted-zones-response-example/)
+- [Amazon Route 53 Openapi List Resource Record Sets Response Example](https://apis.io/examples/amazon-route-53/amazon-route-53-openapi-list-resource-record-sets-response-example/)
+- [Amazon Route 53 Openapi Resource Record Set Example](https://apis.io/examples/amazon-route-53/amazon-route-53-openapi-resource-record-set-example/)
+
+#### Collections (7)
+
+Postman and Open Collection request collections.
+
+- [Amazon Route 53 API](https://apis.io/collections/amazon-route-53/open-amazon-route-53/)
+- [Amazon Route 53 Health Checks API](https://apis.io/collections/amazon-route-53/open-amazon-route-53-health-checks-api/)
+- [Amazon Route 53 Health Checks Hosted Zones API](https://apis.io/collections/amazon-route-53/open-amazon-route-53-hosted-zones-api/)
+- [Amazon Route 53 Health Checks Resource Record Sets API](https://apis.io/collections/amazon-route-53/open-amazon-route-53-resource-record-sets-api/)
+- [Amazon Route 53 Health Checks API](https://apis.io/collections/amazon-route-53/postman-amazon-route-53-health-checks-api/)
+- [Amazon Route 53 Health Checks Hosted Zones API](https://apis.io/collections/amazon-route-53/postman-amazon-route-53-hosted-zones-api/)
+- [Amazon Route 53 Health Checks Resource Record Sets API](https://apis.io/collections/amazon-route-53/postman-amazon-route-53-resource-record-sets-api/)
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Amazon Route 53 — jsonschema rules](https://apis.io/rules/amazon-route-53/amazon-route-53-jsonschema-spectral-rules/)
+- [Amazon Route 53 API Rules](https://apis.io/rules/amazon-route-53/amazon-route-53-spectral-rules/)
+
+#### Security (4)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Amazon Route 53 Authentication](https://apis.io/security/amazon-route-53/amazon-route-53-authentication/)
+- [Amazon Route 53 Domain Security](https://apis.io/security/amazon-route-53/amazon-route-53-domain-security/)
+- [Amazon Route 53 Trust Center](https://apis.io/security/amazon-route-53/amazon-route-53-trust-center/)
+- [Amazon Route 53 Vulnerability Disclosure](https://apis.io/security/amazon-route-53/amazon-route-53-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Amazon Route 53 Plans Pricing](https://apis.io/plans/amazon-route-53/amazon-route-53-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Amazon Route 53 Rate Limits](https://apis.io/rate-limits/amazon-route-53/amazon-route-53-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Amazon Route 53 Finops](https://apis.io/finops/amazon-route-53/amazon-route-53-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Documentation](https://docs.aws.amazon.com/)
-- [Terms of Service](https://aws.amazon.com/service-terms/)
-- [Privacy Policy](https://aws.amazon.com/privacy/)
 - [Support](https://aws.amazon.com/support/)
 - [Blog](https://aws.amazon.com/blogs/networking-and-content-delivery/)
-- [Git Hub](https://github.com/aws)
-- [Portal](https://console.aws.amazon.com/route53/)
-- [Sign Up](https://portal.aws.amazon.com/billing/signup)
-- [Login](https://signin.aws.amazon.com/)
-- [Status Page](https://health.aws.amazon.com/health/status)
-- [Knowledge  Center](https://repost.aws/knowledge-center)
-- [YouTube](https://www.youtube.com/user/AmazonWebServices)
-- [Stack Overflow](https://stackoverflow.com/questions/tagged/amazon-route53)
-- [Contact](https://aws.amazon.com/contact-us/)
 - [Security](https://aws.amazon.com/security/)
 - [Compliance](https://aws.amazon.com/compliance/)
-- [JSON-LD](json-ld/amazon-route-53-context-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
-- [JSON-LD](json-ld/amazon-route-53-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
-- [JSON Schema](json-schema/amazon-route-53-hosted-zone-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/amazon-route-53-openapi-change-info-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/amazon-route-53-openapi-change-resource-record-sets-request-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/amazon-route-53-openapi-change-resource-record-sets-response-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/amazon-route-53-openapi-create-health-check-request-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/amazon-route-53-openapi-create-health-check-response-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/amazon-route-53-openapi-create-hosted-zone-request-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/amazon-route-53-openapi-create-hosted-zone-response-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/amazon-route-53-openapi-delegation-set-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/amazon-route-53-openapi-delete-hosted-zone-response-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/amazon-route-53-openapi-get-health-check-response-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/amazon-route-53-openapi-get-hosted-zone-response-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/amazon-route-53-openapi-health-check-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/amazon-route-53-openapi-hosted-zone-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/amazon-route-53-openapi-list-health-checks-response-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/amazon-route-53-openapi-list-hosted-zones-response-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/amazon-route-53-openapi-list-resource-record-sets-response-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/amazon-route-53-openapi-resource-record-set-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Structure](json-structure/amazon-route-53-hosted-zone-structure.json)
-- [JSON Structure](json-structure/amazon-route-53-openapi-change-info-structure.json)
-- [JSON Structure](json-structure/amazon-route-53-openapi-change-resource-record-sets-request-structure.json)
-- [JSON Structure](json-structure/amazon-route-53-openapi-change-resource-record-sets-response-structure.json)
-- [JSON Structure](json-structure/amazon-route-53-openapi-create-health-check-request-structure.json)
-- [JSON Structure](json-structure/amazon-route-53-openapi-create-health-check-response-structure.json)
-- [JSON Structure](json-structure/amazon-route-53-openapi-create-hosted-zone-request-structure.json)
-- [JSON Structure](json-structure/amazon-route-53-openapi-create-hosted-zone-response-structure.json)
-- [JSON Structure](json-structure/amazon-route-53-openapi-delegation-set-structure.json)
-- [JSON Structure](json-structure/amazon-route-53-openapi-delete-hosted-zone-response-structure.json)
-- [JSON Structure](json-structure/amazon-route-53-openapi-get-health-check-response-structure.json)
-- [JSON Structure](json-structure/amazon-route-53-openapi-get-hosted-zone-response-structure.json)
-- [JSON Structure](json-structure/amazon-route-53-openapi-health-check-structure.json)
-- [JSON Structure](json-structure/amazon-route-53-openapi-hosted-zone-structure.json)
-- [JSON Structure](json-structure/amazon-route-53-openapi-list-health-checks-response-structure.json)
-- [JSON Structure](json-structure/amazon-route-53-openapi-list-hosted-zones-response-structure.json)
-- [JSON Structure](json-structure/amazon-route-53-openapi-list-resource-record-sets-response-structure.json)
-- [JSON Structure](json-structure/amazon-route-53-openapi-resource-record-set-structure.json)
-- [Example](examples/amazon-route-53-hosted-zone-example.json)
-- [Example](examples/amazon-route-53-openapi-change-info-example.json)
-- [Example](examples/amazon-route-53-openapi-change-resource-record-sets-request-example.json)
-- [Example](examples/amazon-route-53-openapi-change-resource-record-sets-response-example.json)
-- [Example](examples/amazon-route-53-openapi-create-health-check-request-example.json)
-- [Example](examples/amazon-route-53-openapi-create-health-check-response-example.json)
-- [Example](examples/amazon-route-53-openapi-create-hosted-zone-request-example.json)
-- [Example](examples/amazon-route-53-openapi-create-hosted-zone-response-example.json)
-- [Example](examples/amazon-route-53-openapi-delegation-set-example.json)
-- [Example](examples/amazon-route-53-openapi-delete-hosted-zone-response-example.json)
-- [Example](examples/amazon-route-53-openapi-get-health-check-response-example.json)
-- [Example](examples/amazon-route-53-openapi-get-hosted-zone-response-example.json)
-- [Example](examples/amazon-route-53-openapi-health-check-example.json)
-- [Example](examples/amazon-route-53-openapi-hosted-zone-example.json)
-- [Example](examples/amazon-route-53-openapi-list-health-checks-response-example.json)
-- [Example](examples/amazon-route-53-openapi-list-hosted-zones-response-example.json)
-- [Example](examples/amazon-route-53-openapi-list-resource-record-sets-response-example.json)
-- [Example](examples/amazon-route-53-openapi-resource-record-set-example.json)
-- [Spectral Rules](rules/amazon-route-53-spectral-rules.yml)
-- [Vocabulary](vocabulary/amazon-route-53-vocabulary.yaml)
-- [OpenAPI](openapi/amazon-route-53-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Integrations](https://aws.amazon.com/partners/)
+- [Terms of service](https://aws.amazon.com/service-terms/)
+- [Privacy policy](https://aws.amazon.com/privacy/)
+- [Status](https://health.aws.amazon.com/health/status)
+
+## API Evangelist rating
+
+**Unrated** — no public website could be reached for this company, so there was almost nothing to measure and nothing a reader could check.
+
+This is not a score of zero. No rating is published for this company. If that is wrong because something public exists that we missed, say so on this repository or email [info@apievangelist.com](mailto:info@apievangelist.com) and it will be re-run — free, and no justification needed.
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Amazon Route 53: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/amazon-route-53/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
