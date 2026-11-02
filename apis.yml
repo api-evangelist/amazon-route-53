@@ -1,0 +1,361 @@
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
+specificationVersion: '0.23'
+accessModel:
+  pricing: free
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Free · Self-serve signup
+  confidence: medium
+  source:
+  - plans
+  - authentication
+  - security
+  generated: '2026-09-03'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/amazon-route-53.png
+name: Amazon Route 53
+description: Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service that provides DNS routing,
+  domain name registration, and health checking capabilities. Route 53 connects user requests to internet applications running
+  on AWS or on-premises infrastructure, and can be used to route traffic based on latency, geolocation, geoproximity, and
+  weighted round-robin policies.
+url: https://raw.githubusercontent.com/api-evangelist/amazon-route-53/refs/heads/main/apis.yml
+baseURL: https://route53.amazonaws.com
+tags:
+- Amazon Web Services
+- DNS
+- Domain Registration
+- Health Checks
+- Routing
+tags_raw:
+- AWS
+- DNS
+- Domain Registration
+- Health Checks
+- Routing
+properties:
+- type: Documentation
+  url: https://docs.aws.amazon.com/Route53/latest/APIReference/
+- type: OpenAPI
+  url: openapi/_original/amazon-route-53-openapi.yml
+- type: OpenAPI
+  url: https://api.apis.guru/v2/specs/amazonaws.com/route53/2013-04-01/openapi.yaml
+- type: JSONSchema
+  url: json-schema/amazon-route-53-hosted-zone-schema.json
+- type: JSONLD
+  url: json-ld/amazon-route-53-context.jsonld
+- type: Pricing
+  url: https://aws.amazon.com/route53/pricing/
+- type: GettingStarted
+  url: https://aws.amazon.com/route53/getting-started/
+- type: FAQ
+  url: https://aws.amazon.com/route53/faqs/
+- type: User Guide
+  url: https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/
+- type: APIReference
+  url: https://docs.aws.amazon.com/Route53/latest/APIReference/
+- type: CLI Reference
+  url: https://docs.aws.amazon.com/cli/latest/reference/route53/
+- type: Security
+  url: https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/security.html
+apis:
+- aid: amazon-route-53:amazon-route-53-health-checks-api
+  name: Amazon Route 53 Health Checks API
+  description: Operations for managing health checks.
+  tags:
+  - Health Checks
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-route-53-health-checks-api-openapi.yml
+- aid: amazon-route-53:amazon-route-53-hosted-zones-api
+  name: Amazon Route 53 Hosted Zones API
+  description: Operations for managing DNS hosted zones.
+  tags:
+  - Hosted Zones
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-route-53-hosted-zones-api-openapi.yml
+- aid: amazon-route-53:amazon-route-53-resource-record-sets-api
+  name: Amazon Route 53 Resource Record Sets API
+  description: Operations for managing DNS resource record sets.
+  tags:
+  - Resource Record Sets
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-route-53-resource-record-sets-api-openapi.yml
+- aid: amazon-route-53:amazon-route-53-cidrcollection-api
+  name: Amazon Route 53 Route 53 Cidrcollection API
+  description: >-
+    The Route 53 Cidrcollection API from Amazon Route 53 — 3 operation(s) for route 53 cidrcollection.
+  tags:
+  - Route 53 Cidrcollection
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-route-53-cidrcollection-api-openapi.yml
+- aid: amazon-route-53:amazon-route-53-delegationset-api
+  name: Amazon Route 53 Route 53 Delegationset API
+  description: >-
+    The Route 53 Delegationset API from Amazon Route 53 — 2 operation(s) for route 53 delegationset.
+  tags:
+  - Route 53 Delegationset
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-route-53-delegationset-api-openapi.yml
+- aid: amazon-route-53:amazon-route-53-operations-api
+  name: Amazon Route 53 Route 53 Operations API
+  description: >-
+    The Route 53 Operations API from Amazon Route 53 — 30 operation(s) for route 53 operations.
+  tags:
+  - Route 53 Operations
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-route-53-operations-api-openapi.yml
+- aid: amazon-route-53:amazon-route-53-queryloggingconfig-api
+  name: Amazon Route 53 Route 53 Queryloggingconfig API
+  description: >-
+    The Route 53 Queryloggingconfig API from Amazon Route 53 — 2 operation(s) for route 53 queryloggingconfig.
+  tags:
+  - Route 53 Queryloggingconfig
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-route-53-queryloggingconfig-api-openapi.yml
+- aid: amazon-route-53:amazon-route-53-tags-api
+  name: Amazon Route 53 Route 53 Tags API
+  description: The Route 53 Tags API from Amazon Route 53 — 2 operation(s) for route 53 tags.
+  tags:
+  - Route 53 Tags
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-route-53-tags-api-openapi.yml
+- aid: amazon-route-53:amazon-route-53-trafficpolicy-api
+  name: Amazon Route 53 Route 53 Trafficpolicy API
+  description: >-
+    The Route 53 Trafficpolicy API from Amazon Route 53 — 3 operation(s) for route 53 trafficpolicy.
+  tags:
+  - Route 53 Trafficpolicy
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-route-53-trafficpolicy-api-openapi.yml
+- aid: amazon-route-53:amazon-route-53-trafficpolicyinstance-api
+  name: Amazon Route 53 Route 53 Trafficpolicyinstance API
+  description: >-
+    The Route 53 Trafficpolicyinstance API from Amazon Route 53 — 2 operation(s) for route 53 trafficpolicyinstance.
+  tags:
+  - Route 53 Trafficpolicyinstance
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-route-53-trafficpolicyinstance-api-openapi.yml
+- aid: amazon-route-53:amazon-route-53-trafficpolicyinstances-api
+  name: Amazon Route 53 Route 53 Trafficpolicyinstances API
+  description: >-
+    The Route 53 Trafficpolicyinstances API from Amazon Route 53 — 3 operation(s) for route 53 trafficpolicyinstances.
+  tags:
+  - Route 53 Trafficpolicyinstances
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-route-53-trafficpolicyinstances-api-openapi.yml
+common:
+- type: CapabilityMap
+  url: capabilities/amazon-route-53-capability-edges.yml
+  name: Amazon Route 53 Business Capability Map
+- type: Plans
+  url: plans/amazon-route-53-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/amazon-route-53-rate-limits.yml
+- type: FinOps
+  url: finops/amazon-route-53-finops.yml
+- type: PostmanWorkspace
+  url: https://www.postman.com/kinlaneapi/amazon-route-53/overview
+- type: AgenticAccess
+  url: agentic-access/amazon-route-53-agentic-access.yml
+- type: TrustCenter
+  url: security/amazon-route-53-trust-center.yml
+- type: VulnerabilityDisclosure
+  url: security/amazon-route-53-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/amazon-route-53-domain-security.yml
+- type: Authentication
+  url: authentication/amazon-route-53-authentication.yml
+- type: Portal
+  url: https://aws.amazon.com/
+- type: Portal
+  url: https://aws.amazon.com/route53/
+- type: Documentation
+  url: https://docs.aws.amazon.com/
+- type: TermsOfService
+  url: https://aws.amazon.com/service-terms/
+- type: PrivacyPolicy
+  url: https://aws.amazon.com/privacy/
+- type: Support
+  url: https://aws.amazon.com/support/
+- type: Blog
+  url: https://aws.amazon.com/blogs/networking-and-content-delivery/
+- type: GitHub
+  url: https://github.com/aws
+- type: Portal
+  url: https://console.aws.amazon.com/route53/
+- type: Signup
+  url: https://portal.aws.amazon.com/billing/signup
+- type: Login
+  url: https://signin.aws.amazon.com/
+- type: StatusPage
+  url: https://health.aws.amazon.com/health/status
+- type: Knowledge Center
+  url: https://repost.aws/knowledge-center
+- type: YouTube
+  url: https://www.youtube.com/user/AmazonWebServices
+- type: StackOverflow
+  url: https://stackoverflow.com/questions/tagged/amazon-route53
+- type: Contact
+  url: https://aws.amazon.com/contact-us/
+- type: Security
+  url: https://aws.amazon.com/security/
+- type: Compliance
+  url: https://aws.amazon.com/compliance/
+- type: JSONLD
+  url: json-ld/amazon-route-53-context-context.jsonld
+- type: JSONLD
+  url: json-ld/amazon-route-53-context.jsonld
+- type: JSONSchema
+  url: json-schema/amazon-route-53-hosted-zone-schema.json
+- type: JSONSchema
+  url: json-schema/amazon-route-53-openapi-change-info-schema.json
+- type: JSONSchema
+  url: json-schema/amazon-route-53-openapi-change-resource-record-sets-request-schema.json
+- type: JSONSchema
+  url: json-schema/amazon-route-53-openapi-change-resource-record-sets-response-schema.json
+- type: JSONSchema
+  url: json-schema/amazon-route-53-openapi-create-health-check-request-schema.json
+- type: JSONSchema
+  url: json-schema/amazon-route-53-openapi-create-health-check-response-schema.json
+- type: JSONSchema
+  url: json-schema/amazon-route-53-openapi-create-hosted-zone-request-schema.json
+- type: JSONSchema
+  url: json-schema/amazon-route-53-openapi-create-hosted-zone-response-schema.json
+- type: JSONSchema
+  url: json-schema/amazon-route-53-openapi-delegation-set-schema.json
+- type: JSONSchema
+  url: json-schema/amazon-route-53-openapi-delete-hosted-zone-response-schema.json
+- type: JSONSchema
+  url: json-schema/amazon-route-53-openapi-get-health-check-response-schema.json
+- type: JSONSchema
+  url: json-schema/amazon-route-53-openapi-get-hosted-zone-response-schema.json
+- type: JSONSchema
+  url: json-schema/amazon-route-53-openapi-health-check-schema.json
+- type: JSONSchema
+  url: json-schema/amazon-route-53-openapi-hosted-zone-schema.json
+- type: JSONSchema
+  url: json-schema/amazon-route-53-openapi-list-health-checks-response-schema.json
+- type: JSONSchema
+  url: json-schema/amazon-route-53-openapi-list-hosted-zones-response-schema.json
+- type: JSONSchema
+  url: json-schema/amazon-route-53-openapi-list-resource-record-sets-response-schema.json
+- type: JSONSchema
+  url: json-schema/amazon-route-53-openapi-resource-record-set-schema.json
+- type: JSONStructure
+  url: json-structure/amazon-route-53-hosted-zone-structure.json
+- type: JSONStructure
+  url: json-structure/amazon-route-53-openapi-change-info-structure.json
+- type: JSONStructure
+  url: json-structure/amazon-route-53-openapi-change-resource-record-sets-request-structure.json
+- type: JSONStructure
+  url: json-structure/amazon-route-53-openapi-change-resource-record-sets-response-structure.json
+- type: JSONStructure
+  url: json-structure/amazon-route-53-openapi-create-health-check-request-structure.json
+- type: JSONStructure
+  url: json-structure/amazon-route-53-openapi-create-health-check-response-structure.json
+- type: JSONStructure
+  url: json-structure/amazon-route-53-openapi-create-hosted-zone-request-structure.json
+- type: JSONStructure
+  url: json-structure/amazon-route-53-openapi-create-hosted-zone-response-structure.json
+- type: JSONStructure
+  url: json-structure/amazon-route-53-openapi-delegation-set-structure.json
+- type: JSONStructure
+  url: json-structure/amazon-route-53-openapi-delete-hosted-zone-response-structure.json
+- type: JSONStructure
+  url: json-structure/amazon-route-53-openapi-get-health-check-response-structure.json
+- type: JSONStructure
+  url: json-structure/amazon-route-53-openapi-get-hosted-zone-response-structure.json
+- type: JSONStructure
+  url: json-structure/amazon-route-53-openapi-health-check-structure.json
+- type: JSONStructure
+  url: json-structure/amazon-route-53-openapi-hosted-zone-structure.json
+- type: JSONStructure
+  url: json-structure/amazon-route-53-openapi-list-health-checks-response-structure.json
+- type: JSONStructure
+  url: json-structure/amazon-route-53-openapi-list-hosted-zones-response-structure.json
+- type: JSONStructure
+  url: json-structure/amazon-route-53-openapi-list-resource-record-sets-response-structure.json
+- type: JSONStructure
+  url: json-structure/amazon-route-53-openapi-resource-record-set-structure.json
+- type: Examples
+  url: examples/amazon-route-53-hosted-zone-example.json
+- type: Examples
+  url: examples/amazon-route-53-openapi-change-info-example.json
+- type: Examples
+  url: examples/amazon-route-53-openapi-change-resource-record-sets-request-example.json
+- type: Examples
+  url: examples/amazon-route-53-openapi-change-resource-record-sets-response-example.json
+- type: Examples
+  url: examples/amazon-route-53-openapi-create-health-check-request-example.json
+- type: Examples
+  url: examples/amazon-route-53-openapi-create-health-check-response-example.json
+- type: Examples
+  url: examples/amazon-route-53-openapi-create-hosted-zone-request-example.json
+- type: Examples
+  url: examples/amazon-route-53-openapi-create-hosted-zone-response-example.json
+- type: Examples
+  url: examples/amazon-route-53-openapi-delegation-set-example.json
+- type: Examples
+  url: examples/amazon-route-53-openapi-delete-hosted-zone-response-example.json
+- type: Examples
+  url: examples/amazon-route-53-openapi-get-health-check-response-example.json
+- type: Examples
+  url: examples/amazon-route-53-openapi-get-hosted-zone-response-example.json
+- type: Examples
+  url: examples/amazon-route-53-openapi-health-check-example.json
+- type: Examples
+  url: examples/amazon-route-53-openapi-hosted-zone-example.json
+- type: Examples
+  url: examples/amazon-route-53-openapi-list-health-checks-response-example.json
+- type: Examples
+  url: examples/amazon-route-53-openapi-list-hosted-zones-response-example.json
+- type: Examples
+  url: examples/amazon-route-53-openapi-list-resource-record-sets-response-example.json
+- type: Examples
+  url: examples/amazon-route-53-openapi-resource-record-set-example.json
+- type: SpectralRules
+  url: rules/amazon-route-53-spectral-rules.yml
+- type: Vocabulary
+  url: vocabulary/amazon-route-53-vocabulary.yaml
+- type: OpenAPI
+  url: openapi/_original/amazon-route-53-openapi.yml
+- type: Integrations
+  url: https://aws.amazon.com/partners/
+maintainer:
+  name: Kin Lane
+  url: https://kinlane.com
+modified: '2026-05-19'
+integrations:
+- name: Partner Programs
+- name: Resources
+- name: Success Stories
+- name: Work with an AWS Partner
+- name: AWS Marketplace
+- name: AWS Partner Central
+- name: Partner Paths
+- name: co-sell with AWS
+x-parent: amazon-web-services
+x-relationship: product

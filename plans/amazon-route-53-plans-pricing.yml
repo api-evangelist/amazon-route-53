@@ -1,0 +1,367 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-10-28'
+method: searched
+source: https://aws.amazon.com/route53/pricing/
+sources:
+- https://aws.amazon.com/route53/pricing/
+provenance:
+  tool: engine/economics/harvest_pricing.py
+  run: 20261028T161713
+  grounding: every price_text was found verbatim in the fetched page text
+audience: developer-api
+pricing_basis: per-call
+delivery:
+  delivery: managed
+  method: page
+  read: '2026-10-28'
+published: true
+note: AWS Route 53 pay-as-you-go pricing page; domain registration pricing varies by TLD and is listed
+  elsewhere. DNSSEC and query logs have no Route 53 charge.
+plan_count: 22
+currency: USD
+plans:
+- name: Hosted zones (first 25)
+  price_text: $0.50 per hosted zone per month for the first 25 hosted zones
+  price: 0.5
+  currency: USD
+  period: month
+  unit: hosted zone
+  included_quota: up to 10,000 records per hosted zone
+  overage: $0.10 per hosted zone per month for additional hosted zones; $0.0015 per month per record over
+    10,000
+- name: Standard DNS queries (AWS Regions)
+  price_text: $0.40 per million queries (first 1 billion queries per month)
+  price: 0.4
+  currency: USD
+  period: per-use
+  unit: million queries
+  included_quota: first 1 billion queries per month
+  overage: $0.20 per million queries (over 1 billion queries per month)
+- name: Latency-Based Routing Queries
+  price_text: $0.60 per million queries (first 1 billion queries per month)
+  price: 0.6
+  currency: USD
+  period: per-use
+  unit: million queries
+  overage: $0.30 per million queries (over 1 billion queries per month)
+- name: Geolocation and Geoproximity Queries
+  price_text: $0.70 per million queries (first 1 billion queries per month)
+  price: 0.7
+  currency: USD
+  period: per-use
+  unit: million queries
+  overage: $0.35 per million queries (over 1 billion queries per month)
+- name: IP-Based Routing Queries
+  price_text: $0.80 per million queries (first 1 billion queries per month)
+  price: 0.8
+  currency: USD
+  period: per-use
+  unit: million queries
+  included_quota: storage of up to 1,000 IP (CIDR) blocks
+  overage: $0.40 per million queries (over 1 billion queries per month); $0.0015 per month per IP block
+    above 1,000
+- name: GovCloud Standard Queries
+  price_text: $0.50 per million queries (first 1 billion queries per month)
+  price: 0.5
+  currency: USD
+  period: per-use
+  unit: million queries
+  overage: $0.25 per million queries (over 1 billion queries per month)
+- name: GovCloud Latency-Based Routing Queries
+  price_text: $0.72 per million queries (first 1 billion queries per month)
+  price: 0.72
+  currency: USD
+  period: per-use
+  unit: million queries
+  overage: $0.36 per million queries (over 1 billion queries per month)
+- name: GovCloud Geolocation and Geoproximity Queries
+  price_text: $0.84 per million queries (first 1 billion queries per month)
+  price: 0.84
+  currency: USD
+  period: per-use
+  unit: million queries
+  overage: $0.42 per million queries (over 1 billion queries per month)
+- name: Traffic Flow
+  price_text: $50.00 per policy record per month
+  price: 50
+  currency: USD
+  period: month
+  unit: policy record
+- name: Basic health checks (AWS endpoints)
+  price_text: $0.50 per health check per month
+  price: 0.5
+  currency: USD
+  period: month
+  unit: health check
+  included_quota: up to 50 health checks for AWS endpoints free
+- name: Basic health checks (Non-AWS endpoints)
+  price_text: $0.75 per health check per month
+  price: 0.75
+  currency: USD
+  period: month
+  unit: health check
+- name: Optional health check features (AWS endpoints)
+  price_text: $1.00 per optional health check feature per month
+  price: 1
+  currency: USD
+  period: month
+  unit: optional feature
+- name: Optional health check features (Non-AWS endpoints)
+  price_text: $2.00 per optional health check feature per month
+  price: 2
+  currency: USD
+  period: month
+  unit: optional feature
+- name: Resolver on Outposts
+  price_text: $0.65 per Resolver on Outpost per hour (second-generation AWS Outposts racks only)
+  price: 0.65
+  currency: USD
+  period: per-use
+  unit: hour
+- name: Resolver Endpoints
+  price_text: $0.125 per ENI per hour
+  price: 0.125
+  currency: USD
+  period: per-use
+  unit: ENI per hour
+- name: Recursive DNS queries to/from on-premises
+  price_text: $0.40 per million queries (first 1 billion queries per month)
+  price: 0.4
+  currency: USD
+  period: per-use
+  unit: million queries
+  overage: $0.20 per million queries (over 1 billion queries per month)
+- name: Global Resolver - first two regions
+  price_text: $5.00 per hour ($4.50 per hour without DNS filtering)
+  currency: USD
+  period: per-use
+  unit: hour
+  included_quota: 30-day free trial limited to first two regions, up to 1 billion queries
+  overage: 'Additional regions: $1.50 per hour per region ($0.75 per hour without DNS filtering)'
+- name: Global Resolver query volume
+  price_text: $1.50 per million queries beyond the first 1 billion queries per Global Resolver deployment
+    per month
+  price: 1.5
+  currency: USD
+  period: month
+  unit: million queries
+  included_quota: first 1 billion queries
+- name: Route 53 Profiles
+  price_text: $0.75 per AWS account for up to 100 Profile-VPC associations
+  price: 0.75
+  currency: USD
+  period: per-use
+  unit: hour
+  included_quota: up to 100 Profile-VPC associations
+  overage: $0.0014 per Profile-VPC association per hour per AWS Region
+- name: Resolver DNS Firewall Foundational queries
+  price_text: $0.60 per million queries (first 1 billion queries per month)
+  price: 0.6
+  currency: USD
+  period: per-use
+  unit: million queries
+  overage: $0.40 per million queries (over 1 billion queries per month)
+- name: DNS Firewall domain names
+  price_text: $0.0005 per month (prorated hourly)
+  price: 0.0005
+  currency: USD
+  period: month
+  unit: domain name
+  included_quota: managed domain lists free
+- name: Resolver DNS Firewall Advanced
+  price_text: $0.16 per hour
+  price: 0.16
+  currency: USD
+  period: per-use
+  unit: hour per rule group per VPC
+rate_limit_statements:
+- There is a default limit of 20 domain name registrations per account.
+- Need more than 500 hosted zones or more than 10,000 records in a hosted zone? Please contact us .
+- Need more than 200 health checks? Please contact us .
+x-canonical:
+  generated: '2026-11-01'
+  vocabulary: engine/economics/plans-canonical.yml
+  models:
+  - hybrid
+  - metered
+  - subscription
+  units:
+  - compute
+  - request
+  plans:
+  - name: Hosted zones (first 25)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - other
+    periods:
+    - month
+  - name: Standard DNS queries (AWS Regions)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - request
+    periods:
+    - other
+  - name: Latency-Based Routing Queries
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - request
+    periods:
+    - other
+  - name: Geolocation and Geoproximity Queries
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - request
+    periods:
+    - other
+  - name: IP-Based Routing Queries
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - request
+    periods:
+    - other
+  - name: GovCloud Standard Queries
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - request
+    periods:
+    - other
+  - name: GovCloud Latency-Based Routing Queries
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - request
+    periods:
+    - other
+  - name: GovCloud Geolocation and Geoproximity Queries
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - request
+    periods:
+    - other
+  - name: Traffic Flow
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - month
+  - name: Basic health checks (AWS endpoints)
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - month
+  - name: Basic health checks (Non-AWS endpoints)
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - month
+  - name: Optional health check features (AWS endpoints)
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - month
+  - name: Optional health check features (Non-AWS endpoints)
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - month
+  - name: Resolver on Outposts
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - compute
+    periods:
+    - other
+  - name: Resolver Endpoints
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - compute
+    periods:
+    - other
+  - name: Recursive DNS queries to/from on-premises
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - request
+    periods:
+    - other
+  - name: Global Resolver - first two regions
+    access: other
+    model: metered
+    model_how: derived
+    units:
+    - compute
+    periods:
+    - other
+  - name: Global Resolver query volume
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - request
+    periods:
+    - month
+  - name: Route 53 Profiles
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - compute
+    periods:
+    - other
+  - name: Resolver DNS Firewall Foundational queries
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - request
+    periods:
+    - other
+  - name: DNS Firewall domain names
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - month
+  - name: Resolver DNS Firewall Advanced
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - compute
+    periods:
+    - other
