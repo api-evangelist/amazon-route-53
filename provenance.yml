@@ -5,12 +5,24 @@ artifacts:
   agentic-access/amazon-route-53-agentic-access.yml:
     method: generated
     evidence: declared in the artifact
+  ai-preferences/amazon-route-53-ai-preferences.yml:
+    method: harvested
+    evidence: declared in the artifact
   authentication/amazon-route-53-authentication.yml:
     method: derived
     evidence: declared in the artifact
   capabilities/amazon-route-53-capability-edges.yml:
     method: unknown
     evidence: no authorship recorded
+  certification/observations-2026-11-11.jsonl:
+    method: unknown
+    evidence: no authorship recorded
+  certification/status.yml:
+    method: unknown
+    evidence: no authorship recorded
+  cli/amazon-route-53-cli.yml:
+    method: searched
+    evidence: declared in the artifact
   collections/amazon-route-53-health-checks-api.opencollection.json:
     method: derived
     evidence: openapi/amazon-route-53-health-checks-api
@@ -35,6 +47,27 @@ artifacts:
   collections/amazon-route-53.postman_collection.json:
     method: derived
     evidence: openapi/amazon-route-53
+  compliance/amazon-route-53-compliance.yml:
+    method: harvested
+    evidence: declared in the artifact
+  conformance/amazon-route-53-conformance.yml:
+    method: derived
+    evidence: declared in the artifact
+  conventions/amazon-route-53-conventions.yml:
+    method: derived
+    evidence: declared in the artifact
+  data-model/amazon-route-53-data-model.yml:
+    method: derived
+    evidence: declared in the artifact
+  eligibility/amazon-route-53-eligibility.yml:
+    method: harvested
+    evidence: declared in the artifact
+  errors/amazon-route-53-error-codes.yml:
+    method: searched
+    evidence: declared in the artifact
+  errors/amazon-route-53-problem-types.yml:
+    method: derived
+    evidence: declared in the artifact
   examples/amazon-route-53-hosted-zone-example.json:
     method: unknown
     evidence: no authorship recorded
@@ -92,6 +125,9 @@ artifacts:
   finops/amazon-route-53-finops.yml:
     method: derived
     evidence: declared in the artifact
+  hosts/amazon-route-53-hosts.yml:
+    method: derived
+    evidence: declared in the artifact
   integrations/_index.yml:
     method: generated
     evidence: carries an API Evangelist house phrase
@@ -104,7 +140,214 @@ artifacts:
   json-ld/amazon-route-53-context.jsonld:
     method: unknown
     evidence: no authorship recorded
+  json-schema/amazon-route-53-accept-domain-transfer-from-another-aws-account-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-accept-domain-transfer-from-another-aws-account-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-associate-profile-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-associate-profile-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-associate-resource-to-profile-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-associate-resource-to-profile-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-cancel-domain-transfer-to-another-aws-account-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-cancel-domain-transfer-to-another-aws-account-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-change-cidr-collection-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-change-resource-record-sets-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-change-resource-record-sets-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-change-tags-for-resource-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-create-cidr-collection-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-create-health-check-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-create-health-check-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-create-hosted-zone-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-create-hosted-zone-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-create-profile-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-create-profile-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-create-query-logging-config-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-create-query-logging-config-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-create-reusable-delegation-set-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-create-reusable-delegation-set-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-create-traffic-policy-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-create-traffic-policy-version-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-delete-profile-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-delete-profile-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-delete-query-logging-config-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-delete-reusable-delegation-set-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-get-domain-detail-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-get-health-check-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-get-hosted-zone-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-get-operation-detail-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-get-profile-association-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-get-profile-association-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-get-profile-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-get-profile-resource-association-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-get-profile-resource-association-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-get-profile-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-get-query-logging-config-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-get-reusable-delegation-set-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-get-traffic-policy-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
   json-schema/amazon-route-53-hosted-zone-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-list-cidr-collections-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-list-cidr-collections-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-list-cidr-locations-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-list-cidr-locations-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-list-domains-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-list-health-checks-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-list-health-checks-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-list-hosted-zones-by-name-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-list-hosted-zones-by-vpcrequest-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-list-hosted-zones-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-list-hosted-zones-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-list-query-logging-configs-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-list-query-logging-configs-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-list-resource-record-sets-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-list-resource-record-sets-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-list-reusable-delegation-sets-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-list-reusable-delegation-sets-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-list-tags-for-resource-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-list-tags-for-resources-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-list-traffic-policies-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-list-traffic-policies-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-list-traffic-policy-instances-by-hosted-zone-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-list-traffic-policy-instances-by-hosted-zone-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-list-traffic-policy-instances-by-policy-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-list-traffic-policy-instances-by-policy-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-list-traffic-policy-instances-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-list-traffic-policy-instances-response-schema.json:
     method: unknown
     evidence: no authorship recorded
   json-schema/amazon-route-53-openapi-change-info-schema.json:
@@ -156,6 +399,51 @@ artifacts:
     method: unknown
     evidence: no authorship recorded
   json-schema/amazon-route-53-openapi-resource-record-set-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-register-domain-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-reject-domain-transfer-from-another-aws-account-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-reject-domain-transfer-from-another-aws-account-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-tag-resource-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-transfer-domain-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-untag-resource-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-update-domain-contact-privacy-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-update-health-check-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-update-hosted-zone-comment-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-update-profile-association-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-update-profile-association-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-update-profile-resource-association-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-update-profile-resource-association-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-update-tags-for-domain-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-route-53-update-traffic-policy-comment-request-schema.json:
     method: unknown
     evidence: no authorship recorded
   json-structure/amazon-route-53-hosted-zone-structure.json:
@@ -215,7 +503,7 @@ artifacts:
   kin/checks-2026-10-23T222754.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
-  kin/checks-2026-11-02T082323.yml:
+  kin/checks-2026-11-06T143934.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   kin/score-2026-09-23T000603.yml:
@@ -284,23 +572,49 @@ artifacts:
   kin/score-2026-11-02T082323.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
-  openapi/_original/amazon-route-53-openapi.yml:
-    method: harvested
-    evidence: found in openapi/_original/; the fetch URL and bytes were not recorded, so byte-identity
-      to the provider's source is unverified
+  kin/score-2026-11-06T143934.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  lifecycle/amazon-route-53-lifecycle.yml:
+    method: searched
+    evidence: declared in the artifact
+  llms/amazon-route-53-llms-provenance.yml:
+    method: unknown
+    evidence: no authorship recorded
+  llms/amazon-route-53-llms.txt:
+    method: unknown
+    evidence: no authorship recorded
+  mcp/amazon-route-53-mcp.yml:
+    method: derived
+    evidence: declared in the artifact
   openapi/amazon-route-53-cidrcollection-api-openapi.yml:
     method: unknown
     evidence: no authorship recorded
   openapi/amazon-route-53-delegationset-api-openapi.yml:
     method: unknown
     evidence: no authorship recorded
+  openapi/amazon-route-53-domain-api-openapi.yml:
+    method: unknown
+    evidence: no authorship recorded
+  openapi/amazon-route-53-domain-transfer-api-openapi.yml:
+    method: unknown
+    evidence: no authorship recorded
   openapi/amazon-route-53-health-checks-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
+    method: unknown
+    evidence: no authorship recorded
   openapi/amazon-route-53-hosted-zones-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
+    method: unknown
+    evidence: no authorship recorded
   openapi/amazon-route-53-operations-api-openapi.yml:
+    method: unknown
+    evidence: no authorship recorded
+  openapi/amazon-route-53-profile-api-openapi.yml:
+    method: unknown
+    evidence: no authorship recorded
+  openapi/amazon-route-53-profileassociation-api-openapi.yml:
+    method: unknown
+    evidence: no authorship recorded
+  openapi/amazon-route-53-profileresourceassociation-api-openapi.yml:
     method: unknown
     evidence: no authorship recorded
   openapi/amazon-route-53-queryloggingconfig-api-openapi.yml:
@@ -318,9 +632,12 @@ artifacts:
   openapi/amazon-route-53-trafficpolicyinstance-api-openapi.yml:
     method: unknown
     evidence: no authorship recorded
-  openapi/amazon-route-53-trafficpolicyinstances-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+  packages/amazon-route-53-packages.yml:
+    method: searched
+    evidence: declared in the artifact
+  patterns/amazon-route-53-patterns.yml:
+    method: derived
+    evidence: declared in the artifact
   plans/amazon-route-53-plans-pricing.yml:
     method: searched
     evidence: declared in the artifact
@@ -336,10 +653,16 @@ artifacts:
   postman/amazon-route-53-resource-record-sets-api.postman_collection.json:
     method: derived
     evidence: openapi/amazon-route-53-resource-record-sets-api
+  privacy/amazon-route-53-privacy-policy.yml:
+    method: harvested
+    evidence: declared in the artifact
   rate-limits/amazon-route-53-rate-limits.yml:
-    method: generated
+    method: searched
     evidence: declared in the artifact
   rules/amazon-route-53-jsonschema-spectral-rules.yml:
+    method: generated
+    evidence: declared in the artifact
+  rules/amazon-route-53-rules.yml:
     method: generated
     evidence: declared in the artifact
   rules/amazon-route-53-spectral-rules.yml:
@@ -358,8 +681,35 @@ artifacts:
     method: generated
     evidence: declared in the artifact
   smithy/route-53-2013-04-01.json:
+    method: harvested
+    evidence: byte-identical to https://raw.githubusercontent.com/aws/api-models-aws/3cd98287b471c106254abd89279cc87308d38bfd/models/route-53/service/2013-04-01/route-53-2013-04-01.json
+      (sha256 ecd97d60ded2, fetched 2026-11-11T21:14:41+00:00)
+  smithy/route-53-domains-2014-05-15.json:
+    method: harvested
+    evidence: byte-identical to https://raw.githubusercontent.com/aws/api-models-aws/3cd98287b471c106254abd89279cc87308d38bfd/models/route-53-domains/service/2014-05-15/route-53-domains-2014-05-15.json
+      (sha256 26ad2cc5b462, fetched 2026-11-11T21:14:42+00:00)
+  smithy/route53profiles-2018-05-10.json:
+    method: harvested
+    evidence: byte-identical to https://raw.githubusercontent.com/aws/api-models-aws/3cd98287b471c106254abd89279cc87308d38bfd/models/route53profiles/service/2018-05-10/route53profiles-2018-05-10.json
+      (sha256 72fbf722e995, fetched 2026-11-11T21:14:43+00:00)
+  terms/amazon-route-53-terms-of-service.yml:
+    method: harvested
+    evidence: declared in the artifact
+  vendors/amazon-route-53-vendors.yml:
     method: unknown
     evidence: no authorship recorded
   vocabulary/amazon-route-53-vocabulary.yaml:
+    method: unknown
+    evidence: no authorship recorded
+  vocabulary/amazon-route-53-vocabulary.yml:
+    method: derived
+    evidence: declared in the artifact
+  well-known/amazon-route-53-repost-security.txt:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/amazon-route-53-security.txt:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/amazon-route-53-well-known.yml:
     method: unknown
     evidence: no authorship recorded

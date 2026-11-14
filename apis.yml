@@ -18,19 +18,19 @@ accessModel:
   try_now: false
   public: false
   label: Paid
-  confidence: medium
+  confidence: high
   source:
   - plans
   - authentication
+  - rate-limits
   - security
-  generated: '2026-11-06'
+  generated: '2026-11-13'
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/amazon-route-53.png
 name: Amazon Route 53
-description: Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service that provides DNS routing,
-  domain name registration, and health checking capabilities. Route 53 connects user requests to internet applications running
-  on AWS or on-premises infrastructure, and can be used to route traffic based on latency, geolocation, geoproximity, and
-  weighted round-robin policies.
+description: Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service that provides DNS routing, domain name registration,
+  and health checking capabilities. Route 53 connects user requests to internet applications running on AWS or on-premises infrastructure, and
+  can be used to route traffic based on latency, geolocation, geoproximity, and weighted round-robin policies.
 url: https://raw.githubusercontent.com/api-evangelist/amazon-route-53/refs/heads/main/apis.yml
 baseURL: https://route53.amazonaws.com
 tags:
@@ -49,7 +49,7 @@ properties:
 - type: Documentation
   url: https://docs.aws.amazon.com/Route53/latest/APIReference/
 - type: OpenAPI
-  url: openapi/_original/amazon-route-53-openapi.yml
+  url: openapi/_superseded/amazon-route-53-openapi.yml
 - type: OpenAPI
   url: https://api.apis.guru/v2/specs/amazonaws.com/route53/2013-04-01/openapi.yaml
 - type: JSONSchema
@@ -70,103 +70,52 @@ properties:
   url: https://docs.aws.amazon.com/cli/latest/reference/route53/
 - type: Security
   url: https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/security.html
-apis:
-- aid: amazon-route-53:amazon-route-53-health-checks-api
-  name: Amazon Route 53 Health Checks API
-  description: Operations for managing health checks.
-  tags:
-  - Health Checks
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-route-53-health-checks-api-openapi.yml
-- aid: amazon-route-53:amazon-route-53-hosted-zones-api
-  name: Amazon Route 53 Hosted Zones API
-  description: Operations for managing DNS hosted zones.
-  tags:
-  - Hosted Zones
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-route-53-hosted-zones-api-openapi.yml
-- aid: amazon-route-53:amazon-route-53-resource-record-sets-api
-  name: Amazon Route 53 Resource Record Sets API
-  description: Operations for managing DNS resource record sets.
-  tags:
-  - Resource Record Sets
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-route-53-resource-record-sets-api-openapi.yml
-- aid: amazon-route-53:amazon-route-53-cidrcollection-api
-  name: Amazon Route 53 Route 53 Cidrcollection API
-  description: >-
-    The Route 53 Cidrcollection API from Amazon Route 53 — 3 operation(s) for route 53 cidrcollection.
-  tags:
-  - Route 53 Cidrcollection
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-route-53-cidrcollection-api-openapi.yml
-- aid: amazon-route-53:amazon-route-53-delegationset-api
-  name: Amazon Route 53 Route 53 Delegationset API
-  description: >-
-    The Route 53 Delegationset API from Amazon Route 53 — 2 operation(s) for route 53 delegationset.
-  tags:
-  - Route 53 Delegationset
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-route-53-delegationset-api-openapi.yml
-- aid: amazon-route-53:amazon-route-53-operations-api
-  name: Amazon Route 53 Route 53 Operations API
-  description: >-
-    The Route 53 Operations API from Amazon Route 53 — 30 operation(s) for route 53 operations.
-  tags:
-  - Route 53 Operations
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-route-53-operations-api-openapi.yml
-- aid: amazon-route-53:amazon-route-53-queryloggingconfig-api
-  name: Amazon Route 53 Route 53 Queryloggingconfig API
-  description: >-
-    The Route 53 Queryloggingconfig API from Amazon Route 53 — 2 operation(s) for route 53 queryloggingconfig.
-  tags:
-  - Route 53 Queryloggingconfig
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-route-53-queryloggingconfig-api-openapi.yml
-- aid: amazon-route-53:amazon-route-53-tags-api
-  name: Amazon Route 53 Route 53 Tags API
-  description: The Route 53 Tags API from Amazon Route 53 — 2 operation(s) for route 53 tags.
-  tags:
-  - Route 53 Tags
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-route-53-tags-api-openapi.yml
-- aid: amazon-route-53:amazon-route-53-trafficpolicy-api
-  name: Amazon Route 53 Route 53 Trafficpolicy API
-  description: >-
-    The Route 53 Trafficpolicy API from Amazon Route 53 — 3 operation(s) for route 53 trafficpolicy.
-  tags:
-  - Route 53 Trafficpolicy
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-route-53-trafficpolicy-api-openapi.yml
-- aid: amazon-route-53:amazon-route-53-trafficpolicyinstance-api
-  name: Amazon Route 53 Route 53 Trafficpolicyinstance API
-  description: >-
-    The Route 53 Trafficpolicyinstance API from Amazon Route 53 — 2 operation(s) for route 53 trafficpolicyinstance.
-  tags:
-  - Route 53 Trafficpolicyinstance
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-route-53-trafficpolicyinstance-api-openapi.yml
-- aid: amazon-route-53:amazon-route-53-trafficpolicyinstances-api
-  name: Amazon Route 53 Route 53 Trafficpolicyinstances API
-  description: >-
-    The Route 53 Trafficpolicyinstances API from Amazon Route 53 — 3 operation(s) for route 53 trafficpolicyinstances.
-  tags:
-  - Route 53 Trafficpolicyinstances
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-route-53-trafficpolicyinstances-api-openapi.yml
+modified: '2026-05-19'
 common:
+- type: LLMsTxt
+  url: llms/amazon-route-53-llms.txt
+- type: Website
+  url: https://aws.amazon.com/route53/
+- type: Spectral
+  url: rules/amazon-route-53-spectral-rules.yml
+- type: Spectral
+  url: rules/amazon-route-53-rules.yml
+- type: Spectral
+  url: rules/amazon-route-53-jsonschema-spectral-rules.yml
+- type: Vocabulary
+  url: vocabulary/amazon-route-53-vocabulary.yml
+- type: DataModel
+  url: data-model/amazon-route-53-data-model.yml
+- type: CLI
+  url: cli/amazon-route-53-cli.yml
+- type: Idempotency
+  url: conventions/amazon-route-53-conventions.yml
+- type: Conventions
+  url: conventions/amazon-route-53-conventions.yml
+- type: Lifecycle
+  url: lifecycle/amazon-route-53-lifecycle.yml
+- type: ErrorCatalog
+  url: errors/amazon-route-53-error-codes.yml
+- type: ErrorCatalog
+  url: errors/amazon-route-53-problem-types.yml
+- type: Conformance
+  url: conformance/amazon-route-53-conformance.yml
+- type: SecurityTxt
+  url: well-known/amazon-route-53-security.txt
+- type: SecurityTxt
+  url: well-known/amazon-route-53-repost-security.txt
+- type: WellKnown
+  url: well-known/amazon-route-53-well-known.yml
+- type: Hosts
+  url: hosts/amazon-route-53-hosts.yml
+- type: Vendors
+  url: vendors/amazon-route-53-vendors.yml
+- type: SDKs
+  url: packages/amazon-route-53-packages.yml
+- type: Packages
+  url: packages/amazon-route-53-packages.yml
+- type: GettingStarted
+  url: https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/getting-started.html
 - type: CapabilityMap
   url: capabilities/amazon-route-53-capability-edges.yml
   name: Amazon Route 53 Business Capability Map
@@ -341,13 +290,331 @@ common:
 - type: Vocabulary
   url: vocabulary/amazon-route-53-vocabulary.yaml
 - type: OpenAPI
-  url: openapi/_original/amazon-route-53-openapi.yml
+  url: openapi/_superseded/amazon-route-53-openapi.yml
 - type: Integrations
   url: https://aws.amazon.com/partners/
+- type: UsageTerms
+  url: terms/amazon-route-53-terms-of-service.yml
+- type: DataProcessing
+  url: privacy/amazon-route-53-privacy-policy.yml
+- type: Attestations
+  url: compliance/amazon-route-53-compliance.yml
+- type: Eligibility
+  url: eligibility/amazon-route-53-eligibility.yml
+- type: AIPreferences
+  url: ai-preferences/amazon-route-53-ai-preferences.yml
+apis:
+- aid: amazon-route-53:amazon-route-53-health-checks-api
+  name: Amazon Route 53 Health Checks API
+  description: Operations for managing health checks.
+  tags:
+  - Health Checks
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-route-53-health-checks-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-update-health-check-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-list-health-checks-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-list-health-checks-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-create-health-check-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-get-health-check-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-create-health-check-response-schema.json
+- aid: amazon-route-53:amazon-route-53-hosted-zones-api
+  name: Amazon Route 53 Hosted Zones API
+  description: Operations for managing DNS hosted zones.
+  tags:
+  - Hosted Zones
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-route-53-hosted-zones-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-create-hosted-zone-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-list-hosted-zones-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-list-hosted-zones-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-create-hosted-zone-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-get-hosted-zone-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-update-hosted-zone-comment-request-schema.json
+- aid: amazon-route-53:amazon-route-53-resource-record-sets-api
+  name: Amazon Route 53 Resource Record Sets API
+  description: Operations for managing DNS resource record sets.
+  tags:
+  - Resource Record Sets
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-route-53-resource-record-sets-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-list-resource-record-sets-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-list-resource-record-sets-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-change-resource-record-sets-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-change-resource-record-sets-response-schema.json
+- aid: amazon-route-53:amazon-route-53-cidrcollection-api
+  name: Amazon Route 53 Route 53 Cidrcollection API
+  description: >-
+    The Route 53 Cidrcollection API from Amazon Route 53 — 3 operation(s) for route 53 cidrcollection.
+  tags:
+  - Route 53 Cidrcollection
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-route-53-cidrcollection-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-change-cidr-collection-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-create-cidr-collection-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-list-cidr-locations-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-list-cidr-locations-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-list-cidr-collections-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-list-cidr-collections-request-schema.json
+- aid: amazon-route-53:amazon-route-53-delegationset-api
+  name: Amazon Route 53 Route 53 Delegationset API
+  description: >-
+    The Route 53 Delegationset API from Amazon Route 53 — 2 operation(s) for route 53 delegationset.
+  tags:
+  - Route 53 Delegationset
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-route-53-delegationset-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-list-reusable-delegation-sets-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-list-reusable-delegation-sets-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-create-reusable-delegation-set-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-create-reusable-delegation-set-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-get-reusable-delegation-set-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-delete-reusable-delegation-set-request-schema.json
+- aid: amazon-route-53:amazon-route-53-operations-api
+  name: Amazon Route 53 Route 53 Operations API
+  description: >-
+    The Route 53 Operations API from Amazon Route 53 — 30 operation(s) for route 53 operations.
+  humanURL: >-
+    https://docs.aws.amazon.com/Route53/latest/APIReference/API_Operations_Amazon_Route_53_Domains.html
+  baseURL: https://route53domains.us-east-1.amazonaws.com
+  tags:
+  - Route 53 Operations
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-route-53-operations-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-get-domain-detail-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-transfer-domain-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-update-domain-contact-privacy-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-get-operation-detail-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-list-hosted-zones-by-name-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-list-hosted-zones-by-vpcrequest-schema.json
+- aid: amazon-route-53:amazon-route-53-queryloggingconfig-api
+  name: Amazon Route 53 Route 53 Queryloggingconfig API
+  description: >-
+    The Route 53 Queryloggingconfig API from Amazon Route 53 — 2 operation(s) for route 53 queryloggingconfig.
+  tags:
+  - Route 53 Queryloggingconfig
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-route-53-queryloggingconfig-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-list-query-logging-configs-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-list-query-logging-configs-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-create-query-logging-config-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-create-query-logging-config-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-get-query-logging-config-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-delete-query-logging-config-request-schema.json
+- aid: amazon-route-53:amazon-route-53-tags-api
+  name: Amazon Route 53 Route 53 Tags API
+  description: The Route 53 Tags API from Amazon Route 53 — 2 operation(s) for route 53 tags.
+  tags:
+  - Route 53 Tags
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-route-53-tags-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-change-tags-for-resource-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-list-tags-for-resources-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-update-tags-for-domain-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-list-tags-for-resource-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-tag-resource-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-untag-resource-request-schema.json
+- aid: amazon-route-53:amazon-route-53-trafficpolicy-api
+  name: Amazon Route 53 Route 53 Trafficpolicy API
+  description: >-
+    The Route 53 Trafficpolicy API from Amazon Route 53 — 3 operation(s) for route 53 trafficpolicy.
+  tags:
+  - Route 53 Trafficpolicy
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-route-53-trafficpolicy-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-list-traffic-policies-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-list-traffic-policies-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-create-traffic-policy-version-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-update-traffic-policy-comment-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-create-traffic-policy-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-get-traffic-policy-request-schema.json
+- aid: amazon-route-53:amazon-route-53-trafficpolicyinstance-api
+  name: Amazon Route 53 Route 53 Trafficpolicyinstance API
+  description: >-
+    The Route 53 Trafficpolicyinstance API from Amazon Route 53 — 2 operation(s) for route 53 trafficpolicyinstance.
+  tags:
+  - Route 53 Trafficpolicyinstance
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-route-53-trafficpolicyinstance-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-list-traffic-policy-instances-by-policy-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-list-traffic-policy-instances-request-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/amazon-route-53-list-traffic-policy-instances-by-hosted-zone-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-list-traffic-policy-instances-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-list-traffic-policy-instances-by-policy-response-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/amazon-route-53-list-traffic-policy-instances-by-hosted-zone-response-schema.json
+- aid: amazon-route-53:amazon-route-53-domain-api
+  name: Amazon Route 53 Route 53 Domain API
+  description: The Route 53 Domain API from Amazon Route 53 — 4 operation(s) for route 53 domain.
+  tags:
+  - Route 53 Domain
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-route-53-domain-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-register-domain-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-list-domains-request-schema.json
+- aid: amazon-route-53:amazon-route-53-domain-transfer-api
+  name: Amazon Route 53 Route 53 Domain Transfer API
+  description: >-
+    The Route 53 Domain Transfer API from Amazon Route 53 — 3 operation(s) for route 53 domain transfer.
+  tags:
+  - Route 53 Domain Transfer
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-route-53-domain-transfer-api-openapi.yml
+  - type: JSONSchema
+    url: >-
+      json-schema/amazon-route-53-accept-domain-transfer-from-another-aws-account-request-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/amazon-route-53-cancel-domain-transfer-to-another-aws-account-response-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/amazon-route-53-reject-domain-transfer-from-another-aws-account-response-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/amazon-route-53-reject-domain-transfer-from-another-aws-account-request-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/amazon-route-53-cancel-domain-transfer-to-another-aws-account-request-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/amazon-route-53-accept-domain-transfer-from-another-aws-account-response-schema.json
+- aid: amazon-route-53:amazon-route-53-profile-api
+  name: Amazon Route 53 Route 53 Profile API
+  description: The Route 53 Profile API from Amazon Route 53 — 2 operation(s) for route 53 profile.
+  tags:
+  - Route 53 Profile
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-route-53-profile-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-create-profile-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-delete-profile-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-get-profile-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-create-profile-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-delete-profile-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-get-profile-response-schema.json
+- aid: amazon-route-53:amazon-route-53-profileassociation-api
+  name: Amazon Route 53 Route 53 Profileassociation API
+  description: >-
+    The Route 53 Profileassociation API from Amazon Route 53 — 2 operation(s) for route 53 profileassociation.
+  tags:
+  - Route 53 Profileassociation
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-route-53-profileassociation-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-associate-profile-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-update-profile-association-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-get-profile-association-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-update-profile-association-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-associate-profile-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-get-profile-association-response-schema.json
+- aid: amazon-route-53:amazon-route-53-profileresourceassociation-api
+  name: Amazon Route 53 Route 53 Profileresourceassociation API
+  description: >-
+    The Route 53 Profileresourceassociation API from Amazon Route 53 — 2 operation(s) for route 53 profileresourceassociation.
+  tags:
+  - Route 53 Profileresourceassociation
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-route-53-profileresourceassociation-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-associate-resource-to-profile-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-update-profile-resource-association-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-get-profile-resource-association-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-associate-resource-to-profile-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-get-profile-resource-association-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-route-53-update-profile-resource-association-response-schema.json
 maintainer:
   name: Kin Lane
   url: https://kinlane.com
-modified: '2026-05-19'
 integrations:
 - name: Partner Programs
 - name: Resources
@@ -359,3 +626,8 @@ integrations:
 - name: co-sell with AWS
 x-parent: amazon-web-services
 x-relationship: product
+x-enrichment:
+  date: '2026-11-11'
+  status: enriched
+  artifacts_added: 7
+  pass: local-v6
